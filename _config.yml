@@ -1,0 +1,21 @@
+# Jekyll configuration for GitHub Pages
+title: fukuii
+description: A Scala-based client for Ethereum-like blockchains
+author: Chippr Robotics
+url: https://chippr-robotics.github.io
+baseurl: /fukuii
+
+# Build settings
+markdown: kramdown
+theme: null
+
+# Exclude files from build
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+
+# GitHub Pages specific
+github:
+  repository_url: https://github.com/chippr-robotics/fukuii
