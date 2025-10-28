@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fukuii - Scala-based Ethereum Classic Client</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛓️</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">⛓️</span>
+                <span class="brand-name">fukuii</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#documentation">Documentation</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#contributing">Contributing</a></li>
+                <li><a href="https://github.com/chippr-robotics/fukuii" target="_blank" class="github-link">GitHub</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>fukuii</h1>
+                <p class="tagline">A Scala-based client for Ethereum-like blockchains</p>
+                <p class="description">
+                    <strong>fukuii</strong> is a robust Ethereum Classic client forked from IOHK's mantis project, [github](https://github.com/chippr-robotics) providing production-ready blockchain infrastructure with comprehensive tooling for developers and organizations.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#download" class="btn btn-primary">Download</a>
+                    <a href="#documentation" class="btn btn-secondary">Get Started</a>
+                    <a href="https://github.com/chippr-robotics/fukuii" target="_blank" class="btn btn-outline">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features-section">
+        <div class="container">
+            <h2 class="section-title">Key features and capabilities</h2>
+            <p class="section-intro">fukuii inherits powerful features from the mantis project, delivering a complete blockchain client implementation optimized for Ethereum Classic and compatible networks.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Full blockchain client</h3>
+                    <p>Complete implementation supporting Ethereum Classic, Ethereum, Mordor testnet, and internal testnets with latest hard-fork compatibility including Magneto (ECIP-1103). [GitHub](https://github.com/input-output-hk/mantis) </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>JSON-RPC API</h3>
+                    <p>Industry-standard JSON-RPC interface for seamless blockchain interaction with HTTP/HTTPS support and optional TLS encryption for secure communications. [github](https://github.com/input-output-hk/mantis) </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Wallet management</h3>
+                    <p>Built-in wallet functionality with account management, compatible with standard Ethereum keystore format, and password-protected key encryption.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Comprehensive CLI tools</h3>
+                    <p>Command-line interface for private key generation, address derivation, genesis allocations, key-pair generation, key encryption, and keystore management. [github](https://github.com/input-output-hk/mantis) </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>P2P networking</h3>
+                    <p>Robust peer-to-peer networking via devp2p protocol with configurable ports, ensuring reliable connection to Ethereum Classic and compatible networks.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚰</div>
+                    <h3>Testnet faucet</h3>
+                    <p>Built-in faucet functionality for automated testnet fund distribution, making it easy to provide gas for development and testing accounts. [github](https://github.com/input-output-hk/mantis) </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Monitoring & metrics</h3>
+                    <p>Integrated Prometheus metrics and pre-configured Grafana dashboards for comprehensive performance monitoring and operational visibility. [github](https://github.com/input-output-hk/mantis) </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Enterprise-grade crypto</h3>
+                    <p>Production-ready cryptographic implementations including secp256k1, Keccak-256, RIPEMD-160, SHA-256, [GitHub](https://github.com/input-output-hk/mantis/blob/develop/crypto/src/main/scala/io/iohk/ethereum/crypto/package.scala) and Ethereum IES encryption.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🐳</div>
+                    <h3>Flexible deployment</h3>
+                    <p>Multiple deployment options via source builds, Nix packages, or Docker containers with docker-compose configurations for easy setup. [github](https://github.com/input-output-hk/mantis) </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="section download-section">
+        <div class="container">
+            <h2 class="section-title">Download fukuii</h2>
+            <p class="section-intro">Get the latest version of fukuii for your platform. Multiple installation methods are available to suit your needs.</p>
+            
+            <div class="download-options">
+                <div class="download-card">
+                    <h3>📦 Binary releases</h3>
+                    <p>Pre-built distributions for quick deployment</p>
+                    <a href="https://github.com/chippr-robotics/fukuii/releases" target="_blank" class="btn btn-primary">View Releases</a>
+                </div>
+
+                <div class="download-card">
+                    <h3>💻 Build from source</h3>
+                    <p>Clone the repository and build with sbt</p>
+                    <div class="code-block">
+                        <code>git clone https://github.com/chippr-robotics/fukuii.git<br>
+cd fukuii<br>
+git submodule update --recursive --init<br>
+sbt dist</code>
+                    </div>
+                </div>
+
+                <div class="download-card">
+                    <h3>🐳 Docker image</h3>
+                    <p>Containerized deployment with docker-compose</p>
+                    <div class="code-block">
+                        <code>docker run -d \<br>
+  --name fukuii \<br>
+  -v $LOCAL_DATADIR:/root \<br>
+  -p 30303:30303 \<br>
+  -p 8545:8545 \<br>
+  [image] --classic --rpc</code>
+                    </div>
+                </div>
+
+                <div class="download-card">
+                    <h3>❄️ Nix package</h3>
+                    <p>Reproducible builds using Nix (Linux)</p>
+                    <div class="code-block">
+                        <code>nix-build</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="system-requirements">
+                <h3>System requirements</h3>
+                <ul>
+                    <li><strong>JDK</strong>: Version 1.8 or higher [github](https://github.com/input-output-hk/mantis) </li>
+                    <li><strong>sbt</strong>: Scala Build Tool</li>
+                    <li><strong>Python</strong>: 2.7.15 (for build process) [github](https://github.com/input-output-hk/mantis) </li>
+                    <li><strong>Docker</strong>: Optional, for containerized deployment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="documentation" class="section documentation-section">
+        <div class="container">
+            <h2 class="section-title">Getting started with fukuii</h2>
+            <p class="section-intro">Comprehensive guides to help you install, configure, and use fukuii effectively.</p>
+            
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <h3>🚀 Quick start</h3>
+                    <h4>Starting the client</h4>
+                    <p>Launch fukuii connected to your preferred network:</p>
+                    <div class="code-block">
+                        <code>./bin/mantis-launcher [network]</code>
+                    </div>
+                    <p><strong>Supported networks:</strong></p>
+                    <ul>
+                        <li><code>etc</code> - Ethereum Classic mainnet [github](https://github.com/input-output-hk/mantis) </li>
+                        <li><code>eth</code> - Ethereum mainnet [github](https://github.com/input-output-hk/mantis) </li>
+                        <li><code>mordor</code> - Mordor testnet</li>
+                        <li><code>testnet-internal</code> - Internal testnet [github](https://github.com/input-output-hk/mantis) </li>
+                    </ul>
+                </div>
+
+                <div class="doc-card">
+                    <h3>🔑 CLI tools</h3>
+                    <h4>Generate a private key</h4>
+                    <div class="code-block">
+                        <code>./bin/mantis cli generate-private-key</code>
+                    </div>
+                    
+                    <h4>Derive an address</h4>
+                    <div class="code-block">
+                        <code>./bin/mantis cli derive-address [private-key]</code>
+                    </div>
+                    
+                    <h4>Encrypt a private key</h4>
+                    <div class="code-block">
+                        <code>./bin/mantis cli encrypt-key \<br>
+  --passphrase=[password] [private-key]</code>
+                    </div>
+                    
+                    <h4>Generate multiple key-pairs</h4>
+                    <div class="code-block">
+                        <code>./bin/mantis cli generate-key-pairs 5</code>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <h3>🌐 RPC API usage</h3>
+                    <h4>Create a new account</h4>
+                    <div class="code-block">
+                        <code>curl --request POST \<br>
+  --url http://127.0.0.1:8546/ \<br>
+  --header 'Content-Type: application/json' \<br>
+  --data '{<br>
+    "jsonrpc": "2.0",<br>
+    "method": "personal_newAccount",<br>
+    "params": ["&lt;password&gt;"],<br>
+    "id": 1<br>
+  }'</code>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <h3>📊 Monitoring setup</h3>
+                    <h4>Enable metrics</h4>
+                    <p>Configure metrics in <code>metrics.conf</code>:</p>
+                    <div class="code-block">
+                        <code>mantis.metrics.enabled=true</code>
+                    </div>
+                    
+                    <h4>Start monitoring stack</h4>
+                    <div class="code-block">
+                        <code>./docker/mantis/build.sh</code>
+                    </div>
+                    <p>Access Grafana at <code>http://localhost:3000</code> (credentials: admin/admin) [github](https://github.com/input-output-hk/mantis) </p>
+                </div>
+
+                <div class="doc-card">
+                    <h3>🔒 TLS/HTTPS configuration</h3>
+                    <h4>Generate certificates</h4>
+                    <div class="code-block">
+                        <code>./tls/gen-cert.sh</code>
+                    </div>
+                    
+                    <h4>Configure HTTPS mode</h4>
+                    <p>Set in <code>application.conf</code>:</p>
+                    <div class="code-block">
+                        <code>mantis.network.rpc.http.mode=https</code>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <h3>⚡ Development mode</h3>
+                    <h4>Fast incremental compilation</h4>
+                    <p>Enable development mode for faster builds:</p>
+                    <div class="code-block">
+                        <code>export MANTIS_DEV=true</code>
+                    </div>
+                    <p>Or use system property:</p>
+                    <div class="code-block">
+                        <code>-DmantisDev=true</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="docs-footer">
+                <h3>Need more help?</h3>
+                <p>For detailed documentation, visit the <a href="https://github.com/chippr-robotics/fukuii" target="_blank">GitHub repository</a> or check the <a href="https://github.com/input-output-hk/mantis" target="_blank">upstream mantis documentation</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="section history-section">
+        <div class="container">
+            <h2 class="section-title">Project history</h2>
+            <p class="section-intro">Explore the development journey of fukuii through our video timeline.</p>
+            
+            <div class="history-content">
+                <div class="playlist-embed">
+                    <h3>📺 Development timeline</h3>
+                    <p>Watch our playlist documenting the evolution of the fukuii project:</p>
+                    
+                    <!-- Placeholder for YouTube playlist -->
+                    <div class="video-container">
+                        <iframe 
+                            width="560" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/videoseries?list=PLnPTB0CuBOBw3Ndz70pOCb_LlWJqlJqv8" 
+                            title="fukuii project history" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    
+                    <div class="playlist-link">
+                        <a href="https://youtube.com/playlist?list=PLnPTB0CuBOBw3Ndz70pOCb_LlWJqlJqv8" target="_blank" class="btn btn-primary">
+                            View Full Playlist on YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-context">
+                    <h3>About fukuii's origins</h3>
+                    <p><strong>fukuii</strong> is a fork of the <strong>mantis</strong> project, originally developed by IOHK (Input Output Hong Kong) for the Ethereum Classic network. [github](https://github.com/chippr-robotics) The mantis project was created to provide a robust, production-ready Ethereum Classic client implementation in Scala. [GitHub](https://github.com/input-output-hk/mantis) </p>
+                    
+                    <p><strong>Chippr Robotics</strong> maintains the fukuii fork as part of their commitment to advancing blockchain technology and supporting the Ethereum Classic ecosystem. The organization focuses on automation, AI, and blockchain technologies with a mission of "freeing humanity from labor through automation." [Chipprbots](https://chipprbots.com/about/) </p>
+                    
+                    <h4>Key milestones</h4>
+                    <ul>
+                        <li><strong>Original mantis development</strong> by IOHK for Ethereum Classic</li>
+                        <li><strong>Magneto hard-fork support</strong> (ECIP-1103) integration [GitHub](https://github.com/input-output-hk/mantis) </li>
+                        <li><strong>fukuii fork</strong> by Chippr Robotics for continued development</li>
+                        <li><strong>Ongoing enhancements</strong> to blockchain infrastructure</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contributing Section -->
+    <section id="contributing" class="section contributing-section">
+        <div class="container">
+            <h2 class="section-title">Contributing to fukuii</h2>
+            <p class="section-intro">We welcome contributions from the community! Here's how you can help improve fukuii.</p>
+            
+            <div class="contributing-grid">
+                <div class="contribute-card">
+                    <h3>🍴 Fork and contribute</h3>
+                    <ol>
+                        <li><strong>Fork the repository</strong> on GitHub</li>
+                        <li><strong>Create a feature branch</strong> from <code>main</code></li>
+                        <li><strong>Make your changes</strong> with appropriate tests</li>
+                        <li><strong>Follow Scala coding standards</strong> and best practices</li>
+                        <li><strong>Build and test locally</strong> to ensure everything works</li>
+                        <li><strong>Submit a pull request</strong> with a clear description</li>
+                        <li><strong>Engage in code review</strong> process with maintainers</li>
+                    </ol>
+                </div>
+
+                <div class="contribute-card">
+                    <h3>🐛 Report issues</h3>
+                    <p>Found a bug or have a feature request? Let us know!</p>
+                    <ul>
+                        <li><strong>Check existing issues</strong> to avoid duplicates</li>
+                        <li><strong>Provide detailed descriptions</strong> including steps to reproduce</li>
+                        <li><strong>Include system information</strong> and version details</li>
+                        <li><strong>Add logs and error messages</strong> when applicable</li>
+                    </ul>
+                    <a href="https://github.com/chippr-robotics/fukuii/issues" target="_blank" class="btn btn-outline">Report an Issue</a>
+                </div>
+
+                <div class="contribute-card">
+                    <h3>📝 Improve documentation</h3>
+                    <p>Help make fukuii more accessible:</p>
+                    <ul>
+                        <li><strong>Fix typos and errors</strong> in existing docs</li>
+                        <li><strong>Add examples and tutorials</strong> for common use cases</li>
+                        <li><strong>Improve clarity</strong> of technical explanations</li>
+                        <li><strong>Translate documentation</strong> to other languages</li>
+                    </ul>
+                </div>
+
+                <div class="contribute-card">
+                    <h3>💬 Join the community</h3>
+                    <p>Connect with other contributors and users:</p>
+                    <ul>
+                        <li><strong>GitHub Discussions</strong>: Ask questions and share ideas</li>
+                        <li><strong>Discord</strong>: Real-time collaboration with the team</li>
+                        <li><strong>Ethereum Classic Forum</strong>: Broader ecosystem discussions</li>
+                        <li><strong>Social Media</strong>: Follow updates and announcements</li>
+                    </ul>
+                </div>
+
+                <div class="contribute-card">
+                    <h3>✅ Development guidelines</h3>
+                    <p>Before contributing code, please ensure:</p>
+                    <ul>
+                        <li><strong>Tests pass locally</strong> before submitting PR</li>
+                        <li><strong>Code is well-documented</strong> with clear comments</li>
+                        <li><strong>Commits are atomic</strong> with descriptive messages</li>
+                        <li><strong>Changes are backwards compatible</strong> when possible</li>
+                        <li><strong>Security considerations</strong> are addressed</li>
+                    </ul>
+                </div>
+
+                <div class="contribute-card">
+                    <h3>💖 Support the project</h3>
+                    <p>Other ways to contribute:</p>
+                    <ul>
+                        <li><strong>Star the repository</strong> on GitHub</li>
+                        <li><strong>Share fukuii</strong> with your network</li>
+                        <li><strong>Write blog posts</strong> about your experience</li>
+                        <li><strong>Sponsor development</strong> via GitHub Sponsors</li>
+                    </ul>
+                    <a href="https://github.com/sponsors/chippr-robotics" target="_blank" class="btn btn-primary">Become a Sponsor</a>
+                </div>
+            </div>
+
+            <div class="contributing-footer">
+                <h3>About Chippr Robotics</h3>
+                <p><strong>Chippr Robotics</strong> is dedicated to freeing humanity from labor through automation. The organization focuses on blockchain technology, AI, quantum computing, and distributed systems to create a "cybernetic ecology where we are free of our labors and joined back to nature." [Chipprbots](https://chipprbots.com/about/) </p>
+                <p><strong>Mission:</strong> Happy Helpful Robots</p>
+                <p><strong>Values:</strong> Transparency, [Chipprbots](https://chipprbots.com/about/) Innovation, Responsibility, Community</p>
+                <div class="org-links">
+                    <a href="https://github.com/chippr-robotics" target="_blank">GitHub Organization</a>
+                    <a href="https://chipprbots.com" target="_blank">Website</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>fukuii</h4>
+                    <p>A Scala-based Ethereum Classic client by Chippr Robotics</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/chippr-robotics/fukuii" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/chippr-robotics/fukuii/releases" target="_blank">Releases</a></li>
+                        <li><a href="https://github.com/chippr-robotics/fukuii/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/input-output-hk/mantis" target="_blank">Upstream mantis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="http://forum.ethereumclassic.org/" target="_blank">ETC Forum</a></li>
+                        <li><a href="https://github.com/chippr-robotics" target="_blank">Chippr Robotics</a></li>
+                        <li><a href="https://chipprbots.com" target="_blank">Website</a></li>
+                        <li><a href="https://github.com/sponsors/chippr-robotics" target="_blank">Sponsor</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>License</h4>
+                    <p>fukuii is licensed under the <a href="https://github.com/chippr-robotics/fukuii/blob/main/LICENSE" target="_blank">Apache License 2.0</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Chippr Robotics. Forked from IOHK's mantis project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
