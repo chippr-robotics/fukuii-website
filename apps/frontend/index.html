@@ -1,13 +1,423 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fukuii — Ethereum Node Client for Enterprise Custody</title>
+    <meta name="description" content="Fukuii is a Scala-based Ethereum node client optimized for enterprise custody infrastructure. Built for settlement-critical operations.">
+    
+    <link rel="icon" type="image/png" href="/fukuii-hex-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <img src="/fukuii-hex-logo.png" alt="Fukuii Logo" class="logo-image">
+                <span class="logo-text">Fukuii</span>
+            </a>
+            <div class="nav-links">
+                <a href="#settlement" class="nav-link">Settlement</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#quickstart" class="nav-link">Quick Start</a>
+                <a href="https://docs.fukuii.com" class="nav-link">Documentation</a>
+                <a href="https://github.com/chippr-robotics/fukuii" class="nav-cta">
+                    <svg aria-hidden="true" class="btn-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                Scala-based Ethereum Node Client
+            </div>
+            <h1 class="hero-title">
+                The Node Client<br>
+                <span class="hero-title-accent">for Custody Infrastructure</span>
+            </h1>
+            <p class="hero-subtitle">
+                Fukuii is an Ethereum-compatible node client built in Scala, optimized for enterprise custody operations. Run your own network infrastructure with a focus on settlement reliability.
+            </p>
+            <div class="hero-actions">
+                <a href="https://docs.fukuii.com" class="btn-primary">
+                    Read the Docs
+                    <svg aria-hidden="true" class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com/chippr-robotics/fukuii" class="btn-secondary">
+                    <svg aria-hidden="true" class="btn-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Fukuii -->
+    <section class="intro-section">
+        <div class="intro-inner">
+            <span class="intro-label">What is Fukuii?</span>
+            <h2 class="intro-title">An Ethereum node client that fits into your custody stack</h2>
+            <p class="intro-text">
+                Fukuii is a <strong>node client</strong>—the software that connects to and participates in Ethereum-compatible networks. It processes transactions, maintains blockchain state, and exposes JSON-RPC APIs. Built on the proven Mantis codebase in Scala, Fukuii is designed to serve as reliable infrastructure within larger enterprise custody programs, <strong>not as a standalone custody solution</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Settlement Focus Section -->
+    <section id="settlement" class="section settlement-section">
+        <div class="section-inner">
+            <span class="section-label">Primary Focus</span>
+            <h2 class="section-title">Optimized for Settlement</h2>
+            <p class="section-desc">
+                While a node client supports all aspects of blockchain interaction, Fukuii is particularly tuned for settlement-critical workloads in custody environments.
+            </p>
+
+            <div class="settlement-grid">
+                <div class="settlement-content">
+                    <h3>Why Settlement Matters</h3>
+                    <p>
+                        In digital asset custody, settlement is the moment of truth—when assets actually move between parties with cryptographic finality. A reliable node client is essential infrastructure for processing these transactions with confidence.
+                    </p>
+
+                    <h3>What Fukuii Provides</h3>
+                    <p>
+                        Fukuii gives your custody infrastructure a stable, well-tested connection to EVM networks. It handles block synchronization, transaction propagation, state management, and RPC services—the foundational layer that your custody applications build upon.
+                    </p>
+
+                    <h3>Enterprise Configuration</h3>
+                    <p>
+                        Deploy on public networks like Ethereum Classic, or run private/permissioned chains with the enterprise modifier. Fukuii includes configuration presets for isolated networks with disabled external discovery and compliance-aware defaults.
+                    </p>
+                </div>
+                <div class="settlement-visual">
+                    <div class="settlement-diagram">
+                        <div class="settlement-node">
+                            <svg aria-hidden="true" class="settlement-node-icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                            <span>Peer</span>
+                        </div>
+                        <div class="settlement-node">
+                            <svg aria-hidden="true" class="settlement-node-icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                            <span>Peer</span>
+                        </div>
+                        <div class="settlement-node">
+                            <svg aria-hidden="true" class="settlement-node-icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                            <span>Peer</span>
+                        </div>
+                        <div class="settlement-node">
+                            <svg aria-hidden="true" class="settlement-node-icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                            <span>Peer</span>
+                        </div>
+                        <div class="settlement-node">
+                            <svg aria-hidden="true" class="settlement-node-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            <span>Fukuii</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custody Context Section -->
+    <section id="context" class="section context-section">
+        <div class="section-inner">
+            <div class="context-header">
+                <span class="section-label">Custody Context</span>
+                <h2 class="section-title">Part of a Larger Picture</h2>
+                <p class="section-desc">
+                    Enterprise custody programs typically require capabilities across three areas. Fukuii provides the network infrastructure layer, particularly supporting settlement operations.
+                </p>
+            </div>
+
+            <div class="context-grid">
+                <div class="context-card context-card--safekeeping">
+                    <div class="context-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <h3 class="context-title">Safekeeping</h3>
+                    <p class="context-desc">
+                        Key management, multi-signature authorization, HSM integration, and secure storage of digital assets.
+                    </p>
+                    <p class="context-note">Requires dedicated key management systems and secure enclaves beyond the node client.</p>
+                </div>
+
+                <div class="context-card context-card--settlement">
+                    <div class="context-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3 class="context-title">Settlement</h3>
+                    <p class="context-desc">
+                        Transaction processing, block confirmation, state finality, and network participation for moving assets reliably.
+                    </p>
+                    <p class="context-note">Fukuii provides the node infrastructure for settlement operations.</p>
+                    <span class="context-badge">Fukuii Focus</span>
+                </div>
+
+                <div class="context-card context-card--reporting">
+                    <div class="context-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3 class="context-title">Reporting</h3>
+                    <p class="context-desc">
+                        Audit trails, regulatory compliance, transaction history, and asset provenance tracking.
+                    </p>
+                    <p class="context-note">Built on data from the node, but requires additional tooling for compliance workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features-section">
+        <div class="section-inner">
+            <span class="section-label">Node Features</span>
+            <h2 class="section-title">Built for Reliability</h2>
+            <p class="section-desc">
+                Fukuii inherits the battle-tested Mantis architecture while adding enterprise-focused configuration options.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="feature-title">100% Scala</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Functional programming with strong type safety, immutability guarantees, and formal verification potential for critical infrastructure.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <h3 class="feature-title">EVM Compatible</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Full support for modern EVM hard forks. Deploy to Ethereum Classic mainnet, Mordor testnet, or private enterprise networks.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                        </div>
+                        <h3 class="feature-title">Enterprise Mode</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Dedicated configuration for private/permissioned networks with disabled external discovery and compliance-aware defaults.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                        </div>
+                        <h3 class="feature-title">JSON-RPC API</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Standard Ethereum JSON-RPC interface for integration with existing tooling, wallets, and custody applications.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <h3 class="feature-title">Fast Sync</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Rapid synchronization options including fast sync and bootstrap databases for quick node deployment.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h3 class="feature-title">Terminal UI</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Optional TUI mode for real-time monitoring of node status, peers, sync progress, and network activity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section id="quickstart" class="section quickstart-section">
+        <div class="section-inner">
+            <span class="section-label">Getting Started</span>
+            <h2 class="section-title">Run Fukuii</h2>
+            <p class="section-desc">
+                Fukuii uses SBT for building and provides simple launchers for different network configurations.
+            </p>
+
+            <div class="quickstart-grid">
+                <div class="quickstart-content">
+                    <div class="quickstart-item">
+                        <span class="quickstart-num">01</span>
+                        <div>
+                            <h4 class="quickstart-item-title">Clone and Build</h4>
+                            <p class="quickstart-item-desc">
+                                Clone the repository and build with SBT. Requires JDK 11+ and SBT installed on your system.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="quickstart-item">
+                        <span class="quickstart-num">02</span>
+                        <div>
+                            <h4 class="quickstart-item-title">Choose Your Network</h4>
+                            <p class="quickstart-item-desc">
+                                Launch on ETC mainnet, Mordor testnet, or configure a private enterprise network with the enterprise modifier.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="quickstart-item">
+                        <span class="quickstart-num">03</span>
+                        <div>
+                            <h4 class="quickstart-item-title">Connect Your Stack</h4>
+                            <p class="quickstart-item-desc">
+                                Use the JSON-RPC API to integrate Fukuii with your custody applications, monitoring tools, and transaction systems.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="quickstart-item">
+                        <span class="quickstart-num">04</span>
+                        <div>
+                            <h4 class="quickstart-item-title">Read the Docs</h4>
+                            <p class="quickstart-item-desc">
+                                Full documentation at docs.fukuii.com covers configuration, deployment runbooks, and API reference.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quickstart-visual">
+                    <pre class="quickstart-code"><span class="comment"># Clone the repository</span>
+<span class="command">git clone</span> <span class="arg">https://github.com/chippr-robotics/fukuii.git</span>
+<span class="command">cd</span> fukuii
+
+<span class="comment"># Build with SBT</span>
+<span class="command">sbt</span> compile
+
+<span class="comment"># Launch on ETC mainnet</span>
+<span class="command">./bin/fukuii</span> <span class="arg">etc</span>
+
+<span class="comment"># Launch on Mordor testnet</span>
+<span class="command">./bin/fukuii</span> <span class="arg">mordor</span>
+
+<span class="comment"># Enterprise mode for private networks</span>
+<span class="command">./bin/fukuii</span> <span class="flag">enterprise</span> <span class="arg">pottery</span>
+
+<span class="comment"># With terminal UI</span>
+<span class="command">./bin/fukuii</span> <span class="flag">enterprise</span> <span class="flag">--tui</span>
+
+<span class="comment"># Custom configuration</span>
+<span class="command">./bin/fukuii</span> <span class="flag">enterprise</span> \
+  <span class="flag">-Dconfig.file=</span><span class="arg">custom.conf</span></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="section-inner">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Build?</h2>
+                    <p class="cta-desc">
+                        Explore the documentation to get started with Fukuii, or dive into the source code on GitHub.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="https://docs.fukuii.com" class="btn-primary">
+                            Documentation
+                            <svg aria-hidden="true" class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="https://github.com/chippr-robotics/fukuii" class="btn-secondary">
+                            <svg aria-hidden="true" class="btn-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            View Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <img src="/fukuii-hex-logo.png" alt="Fukuii Logo" class="logo-image">
+                        <span class="logo-text">Fukuii</span>
+                    </a>
+                    <p>A Scala-based Ethereum node client optimized for enterprise custody infrastructure.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#settlement">Settlement</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#quickstart">Quick Start</a></li>
+                        <li><a href="https://docs.fukuii.com">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://docs.fukuii.com">Getting Started</a></li>
+                        <li><a href="https://docs.fukuii.com">API Reference</a></li>
+                        <li><a href="https://docs.fukuii.com">Runbooks</a></li>
+                        <li><a href="https://github.com/chippr-robotics/fukuii/releases">Releases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/chippr-robotics/fukuii">GitHub</a></li>
+                        <li><a href="https://github.com/chippr-robotics/fukuii/issues">Issues</a></li>
+                        <li><a href="https://github.com/chippr-robotics/fukuii/discussions">Discussions</a></li>
+                        <li><a href="https://chipprbots.com">Chippr Robotics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    © 2025 <a href="https://chipprbots.com">Chippr Robotics</a>. Open source under Apache 2.0.
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/chippr-robotics/fukuii" aria-label="GitHub">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://chipprbots.com" aria-label="Website">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+</body>
 </html>
