@@ -24,7 +24,7 @@ variable "image_tag" {
 variable "container_port" {
   description = "Port the container listens on"
   type        = number
-  default     = 80
+  default     = 8080
 }
 
 variable "min_instances" {
