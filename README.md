@@ -65,7 +65,7 @@ Build and run locally:
 docker build -t fukuii-website .
 
 # Run container
-docker run -p 8080:80 fukuii-website
+docker run -p 8080:8080 fukuii-website
 ```
 
 Visit `http://localhost:8080`
