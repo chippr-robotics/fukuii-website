@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fukuii — The world's first vibe-coded Ethereum client</title>
+    <title>Fukuii — The Ethereum execution client built for operators</title>
     <meta name="description" content="Fukuii is an EVM-compliant Ethereum execution layer client written in Scala 3. Dual ETC + ETH support, Engine API V1–V4 through Prague/Electra, pluggable consensus.">
     <meta name="theme-color" content="#1a1f16" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#f5f3ed" media="(prefers-color-scheme: light)">
 
-    <meta property="og:title" content="Fukuii — The world's first vibe-coded Ethereum client">
+    <meta property="og:title" content="Fukuii — The Ethereum execution client built for operators">
     <meta property="og:description" content="Dual ETC + ETH execution client in Scala 3. Engine API V1–V4 through Prague/Electra. Pluggable consensus. Alpha · Olympia.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/fukuii-logo-cute.png">
@@ -37,7 +37,7 @@
                 <a href="#what" class="nav-link">What</a>
                 <a href="#networks" class="nav-link">Networks</a>
                 <a href="#features" class="nav-link">Features</a>
-                <a href="#timeline" class="nav-link">Hardening</a>
+                <a href="#operations" class="nav-link">Operations</a>
                 <a href="#quickstart" class="nav-link">Quick Start</a>
                 <a href="https://chippr-robotics.github.io/fukuii/" class="nav-link">Docs</a>
             </nav>
@@ -69,9 +69,8 @@
                 Alpha · Olympia · Engine API on Sepolia
             </div>
             <h1 class="hero-title">
-                The world's first
-                <span class="hero-title-accent">vibe-coded</span>
-                Ethereum client.
+                The Ethereum client
+                <span class="hero-title-accent">built for operators</span>.
             </h1>
             <p class="hero-subtitle">
                 Fukuii is an EVM-compliant execution layer client in Scala 3. Run it on
@@ -111,8 +110,8 @@
                 <span class="stat-label">supported networks</span>
             </div>
             <div class="stat reveal">
-                <span class="stat-num" data-count="20">0</span>
-                <span class="stat-label">alpha bugs squashed</span>
+                <span class="stat-num" data-count="3">0</span>
+                <span class="stat-label">sync modes</span>
             </div>
             <div class="stat reveal stat--text">
                 <span class="stat-num stat-num--text">JDK 25 LTS</span>
@@ -125,11 +124,11 @@
     <section id="what" class="section">
         <div class="section-inner">
             <span class="section-label">What is Fukuii?</span>
-            <h2 class="section-title">An Ethereum execution client with a strange origin story.</h2>
+            <h2 class="section-title">An independent execution client for ETC and Ethereum.</h2>
             <p class="section-desc">
-                Forked from <em>Mantis</em> (IOHK's abandoned Scala client), modernised, and pointed at
-                a single goal: be a credible second non-Geth EVM client for both Ethereum Classic and
-                post-Merge Ethereum.
+                A continuation of <em>Mantis</em>, IOHK's Scala client — modernised to Scala 3 and
+                pointed at a single goal: a credible second non-Geth EVM client for both Ethereum
+                Classic and post-Merge Ethereum.
             </p>
 
             <div class="cards cards--3">
@@ -158,12 +157,13 @@
 
                 <article class="card glass reveal">
                     <div class="card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2c2 4 4 6 8 8-4 2-6 4-8 8-2-4-4-6-8-8 4-2 6-4 8-8z"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     </div>
-                    <h3 class="card-title">Vibe-coded origin</h3>
+                    <h3 class="card-title">Broad API surface</h3>
                     <p class="card-desc">
-                        <em>Chordodes Fukuii</em> is a horsehair worm that hijacks a mantis. Fukuii hijacks
-                        Mantis and drives it toward Olympia — ECIP-1111, 1112, 1121.
+                        JSON-RPC over HTTP and WebSocket, trace and txpool introspection, GraphQL,
+                        and an MCP server — plus health, readiness, and buildinfo endpoints for
+                        your load balancer.
                     </p>
                 </article>
             </div>
@@ -242,8 +242,8 @@
             <span class="section-label">Capabilities</span>
             <h2 class="section-title">Everything an execution client should be.</h2>
             <p class="section-desc">
-                Sync modes, EVM forks, Engine API, JSON-RPC, Hive compliance, operational glue.
-                Click around — keyboard works too.
+                Sync modes, EVM forks, Engine API, JSON-RPC, Hive compliance, and the
+                operational tooling around them.
             </p>
 
             <div class="tabs reveal">
@@ -348,67 +348,57 @@
         </div>
     </section>
 
-    <!-- Recent developments timeline -->
-    <section id="timeline" class="section section--muted">
+    <!-- Operations -->
+    <section id="operations" class="section section--muted">
         <div class="section-inner">
-            <span class="section-label">Alpha hardening</span>
-            <h2 class="section-title">Twenty bugs squashed on the road to Olympia.</h2>
+            <span class="section-label">Operations</span>
+            <h2 class="section-title">Designed for the people who run it.</h2>
             <p class="section-desc">
-                Real changes from real production traffic. Critical first.
+                Observability, predictable behaviour under load, and a verifiable supply chain —
+                the things that matter at 3 a.m.
             </p>
 
-            <ol class="timeline">
-                <li class="timeline-item timeline-item--critical reveal">
-                    <span class="timeline-sev">Critical</span>
-                    <h3>Bug 18 — SNAP OOM</h3>
-                    <p><code>DeferredWriteMptStorage</code> flushes per batch, file-backed <code>contractAccounts</code> at ~45M entries, crash-safe progress checkpoints. SNAP no longer eats your heap.</p>
-                </li>
-                <li class="timeline-item timeline-item--critical reveal">
-                    <span class="timeline-sev">Critical</span>
-                    <h3>Bug 6 — RPC starvation</h3>
-                    <p>Sync actors moved to a dedicated <code>sync-dispatcher</code>. JSON-RPC stays responsive even under heavy SNAP load.</p>
-                </li>
-                <li class="timeline-item timeline-item--critical reveal">
-                    <span class="timeline-sev">Critical</span>
-                    <h3>ETH68 handshake</h3>
-                    <p>Protocol messages now decoded before capability messages. Geth and Nethermind peers actually connect.</p>
-                </li>
-                <li class="timeline-item timeline-item--high reveal">
-                    <span class="timeline-sev">High</span>
-                    <h3>Bug 20 — SNAP post-download pipeline</h3>
-                    <p>Phase handoff timeout: Bloom-filter dedup (73.5M → 2M codeHashes), 10K-batch storage streaming, <code>StorageConsistencyChecker</code> skip on <code>SnapSyncDone</code>, recovery actor forwarding, <code>MptStorage.decodeNode()</code> visited-set fix.</p>
-                </li>
-                <li class="timeline-item timeline-item--high reveal">
-                    <span class="timeline-sev">High</span>
-                    <h3>Bug 2 — SNAP fallback resilience</h3>
-                    <p>Counter persistence across <code>restartSnapSync()</code> with exponential backoff bootstrap retry.</p>
-                </li>
-                <li class="timeline-item timeline-item--high reveal">
-                    <span class="timeline-sev">High</span>
-                    <h3>Bug 8 — block body stall</h3>
-                    <p><code>ExcludingPeers</code> selector + backoff + <code>maxBodyFetchRetries</code>. Body downloads no longer get wedged on a single bad peer.</p>
-                </li>
-                <li class="timeline-item timeline-item--medium reveal">
-                    <span class="timeline-sev">Medium</span>
-                    <h3>Bugs 7 &amp; 10 — MissingNodeException</h3>
-                    <p><code>.recover</code> added to <code>eth_call</code>, <code>eth_estimateGas</code>, <code>eth_getCode</code>, <code>personal_sendTransaction</code>. State RPC degrades gracefully during sync.</p>
-                </li>
-                <li class="timeline-item timeline-item--medium reveal">
-                    <span class="timeline-sev">Medium</span>
-                    <h3>Bug 9 — net_listPeers timeout</h3>
-                    <p>In-process <code>peerStatusCache</code>. The peer list is no longer an RPC roundtrip storm.</p>
-                </li>
-                <li class="timeline-item timeline-item--medium reveal">
-                    <span class="timeline-sev">Medium</span>
-                    <h3>Bugs 11–17 — SNAP coordinator hardening</h3>
-                    <p>Capability check, stagnation watchdog, partial-range resume, dynamic concurrency, in-place pivot refresh, peer dedup, stale-root guard. Seven independent fixes, one calmer SNAP coordinator.</p>
-                </li>
-                <li class="timeline-item timeline-item--low reveal">
-                    <span class="timeline-sev">Low</span>
-                    <h3>Bugs 1, 3, 4, 5, 19</h3>
-                    <p>Config cache (<code>ConfigFactory.invalidateCaches()</code>), FastSync best-block tracking, JSON-RPC null-id coercion, actor name-collision generation counter, <code>ResilientRollingFileAppender</code> for log rotation under disk pressure.</p>
-                </li>
-            </ol>
+            <div class="cards cards--3">
+                <article class="card glass reveal">
+                    <div class="card-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+                    </div>
+                    <h3 class="card-title">Observability built in</h3>
+                    <p class="card-desc">
+                        Prometheus metrics and Grafana dashboards out of the box, with
+                        <code>/health</code>, <code>/readiness</code>, and <code>/buildinfo</code>
+                        endpoints for orchestrators and load balancers.
+                    </p>
+                </article>
+
+                <article class="card glass reveal">
+                    <div class="card-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3 class="card-title">Predictable under load</h3>
+                    <p class="card-desc">
+                        Sync runs on its own dispatcher so JSON-RPC stays responsive during heavy
+                        SNAP traffic. Bootstrap checkpoints skip the peer-wait at startup, and
+                        log rotation survives disk pressure.
+                    </p>
+                </article>
+
+                <article class="card glass reveal">
+                    <div class="card-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3 class="card-title">Verifiable supply chain</h3>
+                    <p class="card-desc">
+                        Cosign-signed container images on GHCR with SLSA build provenance and a
+                        CycloneDX SBOM, so you can verify exactly what you deploy.
+                    </p>
+                </article>
+            </div>
+
+            <p class="callout reveal">
+                Runbooks, alerting guidance, and upgrade procedures live in the
+                <a href="https://chippr-robotics.github.io/fukuii/for-operators/" rel="noopener">operator documentation</a>.
+            </p>
         </div>
     </section>
 
@@ -444,7 +434,8 @@
             <span class="section-label">Get started</span>
             <h2 class="section-title">Pick your path.</h2>
             <p class="section-desc">
-                Source build for hackers, Docker for operators, Sepolia + Lighthouse for the brave.
+                Docker images for deployments, source builds for development, and Engine API
+                pairing with the consensus client you already run.
             </p>
 
             <div class="quickstart-grid">
@@ -522,7 +513,7 @@ docker run -d \
     <section class="section">
         <div class="section-inner">
             <span class="section-label">Documentation</span>
-            <h2 class="section-title">Pick the door that fits.</h2>
+            <h2 class="section-title">Documentation for every role.</h2>
             <p class="section-desc">
                 The full docs live at <a href="https://chippr-robotics.github.io/fukuii/" rel="noopener">chippr-robotics.github.io/fukuii</a>.
                 These are the four most common entry points.
@@ -541,7 +532,7 @@ docker run -d \
                         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
                     </span>
                     <h3>Node operators</h3>
-                    <p>Mainnet, testnet, peers, ports, and patience.</p>
+                    <p>Network selection, ports, peering, and sync.</p>
                 </a>
                 <a class="audience-card glass reveal" href="https://chippr-robotics.github.io/fukuii/for-operators/" rel="noopener">
                     <span class="audience-icon">
@@ -567,14 +558,15 @@ docker run -d \
             <div class="cta-box glass">
                 <div class="cta-content">
                     <span class="cta-tag">Alpha software</span>
-                    <h2 class="cta-title">Run it. Break it. Tell us.</h2>
+                    <h2 class="cta-title">Run a node. Tell us what you see.</h2>
                     <p class="cta-desc">
-                        Fukuii is alpha. Things will misbehave on edge networks and exotic configs.
-                        File issues, start discussions — that's the whole point of the alpha.
+                        Fukuii is in alpha and not yet recommended for production-critical workloads.
+                        Operator reports — sync behaviour, peering, resource profiles — directly
+                        shape the road to a stable release.
                     </p>
                     <div class="cta-actions">
                         <a href="https://github.com/chippr-robotics/fukuii/issues" class="btn btn-primary" rel="noopener">
-                            Open an issue
+                            Report an issue
                             <svg aria-hidden="true" class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                         <a href="https://github.com/chippr-robotics/fukuii/discussions" class="btn btn-secondary" rel="noopener">
@@ -605,7 +597,7 @@ docker run -d \
                         <li><a href="#what">What is Fukuii?</a></li>
                         <li><a href="#networks">Networks</a></li>
                         <li><a href="#features">Features</a></li>
-                        <li><a href="#timeline">Hardening</a></li>
+                        <li><a href="#operations">Operations</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

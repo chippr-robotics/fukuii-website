@@ -612,7 +612,7 @@ body::before {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
-.card-desc code, .timeline-item code, .tabpanel code, .qs-desc code {
+.card-desc code, .tabpanel code, .qs-desc code, .callout code {
     font-family: var(--font-mono);
     font-size: 0.85em;
     padding: 0.1em 0.4em;
@@ -801,72 +801,6 @@ body::before {
 @keyframes fade-in {
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ====================================================================
-   Timeline
-   ==================================================================== */
-
-.timeline {
-    list-style: none;
-    position: relative;
-    padding-left: 1.75rem;
-}
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 6px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--accent), var(--accent-2), transparent);
-    opacity: 0.4;
-}
-.timeline-item {
-    position: relative;
-    padding: 0 0 2rem 0;
-}
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -1.75rem;
-    top: 0.45rem;
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 2px solid var(--accent-2);
-    box-shadow: 0 0 0 4px var(--bg);
-}
-.timeline-item--critical::before { border-color: #d97757; box-shadow: 0 0 0 4px var(--bg), 0 0 12px rgba(217, 119, 87, 0.5); }
-.timeline-item--high::before     { border-color: var(--accent-2); }
-.timeline-item--medium::before   { border-color: var(--accent); }
-.timeline-item--low::before      { border-color: var(--text-subtle); }
-
-.timeline-sev {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    padding: 0.2rem 0.55rem;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-}
-.timeline-item--critical .timeline-sev { background: rgba(217, 119, 87, 0.15); color: #d97757; }
-.timeline-item--high .timeline-sev     { background: var(--gold-soft); color: var(--accent-2); }
-.timeline-item--medium .timeline-sev   { background: var(--accent-soft); color: var(--accent); }
-.timeline-item--low .timeline-sev      { background: var(--bg-card); color: var(--text-subtle); border: 1px solid var(--border); }
-
-.timeline-item h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.005em;
-}
-.timeline-item p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    max-width: 70ch;
 }
 
 /* ====================================================================
