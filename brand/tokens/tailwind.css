@@ -1,0 +1,43 @@
+/**
+ * Fukuii Brand — Tailwind CSS 4 @theme block
+ * Import in globals.css: @import '../../../brand/tokens/tailwind.css';
+ */
+
+@import './colors.css';
+
+@theme {
+  /* Brand colors as Tailwind utilities */
+  --color-brand-green:       var(--brand-green);
+  --color-brand-green-light: var(--brand-green-light);
+  --color-brand-green-mid:   var(--brand-green-mid);
+  --color-brand-green-dark:  var(--brand-green-dark);
+  --color-brand-gold:        var(--brand-gold);
+  --color-brand-gold-dark:   var(--brand-gold-dark);
+
+  /* Surface */
+  --color-surface:   var(--bg-surface);
+  --color-elevated:  var(--bg-elevated);
+
+  /* Text */
+  --color-text:         var(--text-primary);
+  --color-text-muted:   var(--text-muted);
+  --color-text-subtle:  var(--text-subtle);
+
+  /* Fonts */
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+}
+
+/* Fukuii card utility */
+.fukuii-card {
+  background:    var(--card-bg);
+  border:        1px solid var(--card-border);
+  box-shadow:    var(--card-shadow);
+  border-radius: 0.75rem;
+  transition:    border-color 200ms, box-shadow 200ms;
+}
+
+.fukuii-card:hover {
+  border-color: var(--border-brand);
+  box-shadow:   var(--card-hover-shadow);
+}

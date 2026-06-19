@@ -1,0 +1,107 @@
+/**
+ * Fukuii Brand Colors
+ * Design tokens as CSS custom properties
+ *
+ * Usage:
+ *   @import url('path/to/colors.css');
+ *   background: var(--brand-green);
+ */
+
+/* ==========================================
+   Dark Mode (Default)
+   ========================================== */
+
+:root {
+  /* Primary Brand — Forest Green */
+  --brand-green:        #4d8a28;
+  --brand-green-light:  #7bc34e;
+  --brand-green-mid:    #3d6b1f;
+  --brand-green-dark:   #2d5016;
+  --brand-green-subtle: rgba(77, 138, 40, 0.08);
+  --brand-green-glow:   rgba(77, 138, 40, 0.35);
+
+  /* Secondary — Old Gold */
+  --brand-gold:         #d6b56b;
+  --brand-gold-dark:    #b8964f;
+  --brand-gold-subtle:  rgba(214, 181, 107, 0.08);
+
+  /* Surfaces */
+  --bg-primary:  #1a1f16;
+  --bg-surface:  #1f2619;
+  --bg-elevated: #27301e;
+  --bg-overlay:  rgba(26, 31, 22, 0.85);
+  --bg-card:     rgba(0, 0, 0, 0.30);
+
+  /* Text */
+  --text-primary:   #f5f3ed;
+  --text-secondary: #c8c5b8;
+  --text-muted:     #9ca3af;
+  --text-subtle:    #6b7280;
+  --text-disabled:  #374151;
+
+  /* Borders */
+  --border-default: #2d3525;
+  --border-subtle:  rgba(255, 255, 255, 0.04);
+  --border-strong:  rgba(255, 255, 255, 0.16);
+  --border-brand:   rgba(77, 138, 40, 0.35);
+  --border-glow:    rgba(77, 138, 40, 0.25);
+
+  /* Semantic */
+  --color-success: #4d8a28;
+  --color-error:   #ef4444;
+  --color-warning: #d6b56b;
+  --color-info:    #38bdf8;
+
+  /* Card */
+  --card-bg:           rgba(0, 0, 0, 0.30);
+  --card-border:       #2d3525;
+  --card-shadow:       0 10px 26px rgba(0, 0, 0, 0.45);
+  --card-hover-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+}
+
+/* ==========================================
+   Light Mode
+   ========================================== */
+
+:root[data-theme="light"],
+.light {
+  /* Primary Brand (darker for contrast on light bg) */
+  --brand-green:        #3d6b1f;
+  --brand-green-light:  #4d8a28;
+  --brand-green-mid:    #2d5016;
+  --brand-green-dark:   #1e3610;
+  --brand-green-subtle: rgba(61, 107, 31, 0.06);
+  --brand-green-glow:   rgba(61, 107, 31, 0.20);
+
+  /* Secondary */
+  --brand-gold:         #b8964f;
+  --brand-gold-dark:    #8a6e39;
+  --brand-gold-subtle:  rgba(184, 150, 79, 0.06);
+
+  /* Surfaces */
+  --bg-primary:  #f5f3ed;
+  --bg-surface:  #eeebe4;
+  --bg-elevated: #e5e1d8;
+  --bg-overlay:  rgba(245, 243, 237, 0.90);
+  --bg-card:     #ffffff;
+
+  /* Text */
+  --text-primary:   #1a1f16;
+  --text-secondary: #3a4030;
+  --text-muted:     #6b7280;
+  --text-subtle:    #9ca3af;
+  --text-disabled:  #d1d5db;
+
+  /* Borders */
+  --border-default: #d5d0c5;
+  --border-subtle:  rgba(0, 0, 0, 0.04);
+  --border-strong:  rgba(0, 0, 0, 0.16);
+  --border-brand:   rgba(61, 107, 31, 0.30);
+  --border-glow:    rgba(61, 107, 31, 0.20);
+
+  /* Card */
+  --card-bg:           #ffffff;
+  --card-border:       #d5d0c5;
+  --card-shadow:       0 4px 12px rgba(0, 0, 0, 0.08);
+  --card-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}

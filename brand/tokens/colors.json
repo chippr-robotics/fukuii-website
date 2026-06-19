@@ -1,0 +1,54 @@
+{
+  "dark": {
+    "brand": {
+      "green":        "#4d8a28",
+      "greenLight":   "#7bc34e",
+      "greenMid":     "#3d6b1f",
+      "greenDark":    "#2d5016",
+      "gold":         "#d6b56b",
+      "goldDark":     "#b8964f"
+    },
+    "surface": {
+      "primary":  "#1a1f16",
+      "surface":  "#1f2619",
+      "elevated": "#27301e",
+      "card":     "rgba(0, 0, 0, 0.30)"
+    },
+    "text": {
+      "primary":   "#f5f3ed",
+      "secondary": "#c8c5b8",
+      "muted":     "#9ca3af",
+      "subtle":    "#6b7280"
+    },
+    "border": {
+      "default": "#2d3525",
+      "brand":   "rgba(77, 138, 40, 0.35)"
+    }
+  },
+  "light": {
+    "brand": {
+      "green":        "#3d6b1f",
+      "greenLight":   "#4d8a28",
+      "greenMid":     "#2d5016",
+      "greenDark":    "#1e3610",
+      "gold":         "#b8964f",
+      "goldDark":     "#8a6e39"
+    },
+    "surface": {
+      "primary":  "#f5f3ed",
+      "surface":  "#eeebe4",
+      "elevated": "#e5e1d8",
+      "card":     "#ffffff"
+    },
+    "text": {
+      "primary":   "#1a1f16",
+      "secondary": "#3a4030",
+      "muted":     "#6b7280",
+      "subtle":    "#9ca3af"
+    },
+    "border": {
+      "default": "#d5d0c5",
+      "brand":   "rgba(61, 107, 31, 0.30)"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Paper grain noise -->
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+      <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="blended"/>
+      <feComponentTransfer in="blended">
+        <feFuncA type="linear" slope="1"/>
+      </feComponentTransfer>
+    </filter>
+    <!-- Radial gradient glow top-left -->
+    <radialGradient id="glow" cx="20%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#3d6b1f" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#1a1f16" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1a1f16"/>
+
+  <!-- Subtle glow -->
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Paper grain overlay at low opacity -->
+  <rect width="1200" height="630" fill="#1a1f16" filter="url(#grain)" opacity="0.04"/>
+
+  <!-- Hex logo mark — large, left side -->
+  <image href="../logo/fukuii-hex-logo.png" x="60" y="115" width="360" height="360"/>
+
+  <!-- Brand green vertical accent bar -->
+  <rect x="480" y="80" width="3" height="470" rx="2" fill="#4d8a28" opacity="0.6"/>
+
+  <!-- "FUKUII" wordmark -->
+  <text
+    x="516" y="230"
+    font-family="'DM Sans', ui-sans-serif, system-ui, sans-serif"
+    font-weight="800"
+    font-size="96"
+    letter-spacing="6"
+    fill="#f5f3ed"
+  >FUKUII</text>
+
+  <!-- Tagline -->
+  <text
+    x="518" y="300"
+    font-family="'DM Sans', ui-sans-serif, system-ui, sans-serif"
+    font-weight="400"
+    font-size="30"
+    fill="#9ca3af"
+  >Multi-EVM execution client</text>
+
+  <!-- Sub-tagline -->
+  <text
+    x="518" y="348"
+    font-family="'DM Sans', ui-sans-serif, system-ui, sans-serif"
+    font-weight="400"
+    font-size="24"
+    fill="#4d8a28"
+  >One binary, any network.</text>
+
+  <!-- Feature pills row -->
+  <!-- Pill 1: Scala 3 -->
+  <rect x="518" y="410" width="130" height="36" rx="18" fill="#2d5016" opacity="0.9"/>
+  <text x="583" y="433" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7bc34e" text-anchor="middle">Scala 3</text>
+  <!-- Pill 2: SNAP Sync -->
+  <rect x="660" y="410" width="140" height="36" rx="18" fill="#2d5016" opacity="0.9"/>
+  <text x="730" y="433" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7bc34e" text-anchor="middle">SNAP Sync</text>
+  <!-- Pill 3: SLSA L3 -->
+  <rect x="812" y="410" width="130" height="36" rx="18" fill="#2d5016" opacity="0.9"/>
+  <text x="877" y="433" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7bc34e" text-anchor="middle">SLSA L3</text>
+  <!-- Pill 4: MCP -->
+  <rect x="954" y="410" width="100" height="36" rx="18" fill="#2d5016" opacity="0.9"/>
+  <text x="1004" y="433" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7bc34e" text-anchor="middle">MCP</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="614" width="1200" height="3" fill="#4d8a28" opacity="0.8"/>
+
+  <!-- Footer: chippr robotics -->
+  <text
+    x="518" y="600"
+    font-family="'JetBrains Mono', monospace"
+    font-size="16"
+    fill="#6b7280"
+  >chippr-robotics.github.io/fukuii</text>
+</svg>
