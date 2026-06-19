@@ -1,0 +1,65 @@
+# Fukuii
+
+Fukuii is a multi-EVM execution client in Scala 3, maintained by Chippr Robotics LLC.
+Native Proof-of-Work for Ethereum Classic (chain 61) and Mordor (chain 63),
+plus Engine API V1–V4 for Ethereum (chain 1), Sepolia (chain 11155111), and Holesky.
+One binary, any network. The primary ETC client for the Olympia era.
+
+> ⚠️ ALPHA SOFTWARE — DO NOT USE IN PRODUCTION
+
+## Key Capabilities
+
+- Sync: SNAP, fast, and full sync modes
+- Engine API V1–V4 (Prague/Electra, validated on Sepolia with Lighthouse)
+- SLSA Level 3 provenance — verified, reproducible builds with Cosign keyless signing
+- CycloneDX SBOM on all release artifacts
+- MCP server — machine-readable JSON-RPC interface for agentic operations
+- Pluggable consensus: PoW (ETC/Ethash), PoS via Engine API (Ethereum), PoA (custom chains)
+- 3,621 tests; 14 Hive compliance simulator suites wired into CI
+- JVM/Scala 3 diversity — independent dependency tree from Go/Rust dominant clients
+- Forked from Mantis (IOHK) — battle-tested cryptographic foundation
+
+## Supported Networks
+
+- Ethereum Classic (chain 61) — PoW/Ethash, full SNAP sync, Olympia fork
+- Mordor (chain 63) — ETC PoW testnet
+- Ethereum Mainnet (chain 1) — PoS via Engine API
+- Sepolia (chain 11155111) — PoS testnet
+- Holesky — PoS testnet
+- Private/consortium chains — custom genesis, no source modification required
+- EVM-compatible L2s — chains configured via custom genesis and derivation rules
+
+## Requirements
+
+- Runtime: JDK 25 LTS
+- Language: Scala 3.3.7 LTS
+- Disk: 500 GB+ (SNAP sync — home node)
+- RAM: 8 GB minimum
+
+## Quick Start
+
+    docker pull ghcr.io/chippr-robotics/fukuii:latest
+
+    # Ethereum Classic mainnet
+    docker run -p 8553:8553 -p 30305:30305 ghcr.io/chippr-robotics/fukuii:latest \
+      --network classic
+
+    # Sepolia (requires consensus layer: Lighthouse, Prysm, etc.)
+    docker run -p 8553:8553 -p 30305:30305 ghcr.io/chippr-robotics/fukuii:latest \
+      --network sepolia
+
+## Architecture Roadmap (Orbita)
+
+1. Phase 1 — fukuii-env extraction: per-chain config struct, one binary / multiple envs
+2. Phase 2 — Multi-instance runtime: single process manages multiple (state_db, env, engine_api) tuples
+3. Phase 3 — Checkpoint consensus module: PoA sidechain checkpointing to parent chain (Orbita PoA)
+4. Phase 4 — OP-style derivation module: L2 block derivation from L1 batches/blobs
+
+## Links
+
+Source:   https://github.com/chippr-robotics/fukuii
+Docs:     https://chippr-robotics.github.io/fukuii
+Docker:   https://hub.docker.com/r/chipprbots/fukuii
+Packages: https://github.com/chippr-robotics/fukuii/packages
+License:  Apache 2.0
+Origin:   Forked from Mantis (IOHK) — package com.chipprbots
