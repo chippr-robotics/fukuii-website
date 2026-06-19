@@ -1,31 +1,39 @@
 # Build stage
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files
-COPY apps/frontend/package*.json ./
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Install dependencies
-RUN npm ci
+# Copy lockfile and manifest first for layer caching
+COPY apps/frontend/package.json apps/frontend/pnpm-lock.yaml ./
 
-# Copy source code
+RUN pnpm install --frozen-lockfile
+
 COPY apps/frontend/ ./
 
-# Build the app
-RUN npm run build
+RUN pnpm build
 
-# Production stage
-FROM nginx:alpine
+# Runtime stage
+FROM node:24-alpine AS runner
 
-# Copy built assets from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+WORKDIR /app
 
-# Copy custom nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
-# Expose port 8080 for Cloud Run
-EXPOSE 8080
+RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+
+USER nextjs
+
+EXPOSE 3000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
+  CMD wget -qO- http://localhost:3000/ || exit 1
+
+CMD ["node", "server.js"]

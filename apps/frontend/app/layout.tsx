@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const CANONICAL_URL = "https://chippr-robotics.github.io/fukuii";
+const CANONICAL_URL = "https://fukuii.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(CANONICAL_URL),

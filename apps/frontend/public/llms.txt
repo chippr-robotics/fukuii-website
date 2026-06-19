@@ -58,7 +58,7 @@ One binary, any network. The primary ETC client for the Olympia era.
 ## Links
 
 Source:   https://github.com/chippr-robotics/fukuii
-Docs:     https://chippr-robotics.github.io/fukuii
+Docs:     https://fukuii.com
 Docker:   https://hub.docker.com/r/chipprbots/fukuii
 Packages: https://github.com/chippr-robotics/fukuii/packages
 License:  Apache 2.0

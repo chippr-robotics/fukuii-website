@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export function GET(): NextResponse {
-  const base = "https://chippr-robotics.github.io/fukuii";
+  const base = "https://fukuii.com";
 
   const body = `User-agent: *
 Allow: /

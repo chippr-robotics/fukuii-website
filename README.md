@@ -1,147 +1,70 @@
-# fukuii Website
+# Fukuii Website
 
-This repository contains the official website for the [fukuii](https://github.com/chippr-robotics/fukuii) project.
+Official landing page for [Fukuii](https://github.com/chippr-robotics/fukuii) — the multi-EVM execution client in Scala 3.
 
-## About fukuii
+**Live:** https://fukuii.com
 
-fukuii is a Scala-based Ethereum Classic client forked from IOHK's mantis project, providing production-ready blockchain infrastructure with comprehensive tooling for developers and organizations.
+## Stack
 
-## Repository Structure
+- **Next.js 16** — App Router, `output: 'standalone'`
+- **TypeScript 5** — strict mode
+- **Tailwind CSS 4** — CSS-first (`@theme` in `app/globals.css`, no `tailwind.config.js`)
+- **pnpm 10** — package manager
+- **node:24-alpine** — container runtime
 
-This is a monorepo containing:
-
-- **`apps/frontend/`** - React 19 + Vite frontend application
-- **`terraform/`** - Infrastructure as Code for GCP deployment
-- **`.github/workflows/`** - CI/CD pipeline configuration
-- **Root files** - Static website (legacy GitHub Pages)
-
-## Tech Stack
-
-### Frontend Application
-- **React 19**: Latest React with modern hooks
-- **Vite 7 (Rolldown)**: Lightning-fast build tool
-- **Tailwind CSS 3**: Utility-first styling
-- **Vitest 4**: Fast unit testing
-- **Testing Library**: Component testing
-
-### Infrastructure
-- **Docker**: Multi-stage containerization
-- **GitHub Actions**: CI/CD pipeline
-- **GCP Cloud Run**: Serverless container platform
-- **Terraform**: Infrastructure as Code
-- **GitHub Container Registry**: Docker image hosting
-
-## Quick Start
-
-### Frontend Development
+## Local Setup
 
 ```bash
 cd apps/frontend
-npm install
-npm run dev
+pnpm install
+pnpm dev         # → http://localhost:3000
 ```
 
-Visit `http://localhost:5173`
-
-### Build and Test
+Other commands:
 
 ```bash
-# Run tests
-npm test
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+pnpm build       # production build
+pnpm lint        # ESLint
+pnpm typecheck   # tsc --noEmit
 ```
 
-### Docker
-
-Build and run locally:
+## Docker
 
 ```bash
-# Build image
 docker build -t fukuii-website .
-
-# Run container
-docker run -p 8080:8080 fukuii-website
+docker run -p 3000:3000 fukuii-website
 ```
 
-Visit `http://localhost:8080`
+## Repository Structure
 
-## Deployment
+```
+apps/frontend/          Next.js 16 application
+  app/                  App Router (layout, page, sitemap, robots.txt)
+  components/           Section + UI components
+  lib/api/              Blockscout + CoinGecko data fetchers (ISR)
+  public/               Static assets (favicons, OG image, llms.txt)
+brand/                  Design assets (source of truth)
+  logo/                 SVG logo, PNG exports
+  favicon/              Favicon source files
+  social/               OG image source
+  tokens/               Color tokens (CSS + Tailwind 4)
+.github/workflows/      CI/CD — test + Docker build/push on merge to main
+```
 
-### CI/CD Pipeline
+## Brand
 
-GitHub Actions automatically:
-1. **On every push/PR**: Runs linter, tests, and builds
-2. **On push to `main`**: Builds and pushes Docker image to GHCR
+Forest green (`#4d8a28`) + old gold (`#d6b56b`) + ink (`#1a1f16`) + ivory (`#f5f3ed`). Dark-first; light theme via `[data-theme="light"]` class.
 
-### Infrastructure Setup
+Color tokens: `brand/tokens/colors.css` — copy to `apps/frontend/app/globals.css` when updating.
 
-1. **Prerequisites**:
-   - GCP account with project
-   - Terraform >= 1.0
-   - gcloud CLI configured
+## CI/CD
 
-2. **Configure Terraform**:
-   ```bash
-   cd terraform
-   cp terraform.tfvars.example terraform.tfvars
-   # Edit terraform.tfvars with your GCP project ID
-   ```
+GitHub Actions runs on every push/PR:
+1. `pnpm install --frozen-lockfile`
+2. `pnpm lint && pnpm typecheck && pnpm build`
 
-3. **Deploy**:
-   ```bash
-   terraform init
-   terraform plan
-   terraform apply
-   ```
-
-4. **Get service URL**:
-   ```bash
-   terraform output service_url
-   ```
-
-See [terraform/README.md](terraform/README.md) for detailed deployment instructions.
-
-## Project Documentation
-
-- **[Frontend README](apps/frontend/README.md)** - Frontend development guide
-- **[Terraform README](terraform/README.md)** - Infrastructure and deployment guide
-- **[Main fukuii Repository](https://github.com/chippr-robotics/fukuii)** - Core blockchain client
-
-## Website Content
-
-The website includes the following sections:
-
-- **Home/Overview**: Introduction to fukuii and its capabilities
-- **Features**: Detailed information about key features
-- **Download**: Links to releases and installation instructions
-- **Documentation**: Getting started guides and usage examples
-- **History**: Project development timeline with video content
-- **Contributing**: Guidelines for community contributions
-
-## Contributing
-
-Found an issue with the website? Want to improve the content?
-
-1. Fork this repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+On merge to `main`: builds and pushes Docker image to GHCR (`ghcr.io/chippr-robotics/fukuii-website`).
 
 ## License
 
-This website is part of the fukuii project, which is licensed under the Apache License 2.0.
-
-## Links
-
-- **Main Repository**: https://github.com/chippr-robotics/fukuii
-- **Chippr Robotics**: https://github.com/chippr-robotics
-- **Website**: https://chipprbots.com
-
----
-
-Maintained by [Chippr Robotics](https://github.com/chippr-robotics) • Happy Helpful Robots 🤖
+Apache 2.0 — maintained by [Chippr Robotics LLC](https://github.com/chippr-robotics).

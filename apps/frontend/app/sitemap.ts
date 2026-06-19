@@ -11,7 +11,7 @@ function gitDate(): string {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://chippr-robotics.github.io/fukuii";
+  const base = "https://fukuii.com";
   const lastModified = gitDate();
 
   return [
