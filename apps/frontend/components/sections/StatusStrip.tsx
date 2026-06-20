@@ -5,7 +5,7 @@ import { CountUp } from "@/components/ui/CountUp";
 const STATS = [
   { to: 3621, label: "tests passing", suffix: "" },
   { to: 14, label: "Hive simulators", suffix: "" },
-  { to: 4, label: "networks supported", suffix: "+" },
+  { to: 6, label: "networks supported", suffix: "" },
   { to: 3, label: "sync modes", suffix: "" },
 ] as const;
 

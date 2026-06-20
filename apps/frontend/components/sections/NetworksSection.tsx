@@ -8,7 +8,7 @@ interface Network {
   fork?: string;
   badge?: string;
   badgeColor?: "green" | "gold" | "muted";
-  scalaLang?: boolean;
+  wide?: boolean;
 }
 
 const NETWORKS: Network[] = [
@@ -20,7 +20,7 @@ const NETWORKS: Network[] = [
     fork: "Olympia fork",
     badge: "Primary",
     badgeColor: "green",
-    scalaLang: true,
+    wide: true,
   },
   {
     name: "Mordor",
@@ -40,9 +40,7 @@ const NETWORKS: Network[] = [
     name: "Sepolia",
     chainId: 11155111,
     consensus: "PoS via Engine API",
-    fork: "Validated",
-    badge: "Tested",
-    badgeColor: "green",
+    fork: "ETH testnet",
   },
   {
     name: "Holesky",
@@ -51,32 +49,22 @@ const NETWORKS: Network[] = [
     fork: "PoS testnet",
   },
   {
-    name: "Custom / Consortium",
+    name: "Private & L2 Chains",
     chainId: 0,
     consensus: "Pluggable consensus",
-    fork: "PoA sidechains",
-    badge: "Coming via Orbita",
-    badgeColor: "gold",
+    fork: "PoA · Orbita · OP-compatible",
+    badge: "Roadmap",
+    badgeColor: "muted",
   },
 ];
 
 function ChainIdBadge({ chainId }: { chainId: number }) {
-  if (chainId === 0) {
-    return (
-      <span
-        className="badge-fk"
-        style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem" }}
-      >
-        custom
-      </span>
-    );
-  }
   return (
     <span
       className="badge-fk"
       style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem" }}
     >
-      chain {chainId}
+      {chainId === 0 ? "custom" : `chain ${chainId}`}
     </span>
   );
 }
@@ -86,15 +74,21 @@ export function NetworksSection() {
     <section className="section-fk" id="networks">
       <div className="container-fk">
         <FadeIn>
-          <div style={{ marginBottom: "3rem" }}>
-            <h2 className="section-title">Supported Networks</h2>
+          <div style={{ marginBottom: "3rem", maxWidth: "60ch" }}>
+            <h2 className="section-title" style={{ marginBottom: "0.75rem" }}>
+              EVM networks.
+            </h2>
+            <p className="section-subtitle">
+              Today: the largest PoW EVM and the largest PoS EVM, each with its testnet.
+              Tomorrow: sidechains, L2 rollups, and private chains from the same binary.
+            </p>
           </div>
         </FadeIn>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
             gap: "1.25rem",
           }}
         >
@@ -106,43 +100,20 @@ export function NetworksSection() {
                   padding: "1.5rem",
                   height: "100%",
                   borderTop: net.badge === "Primary" ? "2px solid var(--accent)" : undefined,
+                  gridColumn: net.wide ? "span 2" : undefined,
                 }}
               >
                 <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.75rem", marginBottom: "0.875rem" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    {net.scalaLang && (
-                      <span
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          width: 24,
-                          height: 24,
-                          borderRadius: 6,
-                          background: "#DC322F",
-                          color: "#fff",
-                          fontWeight: 700,
-                          fontSize: "0.6875rem",
-                          fontFamily: "var(--font-mono)",
-                          flexShrink: 0,
-                        }}
-                        title="Scala"
-                        aria-label="Scala"
-                      >
-                        Sc
-                      </span>
-                    )}
-                    <h3
-                      style={{
-                        fontSize: "1rem",
-                        fontWeight: 700,
-                        color: "var(--text)",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      {net.name}
-                    </h3>
-                  </div>
+                  <h3
+                    style={{
+                      fontSize: "1rem",
+                      fontWeight: 700,
+                      color: "var(--text)",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    {net.name}
+                  </h3>
                   <ChainIdBadge chainId={net.chainId} />
                 </div>
 
@@ -183,11 +154,11 @@ export function NetworksSection() {
                 {net.badge && (
                   <div style={{ marginTop: "1rem" }}>
                     <span
-                      className={`badge-fk ${
+                      className={`badge-fk${
                         net.badgeColor === "green"
-                          ? "badge-green"
+                          ? " badge-green"
                           : net.badgeColor === "gold"
-                            ? "badge-gold"
+                            ? " badge-gold"
                             : ""
                       }`}
                     >

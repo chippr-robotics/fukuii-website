@@ -1,102 +1,123 @@
 import { FadeIn } from "@/components/ui/FadeIn";
 
-const CARDS = [
+const FACTS = [
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
-      </svg>
-    ),
-    title: "JVM/Scala 3 Diversity",
-    body: "Independent dependency tree from Go/Rust clients. Satisfies risk frameworks requiring multiple independent client implementations across different language ecosystems.",
+    label: "CONSENSUS MODEL",
+    value: "One binary. PoW Ethash and PoS Engine API.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" />
-        <line x1="2" y1="12" x2="22" y2="12" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      </svg>
-    ),
-    title: "No Network Lock-in",
-    body: "One binary: ETC mainnet, Ethereum mainnet, testnets, custom chains. Eliminate the operational overhead of maintaining separate clients for each network you support.",
+    label: "LANGUAGE STACK",
+    value: "Scala 3 LTS · Pekko Typed Actors · JVM.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-    title: "Verifiable Supply Chain",
-    body: "SLSA Level 3 provenance, CycloneDX SBOM, Cosign keyless signatures. SOC2 audit and institutional procurement ready. Every release is reproducible and tamper-evident.",
+    label: "NETWORK COVERAGE",
+    value: "ETC, ETH, Mordor, Sepolia — and growing.",
   },
 ] as const;
 
 export function WhatIsFukuii() {
   return (
-    <section className="section-fk" id="why">
+    <section className="section-fk" id="what">
       <div className="container-fk">
         <FadeIn>
-          <div style={{ marginBottom: "3rem" }}>
-            <h2 className="section-title">Why Fukuii?</h2>
-          </div>
-        </FadeIn>
+          <div className="what-grid">
+            {/* Left cell: editorial paragraphs */}
+            <div
+              style={{
+                padding: "2.5rem",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                borderRight: "1px solid var(--border)",
+              }}
+            >
+              <div>
+                <span className="cell-label">About</span>
+                <h2 className="cell-h2" style={{ marginBottom: "1.5rem" }}>
+                  What is Fukuii?
+                </h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "1.5rem",
-          }}
-        >
-          {CARDS.map((card, i) => (
-            <FadeIn key={card.title} delay={i * 100}>
-              <div
-                className="card-fk"
-                style={{ padding: "2rem", height: "100%" }}
-              >
-                <div
-                  style={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: "var(--radius-sm)",
-                    background: "var(--accent-soft)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "var(--accent)",
-                    marginBottom: "1.25rem",
-                    flexShrink: 0,
-                  }}
-                >
-                  {card.icon}
-                </div>
-                <h3
-                  style={{
-                    fontSize: "1.0625rem",
-                    fontWeight: 700,
-                    color: "var(--text)",
-                    marginBottom: "0.625rem",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  {card.title}
-                </h3>
                 <p
                   style={{
-                    fontSize: "0.9375rem",
+                    fontSize: "1rem",
                     color: "var(--text-muted)",
-                    lineHeight: 1.65,
+                    lineHeight: 1.75,
+                    marginBottom: "1.25rem",
                   }}
                 >
-                  {card.body}
+                  Fukuii is the only Scala EVM execution client. Built on Scala&nbsp;3 LTS
+                  and Pekko Typed Actors, it runs any EVM-compatible network from a single
+                  binary. Today that means Ethereum Classic, the largest Proof-of-Work EVM,
+                  alongside Ethereum mainnet and Sepolia via Engine API V1 through V4.
+                  As Fukuii stabilizes, the same binary will extend to sidechains, L2 rollups,
+                  and private consortium chains.
+                </p>
+                <p
+                  style={{
+                    fontSize: "1rem",
+                    color: "var(--text-muted)",
+                    lineHeight: 1.75,
+                  }}
+                >
+                  There is no Go in the stack. There is no .NET in the stack. Fukuii brings
+                  the JVM, the runtime that already underpins global finance, to EVM node
+                  operations, observability toolchain included.
                 </p>
               </div>
-            </FadeIn>
-          ))}
-        </div>
+
+              <a
+                href="#quickstart"
+                className="cell-cta"
+                style={{ marginTop: "2rem" }}
+              >
+                Get started with Fukuii
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Right cell: fact-boxes */}
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {FACTS.map((fact, i) => (
+                <div
+                  key={fact.label}
+                  className="fact-box"
+                  style={{
+                    borderBottom: i < FACTS.length - 1 ? "1px solid var(--border)" : "none",
+                    flex: 1,
+                  }}
+                >
+                  <span className="cell-label">{fact.label}</span>
+                  <p
+                    style={{
+                      fontSize: "1.0625rem",
+                      fontWeight: 600,
+                      color: "var(--text)",
+                      lineHeight: 1.4,
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    {fact.value}
+                  </p>
+                </div>
+              ))}
+
+              <a
+                href="https://github.com/chippr-robotics/fukuii"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cell-cta"
+              >
+                View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

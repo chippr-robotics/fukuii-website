@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FadeIn } from "@/components/ui/FadeIn";
 
-type Tab = "docker" | "source";
+type Tab = "mordor" | "docker" | "sepolia";
 
 const REQUIREMENTS = [
   { tier: "Home node", ram: "8 GB", disk: "500 GB" },
@@ -12,27 +12,54 @@ const REQUIREMENTS = [
   { tier: "Archive", ram: "64 GB+", disk: "4 TB+" },
 ] as const;
 
-const DOCKER_CODE = `docker pull ghcr.io/chippr-robotics/fukuii:latest
-
-# Ethereum Classic mainnet
-docker run -p 8553:8553 -p 30305:30305 \\
-  ghcr.io/chippr-robotics/fukuii:latest \\
-  --network classic`;
-
-const SOURCE_CODE = `# Requires JDK 25 LTS + sbt
+const CODE: Record<Tab, string> = {
+  mordor: `# Requires JDK 25 LTS + sbt
 git clone https://github.com/chippr-robotics/fukuii
-cd fukuii
-sbt assembly`;
+cd fukuii && sbt assembly
+java -Xmx4g \\
+  -Dfukuii.datadir=/var/lib/fukuii \\
+  -Dfukuii.network=mordor \\
+  -jar target/fukuii-assembly-<ver>.jar mordor`,
+
+  docker: `docker pull ghcr.io/chippr-robotics/fukuii:latest
+docker run -d --name fukuii \\
+  -p 8553:8553 -p 30305:30305 \\
+  -v fukuii-data:/var/lib/fukuii \\
+  ghcr.io/chippr-robotics/fukuii:latest etc`,
+
+  sepolia: `# Engine API mode — pair with any CL
+java -Xmx8g \\
+  -Dfukuii.network=sepolia \\
+  -Dfukuii.engine.enabled=true \\
+  -Dfukuii.engine.jwt-secret=/path/to/jwt.hex \\
+  -jar target/fukuii-assembly-<ver>.jar sepolia
+
+# Then start your consensus client:
+# Lighthouse · Prysm · Teku · Lodestar · Nimbus
+# --execution-endpoint=http://localhost:8551`,
+};
+
+const TAB_LABELS: Record<Tab, string> = {
+  mordor: "Mordor SNAP",
+  docker: "Docker",
+  sepolia: "Sepolia + CL",
+};
 
 export function QuickStartSection() {
-  const [tab, setTab] = useState<Tab>("docker");
+  const [tab, setTab] = useState<Tab>("mordor");
 
   return (
     <section className="section-fk" id="quickstart">
       <div className="container-fk" style={{ maxWidth: 800 }}>
         <FadeIn>
           <div style={{ marginBottom: "2.5rem" }}>
-            <h2 className="section-title">Quick Start</h2>
+            <h2 className="section-title" style={{ marginBottom: "0.75rem" }}>
+              Quick Start
+            </h2>
+            <p className="section-subtitle">
+              Up and running in minutes, whether you&apos;re testing on Mordor, deploying via Docker, or pairing
+              with a consensus client for Ethereum. Requires JDK 25 LTS.
+            </p>
           </div>
         </FadeIn>
 
@@ -45,7 +72,7 @@ export function QuickStartSection() {
               marginBottom: "1.5rem",
             }}
           >
-            {(["docker", "source"] as Tab[]).map((t) => (
+            {(["mordor", "docker", "sepolia"] as Tab[]).map((t) => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
@@ -59,16 +86,13 @@ export function QuickStartSection() {
                   fontWeight: 500,
                   cursor: "pointer",
                   transition: "background 150ms, color 150ms, border-color 150ms",
-                  background:
-                    tab === t ? "var(--bg-elev)" : "transparent",
-                  color:
-                    tab === t ? "var(--text)" : "var(--text-muted)",
-                  borderColor:
-                    tab === t ? "var(--border)" : "transparent",
+                  background: tab === t ? "var(--bg-elev)" : "transparent",
+                  color: tab === t ? "var(--text)" : "var(--text-muted)",
+                  borderColor: tab === t ? "var(--border)" : "transparent",
                   marginBottom: tab === t ? -1 : 0,
                 }}
               >
-                {t === "docker" ? "Docker" : "Build from Source"}
+                {TAB_LABELS[t]}
               </button>
             ))}
           </div>
@@ -76,9 +100,30 @@ export function QuickStartSection() {
 
         <FadeIn delay={120}>
           <pre className="code-block">
-            <code>{tab === "docker" ? DOCKER_CODE : SOURCE_CODE}</code>
+            <code>{CODE[tab]}</code>
           </pre>
         </FadeIn>
+
+        {tab === "sepolia" && (
+          <FadeIn delay={140}>
+            <div
+              style={{
+                marginTop: "1rem",
+                padding: "0.875rem 1.125rem",
+                background: "var(--accent-soft)",
+                border: "1px solid rgba(77,138,40,0.3)",
+                borderRadius: "var(--radius-sm)",
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.75rem",
+                color: "var(--text-muted)",
+                lineHeight: 1.55,
+              }}
+            >
+              Fukuii implements Engine API V1–V4. The JWT secret must match your consensus client&apos;s
+              configuration. Prague/Electra validated on Sepolia with Lighthouse.
+            </div>
+          </FadeIn>
+        )}
 
         <FadeIn delay={160}>
           <div style={{ marginTop: "2.5rem" }}>
@@ -145,29 +190,13 @@ export function QuickStartSection() {
                         background: i % 2 === 0 ? "transparent" : "var(--bg-card)",
                       }}
                     >
-                      <td
-                        style={{
-                          padding: "0.625rem 1rem",
-                          color: "var(--text)",
-                          fontWeight: 500,
-                        }}
-                      >
+                      <td style={{ padding: "0.625rem 1rem", color: "var(--text)", fontWeight: 500 }}>
                         {row.tier}
                       </td>
-                      <td
-                        style={{
-                          padding: "0.625rem 1rem",
-                          color: "var(--text-muted)",
-                        }}
-                      >
+                      <td style={{ padding: "0.625rem 1rem", color: "var(--text-muted)" }}>
                         {row.ram}
                       </td>
-                      <td
-                        style={{
-                          padding: "0.625rem 1rem",
-                          color: "var(--text-muted)",
-                        }}
-                      >
+                      <td style={{ padding: "0.625rem 1rem", color: "var(--text-muted)" }}>
                         {row.disk}
                       </td>
                     </tr>

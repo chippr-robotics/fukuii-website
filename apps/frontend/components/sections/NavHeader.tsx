@@ -1,16 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const NAV_LINKS = [
-  { label: "Features", href: "#features" },
-  { label: "Networks", href: "#networks" },
+  { label: "About", href: "#what" },
   { label: "Quick Start", href: "#quickstart" },
   {
     label: "Docs",
-    href: "https://chippr-robotics.github.io/fukuii",
+    href: "https://fukuii.com",
     external: true,
   },
 ];
@@ -35,29 +33,37 @@ export default function NavHeader() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "0.5rem",
+              gap: "0.625rem",
               textDecoration: "none",
               flexShrink: 0,
             }}
           >
-            <Image
-              src="/fukuii-hex-logo.png"
-              alt="Fukuii"
-              width={36}
-              height={36}
-              priority
-            />
-            <span
-              style={{
-                fontFamily: "var(--font-sans)",
-                fontWeight: 700,
-                fontSize: "1.0625rem",
-                letterSpacing: "-0.01em",
-                color: "var(--text)",
-              }}
-            >
-              Fukuii
-            </span>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.1rem" }}>
+              <span
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontWeight: 700,
+                  fontSize: "1.0625rem",
+                  letterSpacing: "0.06em",
+                  color: "var(--text)",
+                  lineHeight: 1.2,
+                }}
+              >
+                FUKUII
+              </span>
+              <span
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.625rem",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  color: "var(--text-subtle)",
+                  lineHeight: 1,
+                }}
+              >
+                Ethereum Virtual Machine Client
+              </span>
+            </div>
           </a>
 
           <nav

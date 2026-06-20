@@ -1,100 +1,119 @@
 import { FadeIn } from "@/components/ui/FadeIn";
 
-const FEATURES = [
+type TagColor = "green" | "blue" | "teal" | "violet" | "amber" | "indigo" | "orange" | "muted";
+
+interface ProtocolTag { readonly label: string; readonly color: TagColor; }
+interface ProtocolCategory { readonly category: string; readonly tags: readonly ProtocolTag[]; }
+
+const PROTOCOLS: readonly ProtocolCategory[] = [
   {
-    emoji: "⚡",
-    title: "SNAP Sync",
-    body: "6-phase pipeline with adaptive batching. Pruning modes for full, fast, and archive nodes. Syncs Ethereum Classic in hours, not days.",
+    category: "Wire protocols",
+    tags: [
+      { label: "ETH68", color: "blue" },
+      { label: "ETH69", color: "blue" },
+    ],
   },
   {
-    emoji: "🔗",
-    title: "Engine API V1–V4",
-    body: "Prague/Electra validated on Sepolia with Lighthouse CL. Full payload lifecycle, withdrawals, blob transactions, and engine_getClientVersionV1.",
+    category: "Snap sync",
+    tags: [
+      { label: "Snap V1", color: "teal" },
+    ],
   },
   {
-    emoji: "🤖",
-    title: "MCP Server",
-    body: "First EVM client with built-in Model Context Protocol server. Agentic operations, AI-native JSON-RPC tooling for automated infrastructure management.",
+    category: "In progress",
+    tags: [
+      { label: "ETH70", color: "muted" },
+      { label: "ETH71", color: "muted" },
+      { label: "Snap V2", color: "muted" },
+    ],
   },
   {
-    emoji: "🔏",
-    title: "SLSA Level 3",
-    body: "Reproducible builds, Cosign keyless signing, CycloneDX SBOM. Every release is cryptographically attested and auditable end-to-end.",
+    category: "Engine API",
+    tags: [
+      { label: "V1", color: "violet" },
+      { label: "V2", color: "violet" },
+      { label: "V3", color: "violet" },
+      { label: "V4", color: "violet" },
+    ],
   },
   {
-    emoji: "🧪",
-    title: "3,621 Tests",
-    body: "14 Hive compliance simulators, nightly Ethereum Foundation test vectors. Continuous validation against reference clients across both ETC and ETH.",
+    category: "JSON-RPC + API",
+    tags: [
+      { label: "HTTP", color: "amber" },
+      { label: "WebSocket", color: "amber" },
+      { label: "IPC", color: "amber" },
+      { label: "GraphQL", color: "amber" },
+      { label: "MCP server", color: "amber" },
+    ],
   },
   {
-    emoji: "🏛",
-    title: "Mantis Foundation",
-    body: "Forked from IOHK's battle-tested Mantis client. Proven cryptographic foundation built by the team behind Cardano's Haskell and Scala toolchain.",
+    category: "Discovery",
+    tags: [
+      { label: "discv4", color: "muted" },
+      { label: "discv5", color: "muted" },
+    ],
   },
-] as const;
+  {
+    category: "Monitoring",
+    tags: [
+      { label: "Prometheus", color: "orange" },
+      { label: "Grafana", color: "orange" },
+    ],
+  },
+  {
+    category: "Consensus",
+    tags: [
+      { label: "Clique", color: "green" },
+      { label: "AuRa", color: "green" },
+      { label: "Ethash", color: "green" },
+      { label: "PoS", color: "green" },
+      { label: "PoW", color: "green" },
+    ],
+  },
+  {
+    category: "CL interop",
+    tags: [
+      { label: "Lighthouse", color: "indigo" },
+      { label: "Prysm", color: "indigo" },
+      { label: "Teku", color: "indigo" },
+      { label: "Lodestar", color: "indigo" },
+      { label: "Nimbus", color: "indigo" },
+    ],
+  },
+];
 
 export function FeaturesSection() {
   return (
     <section className="section-fk" id="features" style={{ background: "var(--bg-elev)" }}>
       <div className="container-fk">
         <FadeIn>
-          <div style={{ marginBottom: "3rem" }}>
-            <h2 className="section-title">Core Capabilities</h2>
+          <div style={{ marginBottom: "2.5rem", maxWidth: "52ch" }}>
+            <h2 className="section-title" style={{ marginBottom: "0.75rem" }}>
+              Built to the EVM standard.
+            </h2>
+            <p className="section-subtitle">
+              Feature-complete against go-ethereum and Besu. Performance flags from Nethermind and Reth.
+              Prometheus and Grafana out of the box.
+            </p>
           </div>
         </FadeIn>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "1.25rem",
-          }}
-        >
-          {FEATURES.map((f, i) => (
-            <FadeIn key={f.title} delay={Math.floor(i / 2) * 80 + (i % 2) * 40}>
-              <div
-                className="card-fk"
-                style={{ padding: "1.75rem", height: "100%" }}
-              >
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
-                  <span
-                    style={{
-                      fontSize: "1.625rem",
-                      lineHeight: 1,
-                      flexShrink: 0,
-                      marginTop: 2,
-                    }}
-                    aria-hidden="true"
-                  >
-                    {f.emoji}
-                  </span>
-                  <div>
-                    <h3
-                      style={{
-                        fontSize: "1rem",
-                        fontWeight: 700,
-                        color: "var(--text)",
-                        marginBottom: "0.5rem",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      {f.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontSize: "0.875rem",
-                        color: "var(--text-muted)",
-                        lineHeight: 1.65,
-                      }}
-                    >
-                      {f.body}
-                    </p>
-                  </div>
+        <FadeIn delay={80}>
+          <div className="protocol-matrix">
+            {PROTOCOLS.map((row) => (
+              <div key={row.category} className="protocol-row">
+                <div className="protocol-category">{row.category}</div>
+                <div className="protocol-tags">
+                  {row.tags.map((tag) => (
+                    <span key={tag.label} className={`proto-tag proto-tag--${tag.color}`}>
+                      {tag.label}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </FadeIn>
-          ))}
-        </div>
+            ))}
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

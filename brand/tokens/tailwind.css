@@ -8,9 +8,11 @@
 @theme {
   /* Brand colors as Tailwind utilities */
   --color-brand-green:       var(--brand-green);
+  --color-brand-green-char:  var(--brand-green-char);
   --color-brand-green-light: var(--brand-green-light);
   --color-brand-green-mid:   var(--brand-green-mid);
   --color-brand-green-dark:  var(--brand-green-dark);
+  --color-brand-pink:        var(--brand-pink);
   --color-brand-gold:        var(--brand-gold);
   --color-brand-gold-dark:   var(--brand-gold-dark);
 

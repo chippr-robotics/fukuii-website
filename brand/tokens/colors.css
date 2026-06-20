@@ -1,6 +1,7 @@
 /**
  * Fukuii Brand Colors
  * Design tokens as CSS custom properties
+ * Colors derived from fukuii-hex-logo.png (pixel-sampled 2026-06-20)
  *
  * Usage:
  *   @import url('path/to/colors.css');
@@ -12,13 +13,18 @@
    ========================================== */
 
 :root {
-  /* Primary Brand — Forest Green */
-  --brand-green:        #4d8a28;
-  --brand-green-light:  #7bc34e;
-  --brand-green-mid:    #3d6b1f;
-  --brand-green-dark:   #2d5016;
-  --brand-green-subtle: rgba(77, 138, 40, 0.08);
-  --brand-green-glow:   rgba(77, 138, 40, 0.35);
+  /* Primary Brand — Logo Hex Background Green */
+  --brand-green:        #50a060;
+  --brand-green-char:   #60b040;   /* character/mantis body — more yellow */
+  --brand-green-light:  #70c080;   /* highlight / glow */
+  --brand-green-mid:    #2d6b40;   /* mid — light-mode accent */
+  --brand-green-dark:   #1e4a2d;
+  --brand-green-subtle: rgba(80, 160, 96, 0.08);
+  --brand-green-glow:   rgba(80, 160, 96, 0.35);
+
+  /* Worm Accent — Dusty Rose */
+  --brand-pink:         #c06060;
+  --brand-pink-subtle:  rgba(192, 96, 96, 0.08);
 
   /* Secondary — Old Gold */
   --brand-gold:         #d6b56b;
@@ -30,7 +36,7 @@
   --bg-surface:  #1f2619;
   --bg-elevated: #27301e;
   --bg-overlay:  rgba(26, 31, 22, 0.85);
-  --bg-card:     rgba(0, 0, 0, 0.30);
+  --bg-card:     rgba(80, 160, 96, 0.06);
 
   /* Text */
   --text-primary:   #f5f3ed;
@@ -43,17 +49,17 @@
   --border-default: #2d3525;
   --border-subtle:  rgba(255, 255, 255, 0.04);
   --border-strong:  rgba(255, 255, 255, 0.16);
-  --border-brand:   rgba(77, 138, 40, 0.35);
-  --border-glow:    rgba(77, 138, 40, 0.25);
+  --border-brand:   rgba(80, 160, 96, 0.35);
+  --border-glow:    rgba(80, 160, 96, 0.25);
 
   /* Semantic */
-  --color-success: #4d8a28;
+  --color-success: #50a060;
   --color-error:   #ef4444;
   --color-warning: #d6b56b;
   --color-info:    #38bdf8;
 
   /* Card */
-  --card-bg:           rgba(0, 0, 0, 0.30);
+  --card-bg:           rgba(80, 160, 96, 0.06);
   --card-border:       #2d3525;
   --card-shadow:       0 10px 26px rgba(0, 0, 0, 0.45);
   --card-hover-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
@@ -66,12 +72,16 @@
 :root[data-theme="light"],
 .light {
   /* Primary Brand (darker for contrast on light bg) */
-  --brand-green:        #3d6b1f;
-  --brand-green-light:  #4d8a28;
-  --brand-green-mid:    #2d5016;
-  --brand-green-dark:   #1e3610;
-  --brand-green-subtle: rgba(61, 107, 31, 0.06);
-  --brand-green-glow:   rgba(61, 107, 31, 0.20);
+  --brand-green:        #2d6b40;
+  --brand-green-char:   #3d8028;
+  --brand-green-light:  #50a060;
+  --brand-green-mid:    #1e4a2d;
+  --brand-green-dark:   #122e1c;
+  --brand-green-subtle: rgba(45, 107, 64, 0.06);
+  --brand-green-glow:   rgba(45, 107, 64, 0.20);
+
+  --brand-pink:         #a04040;
+  --brand-pink-subtle:  rgba(160, 64, 64, 0.06);
 
   /* Secondary */
   --brand-gold:         #b8964f;
@@ -96,8 +106,8 @@
   --border-default: #d5d0c5;
   --border-subtle:  rgba(0, 0, 0, 0.04);
   --border-strong:  rgba(0, 0, 0, 0.16);
-  --border-brand:   rgba(61, 107, 31, 0.30);
-  --border-glow:    rgba(61, 107, 31, 0.20);
+  --border-brand:   rgba(45, 107, 64, 0.30);
+  --border-glow:    rgba(45, 107, 64, 0.20);
 
   /* Card */
   --card-bg:           #ffffff;

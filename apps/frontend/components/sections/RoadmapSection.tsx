@@ -25,7 +25,7 @@ const PHASES: Phase[] = [
     codename: "Planned",
     status: "planned",
     description:
-      "Single process manages multiple chains concurrently. One fukuii, many networks. Shared EVM runtime with isolated state per chain.",
+      "Single process, multiple chains running concurrently. Run ETC and Ethereum mainnet simultaneously — shared EVM runtime, isolated state and network stack per chain. One node, many networks.",
   },
   {
     number: "3",

@@ -1,10 +1,12 @@
 {
   "dark": {
     "brand": {
-      "green":        "#4d8a28",
-      "greenLight":   "#7bc34e",
-      "greenMid":     "#3d6b1f",
-      "greenDark":    "#2d5016",
+      "green":        "#50a060",
+      "greenChar":    "#60b040",
+      "greenLight":   "#70c080",
+      "greenMid":     "#2d6b40",
+      "greenDark":    "#1e4a2d",
+      "pink":         "#c06060",
       "gold":         "#d6b56b",
       "goldDark":     "#b8964f"
     },
@@ -12,7 +14,7 @@
       "primary":  "#1a1f16",
       "surface":  "#1f2619",
       "elevated": "#27301e",
-      "card":     "rgba(0, 0, 0, 0.30)"
+      "card":     "rgba(80, 160, 96, 0.06)"
     },
     "text": {
       "primary":   "#f5f3ed",
@@ -22,15 +24,17 @@
     },
     "border": {
       "default": "#2d3525",
-      "brand":   "rgba(77, 138, 40, 0.35)"
+      "brand":   "rgba(80, 160, 96, 0.35)"
     }
   },
   "light": {
     "brand": {
-      "green":        "#3d6b1f",
-      "greenLight":   "#4d8a28",
-      "greenMid":     "#2d5016",
-      "greenDark":    "#1e3610",
+      "green":        "#2d6b40",
+      "greenChar":    "#3d8028",
+      "greenLight":   "#50a060",
+      "greenMid":     "#1e4a2d",
+      "greenDark":    "#122e1c",
+      "pink":         "#a04040",
       "gold":         "#b8964f",
       "goldDark":     "#8a6e39"
     },
@@ -48,7 +52,7 @@
     },
     "border": {
       "default": "#d5d0c5",
-      "brand":   "rgba(61, 107, 31, 0.30)"
+      "brand":   "rgba(45, 107, 64, 0.30)"
     }
   }
 }
