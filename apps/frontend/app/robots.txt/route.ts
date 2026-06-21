@@ -28,6 +28,12 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
 # Social previews
 User-agent: Twitterbot
 Allow: /

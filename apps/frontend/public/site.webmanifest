@@ -1,12 +1,17 @@
 {
   "name": "Fukuii",
   "short_name": "Fukuii",
-  "description": "Multi-EVM execution client in Scala 3",
+  "description": "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to institutions.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1a1f16",
   "theme_color": "#50a060",
   "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",

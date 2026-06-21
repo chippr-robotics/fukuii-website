@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s · Fukuii",
   },
   description:
-    "Multi-EVM execution client in Scala 3. Native PoW for Ethereum Classic, Engine API V1–V4 for Ethereum. One binary, any network. SLSA Level 3 provenance, MCP server, SNAP sync.",
+    "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to institutions.",
   keywords: [
     "ethereum classic",
     "ETC",
@@ -40,15 +40,29 @@ export const metadata: Metadata = {
     "Sepolia",
     "MCP server",
     "SLSA",
+    "institutional",
+    "sovereign",
+    "agentic",
+    "Apache Pekko",
+    "enterprise node",
   ],
   authors: [{ name: "Chippr Robotics LLC" }],
+  creator: "Chippr Robotics LLC",
+  formatDetection: { telephone: false, email: false },
+  appleWebApp: {
+    capable: true,
+    title: "Fukuii",
+    statusBarStyle: "black-translucent",
+  },
+  other: { "color-scheme": "dark" },
   openGraph: {
     type: "website",
     url: CANONICAL_URL,
     siteName: "Fukuii",
+    locale: "en_US",
     title: "Fukuii — Multi-EVM Execution Client",
     description:
-      "One binary, any network. Native PoW for Ethereum Classic, Engine API for Ethereum. Scala 3 · SLSA L3 · MCP.",
+      "Built to finance's standard. Scala 3, JVM, Apache Pekko, no BSL. Independent failure modes, built-in MCP server, SLSA Level 3. One binary, any network.",
     images: [
       {
         url: "/og-fukuii.png",
@@ -62,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fukuii — Multi-EVM Execution Client",
     description:
-      "One binary, any network. Native PoW for Ethereum Classic, Engine API for Ethereum. Scala 3 · SLSA L3 · MCP.",
+      "Built to finance's standard. Scala 3, JVM, Apache Pekko, no BSL. Independent failure modes, built-in MCP server, SLSA Level 3. One binary, any network.",
     images: ["/og-fukuii.png"],
   },
   robots: {
@@ -105,7 +119,7 @@ const jsonLdApp = {
   operatingSystem: "Linux, macOS, Windows",
   license: "https://opensource.org/licenses/Apache-2.0",
   description:
-    "Multi-EVM execution client in Scala 3 with native PoW for Ethereum Classic and Engine API V1–V4 for Ethereum.",
+    "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to institutions.",
   downloadUrl: "https://github.com/chippr-robotics/fukuii/releases",
   codeRepository: "https://github.com/chippr-robotics/fukuii",
   programmingLanguage: "Scala",
