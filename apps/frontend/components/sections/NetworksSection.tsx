@@ -1,214 +1,213 @@
 import { FadeIn } from "@/components/ui/FadeIn";
 
-interface Network {
+interface NetEntry {
   name: string;
   chainId: number;
-  consensus: string;
-  sync?: string;
-  fork?: string;
-  badge?: string;
-  badgeColor?: "green" | "gold" | "muted";
-  wide?: boolean;
+  tags: string[];
 }
 
-const NETWORKS: Network[] = [
-  {
-    name: "Ethereum Classic",
-    chainId: 61,
-    consensus: "PoW / Ethash",
-    sync: "SNAP sync",
-    fork: "Olympia fork",
-    badge: "Primary",
-    badgeColor: "green",
-    wide: true,
-  },
-  {
-    name: "Mordor",
-    chainId: 63,
-    consensus: "PoW / Ethash",
-    sync: "SNAP sync",
-    fork: "ETC testnet",
-  },
-  {
-    name: "Ethereum Mainnet",
-    chainId: 1,
-    consensus: "PoS via Engine API",
-    sync: "SNAP sync",
-    fork: "Prague / Electra",
-  },
-  {
-    name: "Sepolia",
-    chainId: 11155111,
-    consensus: "PoS via Engine API",
-    fork: "ETH testnet",
-  },
-  {
-    name: "Holesky",
-    chainId: 17000,
-    consensus: "PoS via Engine API",
-    fork: "PoS testnet",
-  },
-  {
-    name: "Private & L2 Chains",
-    chainId: 0,
-    consensus: "Pluggable consensus",
-    fork: "PoA · Orbita · OP-compatible",
-    badge: "Roadmap",
-    badgeColor: "muted",
-  },
+interface NetGroup {
+  family: string;
+  consensus: string;
+  badgeLabel: string;
+  badgeClass: string;
+  accentColor: string;
+  networks: NetEntry[];
+}
+
+const ETC_GROUP: NetGroup = {
+  family: "Ethereum Classic",
+  consensus: "Proof-of-Work / Ethash",
+  badgeLabel: "PoW",
+  badgeClass: "badge-fk badge-green",
+  accentColor: "var(--fk-green-3)",
+  networks: [
+    { name: "Ethereum Classic", chainId: 61, tags: ["SNAP sync", "Olympia fork"] },
+    { name: "Mordor",           chainId: 63, tags: ["ETC testnet"] },
+  ],
+};
+
+const ETH_GROUP: NetGroup = {
+  family: "Ethereum",
+  consensus: "Proof-of-Stake / Engine API",
+  badgeLabel: "PoS",
+  badgeClass: "badge-fk badge-violet",
+  accentColor: "#a78bfa",
+  networks: [
+    { name: "Ethereum Mainnet", chainId: 1,        tags: ["SNAP sync", "Fulu / Osaka (Fusaka)"] },
+    { name: "Sepolia",          chainId: 11155111,  tags: ["ETH testnet"] },
+    { name: "Holesky",          chainId: 17000,     tags: ["PoS testnet"] },
+  ],
+};
+
+const PLANNED = [
+  { label: "Private Chains", desc: "Custom genesis, pluggable consensus" },
+  { label: "Sidechains",     desc: "Orbita-powered, checkpoint PoA" },
+  { label: "L2 Rollups",     desc: "OP-compatible block derivation" },
 ];
 
-function ChainIdBadge({ chainId }: { chainId: number }) {
+function NetworkGroupBox({ group, borderLeft }: { group: NetGroup; borderLeft?: boolean }) {
   return (
-    <span
-      className="badge-fk"
-      style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem" }}
+    <div
+      style={{
+        borderLeft: borderLeft ? "1px solid var(--border)" : undefined,
+        display: "flex",
+        flexDirection: "column",
+      }}
     >
-      {chainId === 0 ? "custom" : `chain ${chainId}`}
-    </span>
+      {/* Group header */}
+      <div
+        style={{
+          padding: "1.5rem 1.75rem",
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          gap: "0.75rem",
+          borderBottom: "1px solid var(--border)",
+        }}
+      >
+        <div>
+          <span className="cell-label" style={{ color: group.accentColor }}>
+            {group.consensus}
+          </span>
+          <h3
+            style={{
+              fontSize: "1.125rem",
+              fontWeight: 700,
+              letterSpacing: "-0.02em",
+              color: group.accentColor,
+              marginBottom: 0,
+            }}
+          >
+            {group.family}
+          </h3>
+        </div>
+        <span className={group.badgeClass}>{group.badgeLabel}</span>
+      </div>
+
+      {/* Network rows */}
+      {group.networks.map((net) => (
+        <div
+          key={net.name}
+          style={{
+            padding: "1.25rem 1.75rem",
+            borderBottom: "1px solid var(--border)",
+            display: "flex",
+            alignItems: "flex-start",
+            justifyContent: "space-between",
+            gap: "1rem",
+          }}
+        >
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+            <span
+              style={{
+                fontSize: "0.9375rem",
+                fontWeight: 600,
+                color: "var(--text)",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              {net.name}
+            </span>
+            {net.tags.map((tag) => (
+              <span
+                key={tag}
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.75rem",
+                  color: "var(--text-subtle)",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <span
+            className="badge-fk"
+            style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", whiteSpace: "nowrap", flexShrink: 0 }}
+          >
+            {net.chainId === 0 ? "custom" : `chain ${net.chainId}`}
+          </span>
+        </div>
+      ))}
+    </div>
   );
 }
 
-function NetworkMeta({ net }: { net: Network }) {
+function PlannedBox({ item, divider }: { item: { label: string; desc: string }; divider?: boolean }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "0.375rem", marginTop: "0.625rem" }}>
-      <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--text-muted)" }}>
-        {net.consensus}
-      </span>
-      {net.sync && (
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--text-subtle)" }}>
-          {net.sync}
-        </span>
-      )}
-      {net.fork && (
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--text-subtle)" }}>
-          {net.fork}
-        </span>
-      )}
+    <div
+      style={{
+        padding: "1.5rem 1.75rem",
+        borderRight: divider ? "1px solid var(--border)" : undefined,
+      }}
+    >
+      <span className="cell-label">Planned</span>
+      <p
+        style={{
+          fontSize: "0.9375rem",
+          fontWeight: 600,
+          color: "var(--text)",
+          letterSpacing: "-0.01em",
+          marginBottom: "0.375rem",
+        }}
+      >
+        {item.label}
+      </p>
+      <p
+        style={{
+          fontFamily: "var(--font-mono)",
+          fontSize: "0.75rem",
+          color: "var(--text-subtle)",
+        }}
+      >
+        {item.desc}
+      </p>
     </div>
   );
 }
 
 export function NetworksSection() {
-  const primaryNet = NETWORKS.find((n) => n.wide)!;
-  const narrowNets = NETWORKS.filter((n) => !n.wide);
-  const N = narrowNets.length;
-  // last row in a 2-col grid starts at this index
-  const lastRowStart = N % 2 === 0 ? N - 2 : N - 1;
-
   return (
-    <section className="section-fk" id="networks">
+    <section className="section-fk section-bordered" id="networks">
       <div className="container-fk">
         <FadeIn>
           <div style={{ marginBottom: "3rem" }}>
             <span className="cell-label">Networks</span>
             <h2 className="section-title" style={{ marginBottom: "0.75rem" }}>
-              EVM networks.
+              Supported Ethereum Virtual Machine Networks
             </h2>
             <p className="section-subtitle">
               Today: Ethereum Classic and Ethereum mainnet, each with their canonical testnet, running
               from a single binary with per-network chain definitions loaded at runtime. Tomorrow:
               Orbita-powered sidechains, OP-compatible L2 rollups, and private consortium chains,
-              all inheriting the same EVM correctness guarantees. One runtime, many networks: the
-              multi-instance architecture makes this composable rather than coincidental.
+              all inheriting the same EVM correctness guarantees.
             </p>
           </div>
         </FadeIn>
 
-        {/* Primary network — full-width bordered row */}
+        {/* Two protocol boxes */}
         <FadeIn delay={70}>
-          <div
-            style={{
-              border: "1px solid var(--border)",
-              borderBottom: "none",
-              padding: "1.75rem",
-              background: "var(--accent-soft)",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                justifyContent: "space-between",
-                gap: "0.75rem",
-                marginBottom: "0.25rem",
-              }}
-            >
-              <div>
-                <span className="cell-label" style={{ color: "var(--accent)" }}>
-                  {primaryNet.badge}
-                </span>
-                <h3
-                  style={{
-                    fontSize: "1rem",
-                    fontWeight: 700,
-                    color: "var(--text)",
-                    letterSpacing: "-0.01em",
-                    marginBottom: 0,
-                  }}
-                >
-                  {primaryNet.name}
-                </h3>
-              </div>
-              <ChainIdBadge chainId={primaryNet.chainId} />
-            </div>
-            <NetworkMeta net={primaryNet} />
+          <div className="cell-grid-2col" style={{ border: "1px solid var(--border)", marginBottom: "1px" }}>
+            <NetworkGroupBox group={ETC_GROUP} />
+            <NetworkGroupBox group={ETH_GROUP} borderLeft />
           </div>
         </FadeIn>
 
-        {/* Other networks — 2-column cell grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            border: "1px solid var(--border)",
-          }}
-        >
-          {narrowNets.map((net, j) => (
-            <FadeIn key={net.name} delay={j * 70 + 140}>
-              <div
-                style={{
-                  padding: "1.75rem",
-                  height: "100%",
-                  borderRight:
-                    j % 2 === 0 && j + 1 < N
-                      ? "1px solid var(--border)"
-                      : undefined,
-                  borderBottom:
-                    j < lastRowStart ? "1px solid var(--border)" : undefined,
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "space-between",
-                    gap: "0.75rem",
-                    marginBottom: "0.25rem",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: "1rem",
-                      fontWeight: 700,
-                      color: "var(--text)",
-                      letterSpacing: "-0.01em",
-                    }}
-                  >
-                    {net.name}
-                  </h3>
-                  <ChainIdBadge chainId={net.chainId} />
-                </div>
-                <NetworkMeta net={net} />
-                {net.badge && (
-                  <div style={{ marginTop: "1rem" }}>
-                    <span className="badge-fk">{net.badge}</span>
-                  </div>
-                )}
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        {/* Planned support */}
+        <FadeIn delay={140}>
+          <div
+            style={{
+              border: "1px solid var(--border)",
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr",
+            }}
+          >
+            {PLANNED.map((item, i) => (
+              <PlannedBox key={item.label} item={item} divider={i < 2} />
+            ))}
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

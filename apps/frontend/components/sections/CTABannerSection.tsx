@@ -6,12 +6,11 @@ export function CTABannerSection() {
       <div className="container-fk">
         <FadeIn>
           <div
-            className="cta-glass"
             style={{
+              border: "1px solid var(--border)",
+              background: "var(--bg-elev)",
               padding: "clamp(2rem, 5vw, 3.5rem)",
               textAlign: "center",
-              maxWidth: 640,
-              marginInline: "auto",
             }}
           >
             <h2
@@ -33,6 +32,8 @@ export function CTABannerSection() {
                 color: "var(--text-muted)",
                 lineHeight: 1.65,
                 marginBottom: "2rem",
+                maxWidth: 560,
+                marginInline: "auto",
               }}
             >
               Operator feedback shapes the road to v1.0: sync behavior, peering, resource profiles,
@@ -48,24 +49,24 @@ export function CTABannerSection() {
               }}
             >
               <a
-                href="https://github.com/chippr-robotics/fukuii/issues"
+                href="https://github.com/chippr-robotics/fukuii/releases"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "0.5rem",
-                  padding: "0.6875rem 1.5rem",
-                  borderRadius: "var(--radius-md)",
-                  background: "linear-gradient(135deg, var(--fk-green-3) 0%, var(--fk-gold) 100%)",
+                  padding: "0.75rem 1.75rem",
+                  background: "var(--accent)",
+                  border: "1px solid var(--accent)",
                   color: "#fff",
                   fontWeight: 700,
                   fontSize: "0.9375rem",
                   textDecoration: "none",
-                  boxShadow: "0 4px 20px -4px rgba(77,138,40,0.4)",
+                  fontFamily: "var(--font-sans)",
                 }}
               >
-                Report an issue
+                Download
               </a>
               <a
                 href="https://github.com/chippr-robotics/fukuii/discussions"
@@ -74,8 +75,7 @@ export function CTABannerSection() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  padding: "0.6875rem 1.5rem",
-                  borderRadius: "var(--radius-md)",
+                  padding: "0.75rem 1.5rem",
                   border: "1px solid var(--border-strong)",
                   background: "var(--bg-card)",
                   color: "var(--text-muted)",
