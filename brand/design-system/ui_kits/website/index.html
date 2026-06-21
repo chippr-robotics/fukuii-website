@@ -1,0 +1,61 @@
+<!-- @dsCard group="Website" viewport="1280x900" name="Fukuii — Landing page" subtitle="Full marketing site recreated from the design system" -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fukuii — Scala EVM Execution Client</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  html, body { height: 100%; }
+  body { margin: 0; }
+  .kit-scroll { height: 100vh; overflow-y: auto; }
+  .what-grid { display: grid; grid-template-columns: 1fr; border: 1px solid var(--border); }
+  .why-grid-2 { display: grid; grid-template-columns: 1fr; }
+  .cell-grid-2col { display: grid; grid-template-columns: 1fr; }
+  @media (min-width: 768px) {
+    .what-grid { grid-template-columns: 3fr 2fr; }
+    .why-grid-2 { grid-template-columns: 1fr 1fr; }
+    .cell-grid-2col { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 860px) { .kit-navlinks { display: none !important; } }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" src="icons.jsx"></script>
+<script type="text/babel" src="Nav.jsx"></script>
+<script type="text/babel" src="Hero.jsx"></script>
+<script type="text/babel" src="Sections.jsx"></script>
+</head>
+<body class="noise-overlay">
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+  function App() {
+    const [theme, setTheme] = React.useState('dark');
+    React.useEffect(() => { document.documentElement.setAttribute('data-theme', theme); }, [theme]);
+    const toggle = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
+    const { Nav, Hero, StatusStrip, WhatIsFukuii, WhyFukuii, Stack, Networks, Roadmap, QuickStart, CTA, Footer } = window;
+    return (
+      <div className="kit-scroll">
+        <Nav theme={theme} onToggleTheme={toggle} />
+        <main>
+          <Hero />
+          <StatusStrip />
+          <WhatIsFukuii />
+          <WhyFukuii />
+          <Stack />
+          <Networks />
+          <Roadmap />
+          <QuickStart />
+          <CTA />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

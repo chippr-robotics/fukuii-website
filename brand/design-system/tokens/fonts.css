@@ -1,0 +1,8 @@
+/* ========================================================================
+   Fukuii — Webfonts
+   DM Sans is THE typeface — display, headings, body, UI. JetBrains Mono is
+   used SPARINGLY, only as a subheader / label accent (cell labels, badges,
+   chain IDs, versions, code). Loaded via next/font/google in the product.
+   ======================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');

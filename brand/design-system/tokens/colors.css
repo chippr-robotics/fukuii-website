@@ -1,0 +1,68 @@
+/* ========================================================================
+   Fukuii — Color system
+   Forest green + old gold. Greens pixel-sampled from fukuii-hex-logo.png
+   (#50a060 dominant). Dark-first; light via [data-theme="light"].
+   Mirrors apps/frontend/app/globals.css + brand/tokens/colors.css.
+   ======================================================================== */
+
+:root {
+    /* ---- Brand palette (raw, from the logo) ------------------------- */
+    --fk-green:        #1e4a2d;   /* deep background green */
+    --fk-green-2:      #2d6b40;   /* mid — light-mode accent */
+    --fk-green-3:      #50a060;   /* hex background — PRIMARY brand green */
+    --fk-green-char:   #60b040;   /* character / mantis body, yellow-green */
+    --fk-green-light:  #70c080;   /* highlight / glow */
+    --fk-green-glow:   rgba(80, 160, 96, 0.35);
+    --fk-pink:         #c06060;   /* worm accent — dusty rose, used sparingly */
+    --fk-gold:         #b8964f;   /* secondary brand */
+    --fk-gold-2:       #d6b56b;
+    --fk-ink:          #1a1f16;   /* elevated surface */
+    --fk-ink-2:        #0f130d;   /* page background */
+    --fk-ivory:        #f5f3ed;
+    --fk-ivory-dim:    #c5c3b8;
+
+    /* ---- Role tokens — DARK theme (default) ------------------------- */
+    --bg:             var(--fk-ink-2);
+    --bg-elev:        var(--fk-ink);
+    --bg-card:        rgba(80, 160, 96, 0.06);
+    --bg-card-strong: rgba(245, 243, 237, 0.04);
+    --border:         rgba(245, 243, 237, 0.10);
+    --border-strong:  rgba(245, 243, 237, 0.18);
+    --text:           var(--fk-ivory);
+    --text-muted:     var(--fk-ivory-dim);
+    --text-subtle:    rgba(245, 243, 237, 0.55);
+    --accent:         var(--fk-green-3);
+    --accent-soft:    rgba(80, 160, 96, 0.18);
+    --gold-soft:      rgba(214, 181, 107, 0.22);
+
+    /* ---- Semantic signal -------------------------------------------- */
+    --color-success: #50a060;
+    --color-error:   #ef4444;
+    --color-warning: #d6b56b;
+    --color-info:    #38bdf8;
+
+    /* ---- Shadows ---------------------------------------------------- */
+    --shadow-card:    0 30px 60px -30px rgba(0, 0, 0, 0.7);
+    --shadow-glow:    0 0 0 1px rgba(214, 181, 107, 0.10),
+                      0 24px 60px -30px rgba(80, 160, 96, 0.6);
+}
+
+/* ---- Role tokens — LIGHT theme -------------------------------------- */
+[data-theme="light"] {
+    --fk-green-3:     #2d6b40;   /* darker for contrast on light */
+    --bg:             #edf5ee;
+    --bg-elev:        #f5fbf5;
+    --bg-card:        rgba(45, 107, 64, 0.04);
+    --bg-card-strong: rgba(255, 255, 255, 0.7);
+    --border:         rgba(26, 31, 22, 0.12);
+    --border-strong:  rgba(26, 31, 22, 0.22);
+    --text:           var(--fk-ink);
+    --text-muted:     rgba(26, 31, 22, 0.72);
+    --text-subtle:    rgba(26, 31, 22, 0.55);
+    --accent:         var(--fk-green-2);
+    --accent-soft:    rgba(45, 107, 64, 0.10);
+    --gold-soft:      rgba(184, 150, 79, 0.20);
+    --shadow-card:    0 24px 60px -32px rgba(45, 107, 64, 0.30);
+    --shadow-glow:    0 0 0 1px rgba(184, 150, 79, 0.18),
+                      0 24px 60px -30px rgba(45, 107, 64, 0.35);
+}
