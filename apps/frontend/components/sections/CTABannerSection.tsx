@@ -2,7 +2,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 
 export function CTABannerSection() {
   return (
-    <section style={{ paddingBlock: "5rem" }}>
+    <section className="section-fk">
       <div className="container-fk">
         <FadeIn>
           <div
@@ -33,8 +33,6 @@ export function CTABannerSection() {
                 color: "var(--text-muted)",
                 lineHeight: 1.65,
                 marginBottom: "2rem",
-                maxWidth: "52ch",
-                marginInline: "auto",
               }}
             >
               Operator feedback shapes the road to v1.0: sync behavior, peering, resource profiles,

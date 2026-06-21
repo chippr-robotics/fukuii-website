@@ -8,8 +8,9 @@ const COLS = [
     links: [
       { label: "What is Fukuii?", href: "#what" },
       { label: "Networks", href: "#networks" },
-      { label: "Features", href: "#features" },
+      { label: "Features", href: "/features" },
       { label: "Operations", href: "#operations" },
+      { label: "Docs", href: "https://fukuii.com", external: true },
     ],
   },
   {

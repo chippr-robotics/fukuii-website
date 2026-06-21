@@ -46,31 +46,16 @@ export function StackSection() {
     <section className="section-fk" id="stack">
       <div className="container-fk">
         <FadeIn>
-          <div style={{ marginBottom: "2.5rem", maxWidth: "56ch" }}>
+          <div style={{ marginBottom: "2.5rem" }}>
             <span className="cell-label">Stack</span>
-            <h2 className="section-title" style={{ marginBottom: "0.875rem" }}>
+            <h2 className="section-title" style={{ marginBottom: "0.75rem" }}>
               Built on what already works.
             </h2>
-            <p
-              style={{
-                fontSize: "1rem",
-                color: "var(--text-muted)",
-                lineHeight: 1.75,
-                marginBottom: "0.75rem",
-              }}
-            >
-              A current stack, on purpose. Scala 3.3 LTS, JDK 25 LTS, RocksDB 10.x. The runtime
-              is maintained to the latest stable across the board, because the real risk to a
-              minority-chain client isn&apos;t a missing feature. It&apos;s abandonment.
-            </p>
-            <p
-              style={{
-                fontSize: "0.9375rem",
-                color: "var(--text-subtle)",
-                lineHeight: 1.65,
-              }}
-            >
-              Every dependency below ships in a signed CycloneDX SBOM with each release.
+            <p className="section-subtitle">
+              A current stack, on purpose. Scala 3.3 LTS, JDK 25 LTS, RocksDB 10.x, maintained to
+              the latest stable across the board. Production infrastructure runs on supported
+              foundations, not frozen ones. This is what active engineering looks like in a
+              dependency manifest.
             </p>
           </div>
         </FadeIn>
@@ -79,7 +64,6 @@ export function StackSection() {
           <div
             style={{
               border: "1px solid var(--border)",
-              borderRadius: "var(--radius-md)",
               overflow: "hidden",
             }}
           >
@@ -159,11 +143,19 @@ export function StackSection() {
         </FadeIn>
 
         <FadeIn delay={160}>
-          <div style={{ marginTop: "1.25rem" }}>
+          <p
+            style={{
+              fontSize: "0.875rem",
+              color: "var(--text-subtle)",
+              marginTop: "1rem",
+              marginBottom: "1.25rem",
+            }}
+          >
+            Every dependency ships in a signed CycloneDX SBOM with each release.
+          </p>
+          <div>
             <a
-              href="https://fukuii.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/stack"
               style={{
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.8125rem",
@@ -189,6 +181,7 @@ export function StackSection() {
             </a>
           </div>
         </FadeIn>
+
       </div>
     </section>
   );

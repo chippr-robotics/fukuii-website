@@ -11,7 +11,7 @@ const FACTS = [
   },
   {
     label: "NETWORK COVERAGE",
-    value: "ETC, ETH, Mordor, Sepolia — and growing.",
+    value: "ETC, ETH, Mordor, Sepolia, and growing.",
   },
 ] as const;
 
@@ -51,17 +51,6 @@ export function WhatIsFukuii() {
                   alongside Ethereum mainnet and Sepolia via Engine API V1 through V4.
                   As Fukuii stabilizes, the same binary will extend to sidechains, L2 rollups,
                   and private consortium chains.
-                </p>
-                <p
-                  style={{
-                    fontSize: "1rem",
-                    color: "var(--text-muted)",
-                    lineHeight: 1.75,
-                  }}
-                >
-                  There is no Go in the stack. There is no .NET in the stack. Fukuii brings
-                  the JVM, the runtime that already underpins global finance, to EVM node
-                  operations, observability toolchain included.
                 </p>
               </div>
 

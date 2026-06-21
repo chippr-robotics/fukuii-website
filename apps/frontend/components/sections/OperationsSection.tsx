@@ -95,13 +95,17 @@ export function OperationsSection() {
     <section className="section-fk" id="operations" style={{ background: "var(--bg-elev)" }}>
       <div className="container-fk">
         <FadeIn>
-          <div style={{ marginBottom: "3rem", maxWidth: "56ch" }}>
+          <div style={{ marginBottom: "3rem" }}>
+            <span className="cell-label">Operations</span>
             <h2 className="section-title" style={{ marginBottom: "1rem" }}>
               Designed for the people who run it.
             </h2>
             <p className="section-subtitle">
-              Observability, predictable behavior under load, and a verifiable supply chain:
-              the things that matter at 3&nbsp;a.m.
+              Three isolated Pekko dispatchers ensure sync pressure never starves the RPC: the node
+              stays responsive under full-load SNAP sync. Cosign-signed images, SLSA Level 3
+              provenance, and a CycloneDX SBOM on every release mean you know exactly what you
+              deployed and can prove it to anyone who asks. Prometheus metrics, Grafana dashboards,
+              and liveness endpoints are built in, no sidecar, no plugin, no configuration required.
             </p>
           </div>
         </FadeIn>

@@ -119,7 +119,7 @@ export function HeroSection() {
                 marginTop: "1.5rem",
               }}
             >
-              AN <span style={{ color: "var(--accent)" }}>EXECUTION CLIENT</span> FOR<br />THE <span style={{ color: "var(--accent)" }}>EVM</span> ECOSYSTEM
+              The execution client built to <span style={{ color: "var(--accent)" }}>finance&apos;s standard.</span>
             </p>
 
             <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center", marginTop: "auto", paddingTop: "2rem", width: "100%" }}>
