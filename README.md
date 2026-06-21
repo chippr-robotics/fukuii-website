@@ -1,106 +1,56 @@
-# Fukuii Website
+# Fukuii
 
-Official landing page for [Fukuii](https://github.com/chippr-robotics/fukuii) — a Scala 3 execution client for Ethereum and the EVM ecosystem.
+**The execution client built to finance's standard.**
 
-**Live:** https://fukuii.com
+Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to sovereign funds.
 
-## Stack
+[fukuii.com](https://fukuii.com) · [Download](https://github.com/chippr-robotics/fukuii/releases) · [Guide](https://fukuii.com/guide) · [Docs](https://docs.fukuii.com)
 
-- **Next.js 16** — App Router, all routes statically prerendered (`output: 'standalone'`)
-- **TypeScript 5** — strict mode
-- **Tailwind CSS 4** — CSS-first (`@theme` in `app/globals.css`, no `tailwind.config.js`)
-- **pnpm 10** — package manager
-- **node:24-alpine** — container runtime
+---
 
-Fonts: DM Sans (display) + JetBrains Mono (code) via `next/font/google`.
+## What is Fukuii?
 
-## Pages
+The only Scala EVM execution client. Built on Scala 3 LTS and Pekko Typed Actors, it runs any EVM-compatible network from a single binary. Today that means Ethereum Classic, the largest Proof-of-Work EVM, alongside Ethereum mainnet and Sepolia via Engine API V1 through V4. As Fukuii stabilizes, the same binary extends to sidechains, L2 rollups, and private consortium chains.
 
-| Route | Description |
-|-------|-------------|
-| `/` | Landing page — hero, network stats, features, stack, architecture, roadmap, guide preview |
-| `/features` | Full capability matrix |
-| `/stack` | Runtime dependency manifest with versions |
-| `/architecture` | Three-layer architecture breakdown |
-| `/roadmap` | Orbita four-phase roadmap |
-| `/guide` | Installation guide — SNAP sync, Docker, Engine API mode |
+One binary. PoW Ethash and PoS Engine API. ETC, ETH, Mordor, Sepolia, and growing.
 
-## Local Setup
+## Built to the EVM standard.
 
-```bash
-cd apps/frontend
-pnpm install
-pnpm dev         # → http://localhost:3000
-```
+Feature-complete against go-ethereum and Besu: every wire protocol, sync strategy, and consensus mode tracked against the reference implementations. Performance-sensitive paths draw from Nethermind and Reth where Go and Rust solved problems the JVM ecosystem hadn't prioritized.
+
+- Engine API V1–V4
+- SNAP sync
+- ETH68 / ETH69 wire protocols
+- Built-in MCP server
+- Prometheus + Grafana out of the box
+
+## The JVM advantage
+
+Running on the JVM, Fukuii's stack aligns natively with the infrastructure of modern finance: the trading systems, clearing engines, and custody platforms that already run on the JVM. No FFI bridges. No language boundary overhead. Institutions deploying on JVM infrastructure add Fukuii as a first-class dependency.
+
+## Quick start
 
 ```bash
-pnpm build       # production build
-pnpm lint        # ESLint
-pnpm typecheck   # tsc --noEmit
+# Download the latest release
+curl -LO https://github.com/chippr-robotics/fukuii/releases/latest/download/fukuii.jar
+
+# Sync Mordor testnet (SNAP)
+java -jar fukuii.jar --network mordor --sync snap
 ```
 
-## Repository Structure
+See the [installation guide](https://fukuii.com/guide) for Docker, Engine API mode, and hardware requirements.
 
-```
-apps/frontend/              Next.js 16 application
-  app/
-    globals.css             Tailwind 4 @theme + design tokens
-    layout.tsx              Root layout — metadata, JSON-LD, fonts
-    page.tsx                Home page
-    features/page.tsx
-    stack/page.tsx
-    architecture/page.tsx
-    roadmap/page.tsx
-    guide/page.tsx
-    sitemap.ts
-    robots.txt/route.ts
-  components/
-    sections/               Page sections (NavHeader, HeroSection, FooterSection, …)
-    ui/                     Primitives (FadeIn, HexCanvas, PageHero, ThemeToggle, …)
-  lib/api/                  Blockscout + CoinGecko data fetchers (ISR, revalidate: 3600)
-  public/                   Favicons, OG image, site.webmanifest, llms.txt
-brand/                      Design source of truth
-  logo/                     SVG + PNG logo exports, wordmark variants
-  favicon/                  Favicon source files
-  social/                   OG image source (SVG + PNG)
-  tokens/                   Color tokens (CSS + Tailwind 4 + JSON)
-  LOGO-STYLE.md             Logo usage guidelines
-terraform/                  GCP Cloud Run infrastructure (optional)
-nginx.conf                  Reverse-proxy config for VPS deployments
-vercel.json                 Vercel deploy config (rootDirectory: apps/frontend)
-Dockerfile                  Multi-stage build → node:24-alpine
-```
+## Architecture
 
-## Deployment
+Three layers, cleanly separated: a chain-agnostic EVM core (`fukuii-core`), a network and infrastructure layer (`fukuii-env`), and a pluggable consensus module on top. Swap consensus without touching the EVM. The Orbita roadmap runs on this split: multi-instance chain execution, checkpoint PoA consensus, and native L2 block derivation — each a layer above the `fukuii-core` boundary.
 
-Three supported paths:
+[Architecture →](https://fukuii.com/architecture) · [Roadmap →](https://fukuii.com/roadmap)
 
-**Vercel** (simplest): connect the repo, Vercel reads `vercel.json` (`rootDirectory: apps/frontend`) and deploys automatically on push to `main`.
+## Run a node. Tell us what you see.
 
-**Docker / GHCR**: CI builds and pushes to `ghcr.io/chippr-robotics/fukuii-website` on every merge to `main`. Pull and run anywhere:
+Fukuii is pre-v1.0. Operator feedback shapes the road: sync behavior, peering, resource profiles — the things only a running node reveals.
 
-```bash
-docker build -t fukuii-website .
-docker run -p 3000:3000 fukuii-website
-```
-
-**GCP Cloud Run** (Terraform): see `terraform/README.md`. Provisions Cloud Run from the GHCR image.
-
-**VPS**: use `nginx.conf` as a reverse proxy in front of the Docker container or `pnpm start`.
-
-## CI/CD
-
-GitHub Actions (`.github/workflows/build-deploy.yml`) on every push/PR to `main`:
-
-1. `pnpm install --frozen-lockfile`
-2. `pnpm lint && pnpm typecheck && pnpm build`
-3. On merge to `main`: builds and pushes Docker image to GHCR with tags `latest`, `main`, and `main-<sha>`.
-
-## Brand
-
-Forest green `#4d8a28` + old gold `#d6b56b` + ink `#1a1f16` + ivory `#f5f3ed`. Dark-first; light theme via `[data-theme="light"]`.
-
-CSS role tokens (`--bg`, `--bg-card`, `--bg-elev`, `--border`, `--text`, `--text-muted`, `--accent`) are defined in `app/globals.css`. Canonical source is `brand/tokens/colors.css` — copy to `globals.css` when updating tokens.
+[Report an issue](https://github.com/chippr-robotics/fukuii/issues) · [Join discussions](https://github.com/chippr-robotics/fukuii/discussions)
 
 ## License
 
