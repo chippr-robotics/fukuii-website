@@ -17,7 +17,7 @@ const COLS = [
     heading: "Resources",
     links: [
       { label: "Download", href: "https://github.com/chippr-robotics/fukuii/releases", external: true },
-      { label: "Guide", href: "/guide" },
+      { label: "Quick Start", href: "/guide" },
       { label: "Documentation", href: "https://fukuii.com", external: true },
       { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true },
       { label: "Docker", href: "https://ghcr.io/chippr-robotics/fukuii", external: true },

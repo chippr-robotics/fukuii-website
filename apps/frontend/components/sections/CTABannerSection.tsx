@@ -23,7 +23,7 @@ export function CTABannerSection() {
                 marginBottom: "1rem",
               }}
             >
-              Run a node. Tell us what you see.
+              Run Fukuii in production.
             </h2>
 
             <p
@@ -36,8 +36,9 @@ export function CTABannerSection() {
                 marginInline: "auto",
               }}
             >
-              Operator feedback shapes the road to v1.0: sync behavior, peering, resource profiles,
-              the things only a running node reveals.
+              One signed binary, from a single home node to institutional infrastructure.
+              Download a release, follow the operator guide for deployment, monitoring, and upgrades,
+              and run. The community is there when you need it.
             </p>
 
             <div
@@ -69,7 +70,7 @@ export function CTABannerSection() {
                 Download
               </a>
               <a
-                href="https://github.com/chippr-robotics/fukuii/discussions"
+                href="https://docs.fukuii.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -84,9 +85,25 @@ export function CTABannerSection() {
                   textDecoration: "none",
                 }}
               >
-                Join discussions
+                Documentation
               </a>
             </div>
+
+            <a
+              href="https://github.com/chippr-robotics/fukuii/discussions"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                marginTop: "1.25rem",
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.8125rem",
+                color: "var(--text-subtle)",
+                textDecoration: "none",
+              }}
+            >
+              Join discussions
+            </a>
           </div>
         </FadeIn>
       </div>

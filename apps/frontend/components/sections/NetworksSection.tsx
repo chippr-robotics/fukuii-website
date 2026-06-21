@@ -4,6 +4,7 @@ interface NetEntry {
   name: string;
   chainId: number;
   tags: string[];
+  primary?: boolean;
 }
 
 interface NetGroup {
@@ -22,7 +23,7 @@ const ETC_GROUP: NetGroup = {
   badgeClass: "badge-fk badge-green",
   accentColor: "var(--fk-green-3)",
   networks: [
-    { name: "Ethereum Classic", chainId: 61, tags: ["SNAP sync", "Olympia fork"] },
+    { name: "Ethereum Classic", chainId: 61, tags: ["SNAP sync", "Olympia fork"], primary: true },
     { name: "Mordor",           chainId: 63, tags: ["ETC testnet"] },
   ],
 };
@@ -34,16 +35,17 @@ const ETH_GROUP: NetGroup = {
   badgeClass: "badge-fk badge-violet",
   accentColor: "#a78bfa",
   networks: [
-    { name: "Ethereum Mainnet", chainId: 1,        tags: ["SNAP sync", "Fulu / Osaka (Fusaka)"] },
+    { name: "Ethereum Mainnet", chainId: 1,        tags: ["SNAP sync", "Fulu / Osaka (Fusaka)"], primary: true },
     { name: "Sepolia",          chainId: 11155111,  tags: ["ETH testnet"] },
     { name: "Holesky",          chainId: 17000,     tags: ["PoS testnet"] },
   ],
 };
 
 const PLANNED = [
-  { label: "Private Chains", desc: "Custom genesis, pluggable consensus" },
-  { label: "Sidechains",     desc: "Orbita-powered, checkpoint PoA" },
-  { label: "L2 Rollups",     desc: "OP-compatible block derivation" },
+  { label: "Additional L1s",  desc: "Plug in any EVM-compatible network" },
+  { label: "Sidechains",      desc: "Orbita-powered, checkpoint PoA" },
+  { label: "L2 Rollups",      desc: "OP-compatible block derivation" },
+  { label: "Private Chains",  desc: "Custom genesis, pluggable consensus" },
 ];
 
 function NetworkGroupBox({ group, borderLeft }: { group: NetGroup; borderLeft?: boolean }) {
@@ -122,12 +124,16 @@ function NetworkGroupBox({ group, borderLeft }: { group: NetGroup; borderLeft?: 
               </span>
             ))}
           </div>
-          <span
-            className="badge-fk"
-            style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", whiteSpace: "nowrap", flexShrink: 0 }}
-          >
-            {net.chainId === 0 ? "custom" : `chain ${net.chainId}`}
-          </span>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0.375rem", flexShrink: 0 }}>
+            {net.primary && (
+              <span className="badge-fk" style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", whiteSpace: "nowrap" }}>
+                Primary
+              </span>
+            )}
+            <span className="badge-fk" style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", whiteSpace: "nowrap" }}>
+              {net.chainId === 0 ? "custom" : `chain ${net.chainId}`}
+            </span>
+          </div>
         </div>
       ))}
     </div>
@@ -178,10 +184,11 @@ export function NetworksSection() {
               Supported Ethereum Virtual Machine Networks
             </h2>
             <p className="section-subtitle">
-              Today: Ethereum Classic and Ethereum mainnet, each with their canonical testnet, running
-              from a single binary with per-network chain definitions loaded at runtime. Tomorrow:
-              Orbita-powered sidechains, OP-compatible L2 rollups, and private consortium chains,
-              all inheriting the same EVM correctness guarantees.
+              Two primary networks in production today. Ethereum is the primary Proof-of-Stake
+              network; Ethereum Classic is the primary Proof-of-Work network. Both run from a
+              single binary, each alongside its testnets. Planned support extends the same binary
+              to additional L1s, Orbita-powered sidechains, OP-compatible L2 rollups, and private
+              consortium chains.
             </p>
           </div>
         </FadeIn>
@@ -200,7 +207,7 @@ export function NetworksSection() {
             style={{
               border: "1px solid var(--border)",
               display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr",
+              gridTemplateColumns: "repeat(4, 1fr)",
             }}
           >
             {PLANNED.map((item, i) => (

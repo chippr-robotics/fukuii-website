@@ -188,7 +188,7 @@ export function OperationsSection() {
               Runbooks, alerting guidance, and upgrade procedures live in the operator documentation.
             </p>
             <a
-              href="https://fukuii.com/for-operators/"
+              href="https://docs.fukuii.com"
               target="_blank"
               rel="noopener noreferrer"
               style={{

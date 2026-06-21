@@ -101,10 +101,9 @@ export default function FeaturesPage() {
       <PageHero
         eyebrow="Full capability matrix"
         title="What Fukuii can do"
-        description="Feature-complete against go-ethereum and Besu: every wire protocol, sync strategy, and consensus mode tracked against the reference implementations. Performance-sensitive paths draw from Nethermind and Reth where Go and Rust solved problems the JVM ecosystem hadn't prioritized."
+        description="This is the full capability surface, in a single view. Every wire protocol, sync strategy, consensus model, API, and consensus-client integration Fukuii ships is tracked against the reference implementations and proven on the public mainnets it runs today."
         ctas={[
-          { label: "Download", href: "https://github.com/chippr-robotics/fukuii/releases", external: true, primary: true },
-          { label: "Guide", href: "/guide" },
+          { label: "Quick Start", href: "/guide" },
         ]}
       />
       <FeaturesSection />

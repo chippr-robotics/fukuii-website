@@ -2,6 +2,7 @@ import NavHeader from "@/components/sections/NavHeader";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { WhatIsFukuii } from "@/components/sections/WhatIsFukuii";
 import { WhyFukuii } from "@/components/sections/WhyFukuii";
+import { OperationsSection } from "@/components/sections/OperationsSection";
 import { NetworksSection } from "@/components/sections/NetworksSection";
 import { CTABannerSection } from "@/components/sections/CTABannerSection";
 import { FooterSection } from "@/components/sections/FooterSection";
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <WhatIsFukuii />
       <WhyFukuii />
+      <OperationsSection />
       <NetworksSection />
       <CTABannerSection />
       <FooterSection />

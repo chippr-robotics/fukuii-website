@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Fukuii — Scala EVM Execution Client",
     description:
-      "Built to finance's standard. Scala 3, JVM, Apache Pekko, no BSL. Independent failure modes, built-in MCP server, SLSA Level 3. One binary, any network.",
+      "Feature-complete Scala EVM execution client for Ethereum Classic and Ethereum. A type system that catches consensus bugs at compile time, built-in MCP server, SLSA Level 3 provenance. One binary, any EVM network.",
     images: [
       {
         url: "/og-fukuii.png",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fukuii — Scala EVM Execution Client",
     description:
-      "Built to finance's standard. Scala 3, JVM, Apache Pekko, no BSL. Independent failure modes, built-in MCP server, SLSA Level 3. One binary, any network.",
+      "Feature-complete Scala EVM execution client for Ethereum Classic and Ethereum. A type system that catches consensus bugs at compile time, built-in MCP server, SLSA Level 3 provenance. One binary, any EVM network.",
     images: ["/og-fukuii.png"],
   },
   robots: {

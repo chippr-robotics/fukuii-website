@@ -45,17 +45,17 @@ export function WhatIsFukuii() {
                     marginBottom: "1.25rem",
                   }}
                 >
-                  Fukuii is the only Scala EVM execution client. Built on Scala&nbsp;3 LTS
-                  and Pekko Typed Actors, it runs any EVM-compatible network from a single
-                  binary. Today that means Ethereum Classic, the largest Proof-of-Work EVM,
-                  alongside Ethereum mainnet and Sepolia via Engine API V1 through V4.
-                  As Fukuii stabilizes, the same binary will extend to sidechains, L2 rollups,
-                  and private consortium chains.
+                  One binary runs every EVM network. Built on Scala&nbsp;3 LTS and Pekko Typed
+                  Actors, Fukuii runs the largest chains in both consensus models from a single
+                  codebase: Ethereum, the largest EVM and the largest Proof-of-Stake network, and
+                  Ethereum Classic, the largest Proof-of-Work EVM, each with its testnet. Future
+                  releases extend the same binary to additional L1s, sidechains, L2 rollups, and
+                  private consortium networks.
                 </p>
               </div>
 
               <a
-                href="#quickstart"
+                href="/guide"
                 className="cell-cta"
                 style={{ marginTop: "2rem" }}
               >
