@@ -21,11 +21,11 @@ const CANONICAL_URL = "https://fukuii.com";
 export const metadata: Metadata = {
   metadataBase: new URL(CANONICAL_URL),
   title: {
-    default: "Fukuii — Multi-EVM Execution Client",
+    default: "Fukuii — Scala EVM Execution Client",
     template: "%s · Fukuii",
   },
   description:
-    "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to institutions.",
+    "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to sovereign funds.",
   keywords: [
     "ethereum classic",
     "ETC",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     url: CANONICAL_URL,
     siteName: "Fukuii",
     locale: "en_US",
-    title: "Fukuii — Multi-EVM Execution Client",
+    title: "Fukuii — Scala EVM Execution Client",
     description:
       "Built to finance's standard. Scala 3, JVM, Apache Pekko, no BSL. Independent failure modes, built-in MCP server, SLSA Level 3. One binary, any network.",
     images: [
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fukuii — Multi-EVM Execution Client",
+    title: "Fukuii — Scala EVM Execution Client",
     description:
       "Built to finance's standard. Scala 3, JVM, Apache Pekko, no BSL. Independent failure modes, built-in MCP server, SLSA Level 3. One binary, any network.",
     images: ["/og-fukuii.png"],
@@ -119,7 +119,7 @@ const jsonLdApp = {
   operatingSystem: "Linux, macOS, Windows",
   license: "https://opensource.org/licenses/Apache-2.0",
   description:
-    "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to institutions.",
+    "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to sovereign funds.",
   downloadUrl: "https://github.com/chippr-robotics/fukuii/releases",
   codeRepository: "https://github.com/chippr-robotics/fukuii",
   programmingLanguage: "Scala",

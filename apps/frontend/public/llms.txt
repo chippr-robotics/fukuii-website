@@ -1,6 +1,6 @@
 # Fukuii
 
-> Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to institutions.
+> Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to sovereign funds.
 
 Fukuii is the only Scala EVM execution client, maintained by Chippr Robotics LLC.
 One binary runs Ethereum Classic (chain 61), Ethereum mainnet (chain 1), Mordor testnet

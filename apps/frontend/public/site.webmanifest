@@ -1,7 +1,7 @@
 {
   "name": "Fukuii",
   "short_name": "Fukuii",
-  "description": "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to institutions.",
+  "description": "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to sovereign funds.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1a1f16",
