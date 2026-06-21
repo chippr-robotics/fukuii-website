@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NavHeader from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Roadmap",
@@ -58,21 +59,16 @@ export default function RoadmapPage() {
   return (
     <main>
       <NavHeader />
+      <PageHero
+        eyebrow="Roadmap"
+        title="The Orbita vision"
+        description="Fukuii's architecture is evolving toward a multi-instance, consensus-agnostic runtime: one process, multiple chains, with isolated state and network stacks per network. Each phase adds a layer: environment abstraction, concurrent chain execution, pluggable PoA consensus, then native L2 block derivation."
+        ctas={[
+          { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true, primary: true },
+        ]}
+      />
       <section className="section-fk">
         <div className="container-fk">
-          <FadeIn>
-            <div style={{ marginBottom: "3.5rem" }}>
-              <span className="cell-label">Roadmap</span>
-              <h1 className="section-title">Roadmap — The Orbita Vision</h1>
-              <p className="section-subtitle" style={{ marginTop: "0.75rem" }}>
-                Fukuii&apos;s architecture is evolving toward a multi-instance, consensus-agnostic
-                runtime: one process, multiple chains, with isolated state and network stacks per
-                network. Each phase adds a layer: environment abstraction, concurrent chain execution,
-                pluggable PoA consensus, then native L2 block derivation. The end state is an
-                execution layer that runs any EVM chain, not just the ones it was compiled for.
-              </p>
-            </div>
-          </FadeIn>
 
           {/* Phase rows — full descriptions */}
           <div style={{ border: "1px solid var(--border)" }}>

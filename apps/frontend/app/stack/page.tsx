@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NavHeader from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Runtime Stack",
@@ -52,22 +53,16 @@ export default function StackPage() {
   return (
     <main>
       <NavHeader />
+      <PageHero
+        eyebrow="Runtime stack"
+        title="Every dependency, declared"
+        description="A current stack, on purpose. Production infrastructure runs on supported foundations, not frozen ones. Scala 3.3 LTS, JDK 25 LTS, RocksDB 10.x, maintained to the latest stable across the board. Every dependency ships in a signed CycloneDX SBOM with each release."
+        ctas={[
+          { label: "Download", href: "https://github.com/chippr-robotics/fukuii/releases", external: true, primary: true },
+        ]}
+      />
       <section className="section-fk">
         <div className="container-fk">
-          <FadeIn>
-            <div style={{ marginBottom: "2.5rem" }}>
-              <span className="cell-label">Runtime stack</span>
-              <h1 className="section-title" style={{ marginBottom: "0.75rem" }}>
-                Runtime stack
-              </h1>
-              <p className="section-subtitle">
-                A current stack, on purpose. Production infrastructure runs on supported foundations,
-                not frozen ones. Scala 3.3 LTS, JDK 25 LTS, RocksDB 10.x, maintained to the latest
-                stable across the board. Every dependency ships in a signed CycloneDX SBOM with each
-                release.
-              </p>
-            </div>
-          </FadeIn>
 
           <FadeIn delay={80}>
             <div

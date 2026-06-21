@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NavHeader from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Architecture",
@@ -37,23 +38,17 @@ export default function ArchitecturePage() {
   return (
     <main>
       <NavHeader />
+      <PageHero
+        eyebrow="Architecture"
+        title="Three layers, cleanly separated"
+        description="Chain-agnostic at the bottom, opinionated at the top. The three-layer split is what makes the Orbita roadmap possible: swapping consensus modules, adding multi-chain execution, and native L2 derivation all operate above the fukuii-core boundary."
+        ctas={[
+          { label: "Guide", href: "/guide", primary: true },
+          { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true },
+        ]}
+      />
       <section className="section-fk">
         <div className="container-fk">
-          <FadeIn>
-            <div style={{ marginBottom: "3rem" }}>
-              <span className="cell-label">Architecture</span>
-              <h1 className="section-title" style={{ marginBottom: "0.75rem" }}>
-                Three layers, cleanly separated.
-              </h1>
-              <p className="section-subtitle">
-                Chain-agnostic at the bottom, opinionated at the top. The three-layer split is what
-                makes the Orbita roadmap possible: swapping consensus modules, adding multi-chain
-                execution, and native L2 derivation all operate above the{" "}
-                <code style={{ fontFamily: "var(--font-mono)", fontSize: "0.9em" }}>fukuii-core</code>{" "}
-                boundary.
-              </p>
-            </div>
-          </FadeIn>
 
           <FadeIn delay={80}>
             <div

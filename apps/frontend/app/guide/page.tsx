@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import NavHeader from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
-import { FadeIn } from "@/components/ui/FadeIn";
 import { QuickStartInstall } from "@/components/sections/QuickStartInstall";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Quick Start",
@@ -14,20 +14,17 @@ export default function QuickStartPage() {
   return (
     <main>
       <NavHeader />
+      <PageHero
+        eyebrow="Installation Guide"
+        title="Up in five minutes"
+        description="SNAP sync on Mordor, Docker, or Engine API mode paired with a consensus client, all from the same binary."
+        ctas={[
+          { label: "Download", href: "https://github.com/chippr-robotics/fukuii/releases", external: true, primary: true },
+          { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true },
+        ]}
+      />
       <section className="section-fk">
         <div className="container-fk">
-          <FadeIn>
-            <div style={{ marginBottom: "3rem" }}>
-              <span className="cell-label">Quick Start</span>
-              <h1 className="section-title" style={{ marginBottom: "0.75rem" }}>
-                Quick Start
-              </h1>
-              <p className="section-subtitle">
-                Get a node running in under five minutes. SNAP sync on Mordor, Docker, or Engine API
-                mode paired with a consensus client, all from the same binary.
-              </p>
-            </div>
-          </FadeIn>
 
           <QuickStartInstall />
         </div>

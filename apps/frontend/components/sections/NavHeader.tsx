@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "Guide", href: "/guide" },
   {
     label: "Docs",
-    href: "https://fukuii.com",
+    href: "https://docs.fukuii.com",
     external: true,
   },
 ];

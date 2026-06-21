@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NavHeader from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Features",
@@ -95,28 +96,17 @@ export default function FeaturesPage() {
   return (
     <main>
       <NavHeader />
+      <PageHero
+        eyebrow="Full capability matrix"
+        title="What Fukuii can do"
+        description="Feature-complete against go-ethereum and Besu: every wire protocol, sync strategy, and consensus mode tracked against the reference implementations. Performance-sensitive paths draw from Nethermind and Reth where Go and Rust solved problems the JVM ecosystem hadn't prioritized."
+        ctas={[
+          { label: "Download", href: "https://github.com/chippr-robotics/fukuii/releases", external: true, primary: true },
+          { label: "Guide", href: "/guide" },
+        ]}
+      />
       <section className="section-fk">
         <div className="container-fk">
-          <FadeIn>
-            <div
-              style={{
-                border: "1px solid var(--border)",
-                borderBottom: "none",
-                padding: "1.75rem 2.5rem",
-              }}
-            >
-              <span className="cell-label">Full capability matrix</span>
-              <h1 className="section-title" style={{ marginBottom: "0.75rem" }}>
-                Full capability matrix
-              </h1>
-              <p className="section-subtitle">
-                Feature-complete against go-ethereum and Besu: every wire protocol, sync strategy,
-                and consensus mode tracked against the reference implementations.
-                Performance-sensitive paths draw from Nethermind and Reth where Go and Rust solved
-                problems the JVM ecosystem hadn&apos;t prioritized.
-              </p>
-            </div>
-          </FadeIn>
 
           <FadeIn delay={80}>
             <div className="protocol-matrix">
