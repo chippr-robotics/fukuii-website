@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NavHeader from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { QuickStartInstall } from "@/components/sections/QuickStartInstall";
+import { QuickStartSection } from "@/components/sections/QuickStartSection";
 import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function QuickStartPage() {
           { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true },
         ]}
       />
+      <QuickStartSection />
       <section className="section-fk">
         <div className="container-fk">
 

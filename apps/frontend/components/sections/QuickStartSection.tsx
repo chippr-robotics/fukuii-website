@@ -38,25 +38,6 @@ export function QuickStartSection() {
             From an 8 GB home node to a 64 GB+ archive node, the same binary scales from solo
             operator to institutional deployment.
           </p>
-          <a
-            href="/guide"
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: "0.8125rem",
-              fontWeight: 600,
-              color: "var(--accent)",
-              textDecoration: "none",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.375rem",
-            }}
-          >
-            Full quick start
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </a>
         </FadeIn>
       </div>
     </section>

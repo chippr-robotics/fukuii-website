@@ -185,7 +185,7 @@ export function HeroSection() {
               borderLeft: "1px solid var(--border)",
             }}
           >
-            <div className="alpha-status" style={{ position: "absolute", top: "1.25rem", left: "clamp(2rem, 4vw, 3.5rem)" }}>
+            <div className="badge-fk badge-gold" style={{ position: "absolute", top: "1.25rem", left: "clamp(2rem, 4vw, 3.5rem)" }}>
               <span className="badge-pulse-dot" />
               Alpha v0.7
             </div>

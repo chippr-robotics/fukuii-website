@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import NavHeader from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { StackSection } from "@/components/sections/StackSection";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PageHero } from "@/components/ui/PageHero";
 
@@ -61,6 +62,7 @@ export default function StackPage() {
           { label: "Download", href: "https://github.com/chippr-robotics/fukuii/releases", external: true, primary: true },
         ]}
       />
+      <StackSection />
       <section className="section-fk">
         <div className="container-fk">
 

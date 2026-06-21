@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import NavHeader from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { RoadmapSection } from "@/components/sections/RoadmapSection";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PageHero } from "@/components/ui/PageHero";
 
@@ -67,6 +68,7 @@ export default function RoadmapPage() {
           { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true, primary: true },
         ]}
       />
+      <RoadmapSection />
       <section className="section-fk">
         <div className="container-fk">
 

@@ -1,5 +1,3 @@
-"use client";
-
 import { FadeIn } from "@/components/ui/FadeIn";
 
 interface StackRow {
@@ -139,46 +137,6 @@ export function StackSection() {
                 </span>
               </div>
             ))}
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={160}>
-          <p
-            style={{
-              fontSize: "0.875rem",
-              color: "var(--text-subtle)",
-              marginTop: "1rem",
-              marginBottom: "1.25rem",
-            }}
-          >
-            Every dependency ships in a signed CycloneDX SBOM with each release.
-          </p>
-          <div>
-            <a
-              href="/stack"
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "0.8125rem",
-                fontWeight: 600,
-                color: "var(--accent)",
-                textDecoration: "none",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.375rem",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.opacity = "0.7";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
-              }}
-            >
-              Full dependency manifest, generated from our CycloneDX SBOM
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
           </div>
         </FadeIn>
 
