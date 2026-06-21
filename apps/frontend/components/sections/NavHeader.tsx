@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const NAV_LINKS = [
-  { label: "About", href: "#what" },
+  { label: "About", href: "/#what" },
   { label: "Features", href: "/features" },
   { label: "Roadmap", href: "/roadmap" },
   { label: "Guide", href: "/guide" },

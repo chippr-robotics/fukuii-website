@@ -6,13 +6,13 @@ const COLS = [
   {
     heading: "Project",
     links: [
-      { label: "What is Fukuii?", href: "#what" },
+      { label: "What is Fukuii?", href: "/#what" },
       { label: "Features", href: "/features" },
       { label: "Stack", href: "/stack" },
       { label: "Architecture", href: "/architecture" },
       { label: "Roadmap", href: "/roadmap" },
-      { label: "Networks", href: "#networks" },
-      { label: "Operations", href: "#operations" },
+      { label: "Networks", href: "/#networks" },
+      { label: "Operations", href: "/#operations" },
       { label: "Guide", href: "/guide" },
       { label: "Docs", href: "https://fukuii.com", external: true },
     ],
