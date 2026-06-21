@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${base}/docs/quickstart`,
+      url: `${base}/guide`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.7,

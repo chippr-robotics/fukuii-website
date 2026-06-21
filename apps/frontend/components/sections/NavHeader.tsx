@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: "About", href: "#what" },
   { label: "Features", href: "/features" },
   { label: "Roadmap", href: "/roadmap" },
-  { label: "Quick Start", href: "#quickstart" },
+  { label: "Guide", href: "/guide" },
   {
     label: "Docs",
     href: "https://fukuii.com",

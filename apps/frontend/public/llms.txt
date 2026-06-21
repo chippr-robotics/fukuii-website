@@ -96,7 +96,7 @@ Fukuii as the execution layer for OP-compatible rollups.
 - https://fukuii.com/stack - Complete dependency manifest with versions
 - https://fukuii.com/architecture - Three-layer architecture: fukuii-core, fukuii-env, consensus module
 - https://fukuii.com/roadmap - Orbita roadmap with phase descriptions
-- https://fukuii.com/docs/quickstart - Installation guide: Mordor SNAP, Docker, Sepolia with CL
+- https://fukuii.com/guide - Installation guide: Mordor SNAP, Docker, Sepolia with CL
 
 ## Links
 

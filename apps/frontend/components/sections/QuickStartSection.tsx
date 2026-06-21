@@ -39,7 +39,7 @@ export function QuickStartSection() {
             operator to institutional deployment.
           </p>
           <a
-            href="/docs/quickstart"
+            href="/guide"
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "0.8125rem",
