@@ -1,58 +1,58 @@
 {
   "dark": {
-    "brand": {
-      "green":        "#50a060",
-      "greenChar":    "#60b040",
-      "greenLight":   "#70c080",
-      "greenMid":     "#2d6b40",
-      "greenDark":    "#1e4a2d",
-      "pink":         "#c06060",
-      "gold":         "#d6b56b",
-      "goldDark":     "#b8964f"
+    "palette": {
+      "fkGreen":      "#1e4a2d",
+      "fkGreen2":     "#2d6b40",
+      "fkGreen3":     "#50a060",
+      "fkGreenChar":  "#60b040",
+      "fkGreenLight": "#70c080",
+      "fkPink":       "#c06060",
+      "fkGold":       "#b8964f",
+      "fkGold2":      "#d6b56b",
+      "fkInk":        "#1a1f16",
+      "fkInk2":       "#0f130d",
+      "fkIvory":      "#f5f3ed",
+      "fkIvoryDim":   "#c5c3b8"
     },
-    "surface": {
-      "primary":  "#1a1f16",
-      "surface":  "#1f2619",
-      "elevated": "#27301e",
-      "card":     "rgba(80, 160, 96, 0.06)"
-    },
-    "text": {
-      "primary":   "#f5f3ed",
-      "secondary": "#c8c5b8",
-      "muted":     "#9ca3af",
-      "subtle":    "#6b7280"
-    },
-    "border": {
-      "default": "#2d3525",
-      "brand":   "rgba(80, 160, 96, 0.35)"
+    "role": {
+      "bg":           "#0f130d",
+      "bgElev":       "#1a1f16",
+      "bgCard":       "rgba(80, 160, 96, 0.06)",
+      "border":       "rgba(245, 243, 237, 0.10)",
+      "borderStrong": "rgba(245, 243, 237, 0.18)",
+      "text":         "#f5f3ed",
+      "textMuted":    "#c5c3b8",
+      "textSubtle":   "rgba(245, 243, 237, 0.55)",
+      "accent":       "#50a060",
+      "accentSoft":   "rgba(80, 160, 96, 0.18)"
     }
   },
   "light": {
-    "brand": {
-      "green":        "#2d6b40",
-      "greenChar":    "#3d8028",
-      "greenLight":   "#50a060",
-      "greenMid":     "#1e4a2d",
-      "greenDark":    "#122e1c",
-      "pink":         "#a04040",
-      "gold":         "#b8964f",
-      "goldDark":     "#8a6e39"
+    "palette": {
+      "fkGreen":      "#1e4a2d",
+      "fkGreen2":     "#2d6b40",
+      "fkGreen3":     "#2d6b40",
+      "fkGreenChar":  "#3d8028",
+      "fkGreenLight": "#50a060",
+      "fkPink":       "#a04040",
+      "fkGold":       "#8a6e39",
+      "fkGold2":      "#b8964f",
+      "fkInk":        "#1a1f16",
+      "fkInk2":       "#0f130d",
+      "fkIvory":      "#f5f3ed",
+      "fkIvoryDim":   "#c5c3b8"
     },
-    "surface": {
-      "primary":  "#f5f3ed",
-      "surface":  "#eeebe4",
-      "elevated": "#e5e1d8",
-      "card":     "#ffffff"
-    },
-    "text": {
-      "primary":   "#1a1f16",
-      "secondary": "#3a4030",
-      "muted":     "#6b7280",
-      "subtle":    "#9ca3af"
-    },
-    "border": {
-      "default": "#d5d0c5",
-      "brand":   "rgba(45, 107, 64, 0.30)"
+    "role": {
+      "bg":           "#edf5ee",
+      "bgElev":       "#f5fbf5",
+      "bgCard":       "rgba(45, 107, 64, 0.04)",
+      "border":       "rgba(26, 31, 22, 0.12)",
+      "borderStrong": "rgba(26, 31, 22, 0.22)",
+      "text":         "#1a1f16",
+      "textMuted":    "rgba(26, 31, 22, 0.72)",
+      "textSubtle":   "rgba(26, 31, 22, 0.55)",
+      "accent":       "#2d6b40",
+      "accentSoft":   "rgba(45, 107, 64, 0.10)"
     }
   }
 }

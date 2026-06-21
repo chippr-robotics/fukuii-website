@@ -6,14 +6,6 @@
    ========================================================= */
 
 @theme {
-  /* Brand palette — greens derived from fukuii-hex-logo.png (#50a060 dominant) */
-  --color-brand-green:        #50a060;
-  --color-brand-green-light:  #70c080;
-  --color-brand-green-mid:    #2d6b40;
-  --color-brand-green-dark:   #1e4a2d;
-  --color-brand-gold:         #d6b56b;
-  --color-brand-gold-dark:    #b8964f;
-
   /* Fonts */
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, 'JetBrains Mono', monospace;
