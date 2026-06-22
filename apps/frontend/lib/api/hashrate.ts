@@ -70,7 +70,7 @@ function formatLabel(isoTimestamp: string, period: TimePeriod): string {
   const hours = d.getUTCHours();
 
   if (period === "week") {
-    return hours === 0 ? `${month} ${day}` : `${month} ${day} 12:00`;
+    return hours === 0 ? `${month} ${day}` : `${month} ${day} ${String(hours).padStart(2, "0")}:00`;
   }
   if (period === "month") {
     return `${month} ${day}`;

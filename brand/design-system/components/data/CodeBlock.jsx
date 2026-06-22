@@ -7,7 +7,9 @@ import React from 'react';
 export function CodeBlock({ code = '', label = null, style = {}, ...rest }) {
   const [copied, setCopied] = React.useState(false);
   const copy = () => {
-    try { navigator.clipboard.writeText(code); setCopied(true); setTimeout(() => setCopied(false), 1400); } catch (e) {}
+    navigator.clipboard?.writeText(code)
+      .then(() => { setCopied(true); setTimeout(() => setCopied(false), 1400); })
+      .catch(() => {});
   };
   return (
     <div style={{ position: 'relative', ...style }} {...rest}>

@@ -81,7 +81,7 @@ export function ArchitectureSection() {
                     </code>
                     <span
                       className="badge-fk"
-                      style={layer.accent ? { borderColor: "rgba(77,138,40,0.4)", color: "var(--accent)" } : undefined}
+                      style={layer.accent ? { borderColor: "var(--accent)", color: "var(--accent)" } : undefined}
                     >
                       {layer.tag}
                     </span>

@@ -13,6 +13,7 @@ export function Tabs({ items = [], value, defaultValue, onChange, style = {} }) 
       {items.map((it) => (
         <button
           key={it.id}
+          type="button"
           role="tab"
           aria-selected={it.id === active}
           className={`tab-btn${it.id === active ? ' tab-active' : ''}`}

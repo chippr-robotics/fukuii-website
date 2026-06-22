@@ -6,6 +6,7 @@ export function CountUp({ to, duration = 1500, className }: { to: number; durati
   const [value, setValue] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
+  const rafId = useRef<number>(0);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -24,13 +25,13 @@ export function CountUp({ to, duration = 1500, className }: { to: number; durati
           const pct = Math.min((now - start) / duration, 1);
           const eased = 1 - Math.pow(1 - pct, 3);
           setValue(Math.round(eased * to));
-          if (pct < 1) requestAnimationFrame(tick);
+          if (pct < 1) rafId.current = requestAnimationFrame(tick);
         };
-        requestAnimationFrame(tick);
+        rafId.current = requestAnimationFrame(tick);
       }
     }, { threshold: 0.3 });
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => { observer.disconnect(); cancelAnimationFrame(rafId.current); };
   }, [to, duration]);
 
   return <span ref={ref} className={className}>{value.toLocaleString()}</span>;

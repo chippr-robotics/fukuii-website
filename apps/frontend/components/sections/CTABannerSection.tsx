@@ -59,7 +59,7 @@ export function CTABannerSection() {
                   padding: "0.75rem 1.75rem",
                   background: "var(--accent)",
                   border: "1px solid var(--accent)",
-                  color: "#fff",
+                  color: "var(--fk-ivory)",
                   fontWeight: 700,
                   fontSize: "0.9375rem",
                   textDecoration: "none",

@@ -25,7 +25,7 @@ const PERIODS: { key: TimePeriod; label: string }[] = [
 
 export function HashrateChart({ histories, currentTHs }: Props) {
   const [period, setPeriod] = useState<TimePeriod>("week");
-  const chartGreen = "#4d8a28";
+  const chartGreen = "var(--accent)";
   const data = histories[period];
 
   if (!data || data.length === 0) {

@@ -3,7 +3,7 @@ FROM node:24-alpine AS builder
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@10 --activate
 
 # Copy lockfile and manifest first for layer caching
 COPY apps/frontend/package.json apps/frontend/pnpm-lock.yaml ./
