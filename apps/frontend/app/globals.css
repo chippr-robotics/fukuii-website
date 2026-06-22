@@ -181,9 +181,9 @@ body {
 }
 
 .badge-violet {
-  border-color: rgba(167, 139, 250, 0.30);
-  background:   rgba(139, 92, 246, 0.08);
-  color:        #a78bfa;
+  border-color: rgba(167, 139, 250, 0.45);
+  background:   rgba(139, 92, 246, 0.12);
+  color:        #c4b5fd;
 }
 
 /* ── Code blocks ───────────────────────────────────────── */

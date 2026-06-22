@@ -34,7 +34,7 @@ wire straight into a running node.
 
 ## Supported Networks
 
-- Ethereum Classic (chain 61): PoW/Ethash, full SNAP sync, Olympia fork
+- Ethereum Classic (chain 61): PoW/ETChash, full SNAP sync, Olympia (Fusaka)
 - Mordor (chain 63): ETC PoW testnet
 - Ethereum Mainnet (chain 1): PoS via Engine API V1-V4
 - Sepolia (chain 11155111): PoS testnet
@@ -60,9 +60,9 @@ wire straight into a running node.
 
 ## Quick Start
 
-    docker run ghcr.io/chippr-robotics/fukuii --network mordor
+    docker run ghcr.io/chippr-robotics/fukuii mordor
 
-## Orbita Roadmap
+## Roadmap
 
 Fukuii's architecture is evolving toward a multi-instance, consensus-agnostic runtime: one
 process, multiple chains, with isolated state and network stacks per network. The end state
@@ -83,10 +83,10 @@ Fukuii as the execution layer for OP-compatible rollups.
 ## Web Properties
 
 - https://fukuii.com - Main site
-- https://fukuii.com/features - Full capability matrix: wire protocols, sync, Engine API
+- https://fukuii.com/features - Capability surface: wire protocols (ETH68/69), SNAP sync, Engine API V1-V4, JSON-RPC, GraphQL, MCP server
 - https://fukuii.com/stack - Complete dependency manifest with versions
 - https://fukuii.com/architecture - Three-layer architecture: fukuii-core, fukuii-env, consensus module
-- https://fukuii.com/roadmap - Orbita roadmap with phase descriptions
+- https://fukuii.com/roadmap - The path to every EVM network: four phases from environment abstraction to L2 derivation
 - https://fukuii.com/guide - Installation guide: Mordor SNAP, Docker, Sepolia with CL
 
 ## Links

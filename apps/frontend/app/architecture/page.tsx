@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import NavHeader from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -15,7 +16,7 @@ const LAYERS = [
     tag: "PLUGGABLE",
     name: "consensus module",
     description:
-      "Engine API, beacon root handling, fork choice integration. Ethash today; pluggable tomorrow.",
+      "Engine API, beacon root handling, fork choice integration. ETChash today; pluggable tomorrow.",
     accent: false,
   },
   {
@@ -102,7 +103,7 @@ export default function ArchitecturePage() {
 
           <FadeIn delay={160}>
             <div style={{ marginTop: "2.5rem" }}>
-              <a
+              <Link
                 href="/#roadmap"
                 style={{
                   fontFamily: "var(--font-mono)",
@@ -120,7 +121,7 @@ export default function ArchitecturePage() {
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </FadeIn>
         </div>

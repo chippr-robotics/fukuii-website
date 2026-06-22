@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import NavHeader from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
-import { QuickStartInstall } from "@/components/sections/QuickStartInstall";
 import { QuickStartSection } from "@/components/sections/QuickStartSection";
 import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Quick Start",
   description:
-    "Install Fukuii in under five minutes: Mordor SNAP sync, Docker, or Engine API mode paired with a consensus client. Hardware requirements for home nodes through archive nodes.",
+    "Install Fukuii in under five minutes: download the pre-built JAR or Docker image, choose a network, and you're running. Mining, staking, and archive configurations build on the same binary.",
 };
 
 export default function QuickStartPage() {
@@ -16,21 +15,14 @@ export default function QuickStartPage() {
     <main>
       <NavHeader />
       <PageHero
-        eyebrow="Installation Guide"
+        eyebrow="Quick Start"
         title="Up in five minutes"
-        description="SNAP sync on Mordor, Docker, or Engine API mode paired with a consensus client, all from the same binary."
+        description="From download to a syncing node in about five minutes. Install for your platform, choose a network, and you're running. Mining, staking, and archive configurations build on the same binary from there."
         ctas={[
-          { label: "Download", href: "https://github.com/chippr-robotics/fukuii/releases", external: true, primary: true },
-          { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true },
+          { label: "Documentation", href: "https://docs.fukuii.com/", external: true },
         ]}
       />
       <QuickStartSection />
-      <section className="section-fk">
-        <div className="container-fk">
-
-          <QuickStartInstall />
-        </div>
-      </section>
       <FooterSection />
     </main>
   );

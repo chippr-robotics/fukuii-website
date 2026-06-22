@@ -29,14 +29,16 @@ function MoonIcon() {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "dark";
+    const stored = localStorage.getItem("fk-theme");
+    return stored === "light" ? "light" : "dark";
+  });
 
   useEffect(() => {
-    const stored = localStorage.getItem("fk-theme");
-    const initial: Theme = stored === "light" ? "light" : "dark";
-    setTheme(initial);
-    document.documentElement.setAttribute("data-theme", initial);
-  }, []);
+    // Sync the HTML attribute on first mount to match localStorage state
+    document.documentElement.setAttribute("data-theme", theme);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   function toggle() {
     const next: Theme = theme === "dark" ? "light" : "dark";

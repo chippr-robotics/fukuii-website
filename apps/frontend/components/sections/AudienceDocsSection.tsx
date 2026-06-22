@@ -4,17 +4,17 @@ const DOCS = [
   {
     title: "Getting started",
     body: "Installation, configuration, network setup.",
-    href: "https://fukuii.com/getting-started/",
+    href: "https://docs.fukuii.com/getting-started/",
   },
   {
     title: "SRE / production",
     body: "Metrics, alerts, runbooks, and rollback.",
-    href: "https://fukuii.com/for-operators/",
+    href: "https://docs.fukuii.com/for-operators/",
   },
   {
     title: "Developers",
     body: "RPC reference, MCP tools, contributing.",
-    href: "https://fukuii.com/developers/",
+    href: "https://docs.fukuii.com/developers/",
   },
 ] as const;
 

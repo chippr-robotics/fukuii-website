@@ -18,12 +18,12 @@ interface NetGroup {
 
 const ETC_GROUP: NetGroup = {
   family: "Ethereum Classic",
-  consensus: "Proof-of-Work / Ethash",
+  consensus: "Proof-of-Work / ETChash",
   badgeLabel: "PoW",
   badgeClass: "badge-fk badge-green",
   accentColor: "var(--fk-green-3)",
   networks: [
-    { name: "Ethereum Classic", chainId: 61, tags: ["SNAP sync", "Olympia fork"], primary: true },
+    { name: "Ethereum Classic", chainId: 61, tags: ["ETH68, ETH69, SNAP V1", "Olympia (Fusaka)"], primary: true },
     { name: "Mordor",           chainId: 63, tags: ["ETC testnet"] },
   ],
 };
@@ -35,7 +35,7 @@ const ETH_GROUP: NetGroup = {
   badgeClass: "badge-fk badge-violet",
   accentColor: "#a78bfa",
   networks: [
-    { name: "Ethereum Mainnet", chainId: 1,        tags: ["SNAP sync", "Fulu / Osaka (Fusaka)"], primary: true },
+    { name: "Ethereum Mainnet", chainId: 1,        tags: ["ETH69, ETH70, SNAP V1", "Fulu / Osaka (Fusaka)"], primary: true },
     { name: "Sepolia",          chainId: 11155111,  tags: ["ETH testnet"] },
     { name: "Holesky",          chainId: 17000,     tags: ["PoS testnet"] },
   ],
@@ -211,7 +211,7 @@ export function NetworksSection() {
             }}
           >
             {PLANNED.map((item, i) => (
-              <PlannedBox key={item.label} item={item} divider={i < 2} />
+              <PlannedBox key={item.label} item={item} divider={i === 0 || i === 2} />
             ))}
           </div>
         </FadeIn>

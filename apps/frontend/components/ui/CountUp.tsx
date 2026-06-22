@@ -8,7 +8,10 @@ export function CountUp({ to, duration = 1500, className }: { to: number; durati
   const started = useRef(false);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setValue(to); return; }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const id = requestAnimationFrame(() => setValue(to));
+      return () => cancelAnimationFrame(id);
+    }
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver((entries) => {

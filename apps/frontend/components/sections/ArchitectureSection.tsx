@@ -5,7 +5,7 @@ const LAYERS = [
     name: "consensus module",
     tag: "pluggable",
     description:
-      "Engine API, beacon root handling, fork choice integration. Ethash today; pluggable tomorrow.",
+      "Engine API, beacon root handling, fork choice integration. ETChash today; pluggable tomorrow.",
     accent: false,
   },
   {

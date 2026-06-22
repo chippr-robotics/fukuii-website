@@ -8,7 +8,7 @@ import { PageHero } from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "Roadmap",
   description:
-    "Fukuii's four-phase Orbita roadmap: environment abstraction, multi-instance runtime, pluggable PoA consensus, and OP-style L2 derivation.",
+    "The path to every EVM network: Fukuii's roadmap from today's two primary networks to a single runtime for any EVM chain, from L1s and sidechains to L2 rollups and private networks.",
 };
 
 type PhaseStatus = "active" | "planned";
@@ -62,10 +62,10 @@ export default function RoadmapPage() {
       <NavHeader />
       <PageHero
         eyebrow="Roadmap"
-        title="The Orbita vision"
-        description="Fukuii's architecture is evolving toward a multi-instance, consensus-agnostic runtime: one process, multiple chains, with isolated state and network stacks per network. Each phase adds a layer: environment abstraction, concurrent chain execution, pluggable PoA consensus, then native L2 block derivation."
+        title="Fukuii's roadmap"
+        description="Fukuii runs two primary networks today. This roadmap grows it into a single runtime for many: additional L1s, sidechains, L2 rollups, and private networks, all from the same binary."
         ctas={[
-          { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true, primary: true },
+          { label: "Quick Start", href: "/guide" },
         ]}
       />
       <RoadmapSection />

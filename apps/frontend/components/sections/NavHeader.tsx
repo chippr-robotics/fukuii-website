@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
@@ -30,7 +31,7 @@ export default function NavHeader() {
             gap: "1rem",
           }}
         >
-          <a
+          <Link
             href="/"
             style={{
               display: "flex",
@@ -66,7 +67,7 @@ export default function NavHeader() {
                 Ethereum Virtual Machine Client
               </span>
             </div>
-          </a>
+          </Link>
 
           <nav
             style={{

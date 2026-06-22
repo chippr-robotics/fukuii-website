@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { HexCanvas } from "@/components/ui/HexCanvas";
+import { TechStackBadges } from "@/components/ui/TechStackBadges";
 
 interface Platform {
   label: string;
@@ -158,7 +159,7 @@ export function PageHero({ eyebrow, title, description, ctas }: PageHeroProps) {
               padding: "clamp(2.5rem, 4vw, 3.5rem)",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center",
+              justifyContent: "flex-start",
               gap: "1rem",
             }}
           >
@@ -170,7 +171,7 @@ export function PageHero({ eyebrow, title, description, ctas }: PageHeroProps) {
               {description}
             </p>
             {ctas && ctas.length > 0 && (
-              <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", paddingTop: "0.5rem" }}>
+              <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "auto", paddingTop: "2rem", justifyContent: "center" }}>
                 {ctas.map((cta) => (
                   <a
                     key={cta.label}
@@ -204,6 +205,7 @@ export function PageHero({ eyebrow, title, description, ctas }: PageHeroProps) {
                 ))}
               </div>
             )}
+            <TechStackBadges />
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 
 const COLS = [
@@ -18,7 +19,7 @@ const COLS = [
     links: [
       { label: "Download", href: "https://github.com/chippr-robotics/fukuii/releases", external: true },
       { label: "Quick Start", href: "/guide" },
-      { label: "Documentation", href: "https://fukuii.com", external: true },
+      { label: "Documentation", href: "https://docs.fukuii.com", external: true },
       { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true },
       { label: "Docker", href: "https://ghcr.io/chippr-robotics/fukuii", external: true },
     ],
@@ -93,7 +94,7 @@ export function FooterSection() {
 
           {/* Brand block — center */}
           <div>
-            <a
+            <Link
               href="/"
               style={{
                 display: "flex",
@@ -108,7 +109,7 @@ export function FooterSection() {
                 width={120}
                 height={120}
               />
-            </a>
+            </Link>
             <p
               style={{
                 fontSize: "0.8125rem",

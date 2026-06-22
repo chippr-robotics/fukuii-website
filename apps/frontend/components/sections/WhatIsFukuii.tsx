@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 const FACTS = [
   {
     label: "CONSENSUS MODEL",
-    value: "One binary. PoW Ethash and PoS Engine API.",
+    value: "One binary. PoW ETChash and PoS Engine API.",
   },
   {
     label: "LANGUAGE STACK",

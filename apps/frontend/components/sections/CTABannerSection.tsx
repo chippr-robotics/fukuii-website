@@ -36,9 +36,8 @@ export function CTABannerSection() {
                 marginInline: "auto",
               }}
             >
-              One signed binary, from a single home node to institutional infrastructure.
-              Download a release, follow the operator guide for deployment, monitoring, and upgrades,
-              and run. The community is there when you need it.
+              One signed binary scales from a home node to institutional infrastructure.
+              Download a release and run it; deployment, monitoring, and upgrades live in the operator guide.
             </p>
 
             <div

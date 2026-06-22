@@ -9,7 +9,7 @@ import { PageHero } from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Full capability matrix for Fukuii: wire protocols, sync strategies, consensus modes, Engine API, and observability, all tracked against go-ethereum and Besu.",
+    "Fukuii's full capability surface: ETH68/69 wire protocols, SNAP sync, Engine API V1-V4, JSON-RPC, GraphQL, and MCP server. On public-network execution it matches go-ethereum and Besu feature for feature.",
 };
 
 type TagColor = "green" | "blue" | "teal" | "violet" | "amber" | "indigo" | "orange" | "muted";
@@ -77,7 +77,7 @@ const PROTOCOLS: readonly ProtocolCategory[] = [
     tags: [
       { label: "Clique", color: "green" },
       { label: "AuRa", color: "green" },
-      { label: "Ethash", color: "green" },
+      { label: "ETChash", color: "green" },
       { label: "PoS", color: "green" },
       { label: "PoW", color: "green" },
     ],
@@ -99,9 +99,9 @@ export default function FeaturesPage() {
     <main>
       <NavHeader />
       <PageHero
-        eyebrow="Full capability matrix"
+        eyebrow="CAPABILITIES"
         title="What Fukuii can do"
-        description="This is the full capability surface, in a single view. Every wire protocol, sync strategy, consensus model, API, and consensus-client integration Fukuii ships is tracked against the reference implementations and proven on the public mainnets it runs today."
+        description="This is the full capability surface, in a single view. Every wire protocol, sync strategy, consensus model, API transport, and consensus-client integration Fukuii ships is tracked against the reference implementations and proven on the public mainnets it runs today. On public-network execution it matches go-ethereum and Besu feature for feature, from JSON-RPC and GraphQL to SNAP sync and the full Engine API. And where the JVM ecosystem can go further, it does: Fukuii is the first execution client to ship a built-in MCP server."
         ctas={[
           { label: "Quick Start", href: "/guide" },
         ]}

@@ -1,41 +1,5 @@
 import { FadeIn } from "@/components/ui/FadeIn";
 
-type PhaseStatus = "active" | "planned";
-
-interface Phase {
-  number: string;
-  name: string;
-  codename: string;
-  status: PhaseStatus;
-}
-
-const PHASES: Phase[] = [
-  {
-    number: "1",
-    name: "fukuii-env",
-    codename: "In Progress",
-    status: "active",
-  },
-  {
-    number: "2",
-    name: "Multi-Instance Runtime",
-    codename: "Planned",
-    status: "planned",
-  },
-  {
-    number: "3",
-    name: "Checkpoint Consensus (Orbita PoA)",
-    codename: "Planned",
-    status: "planned",
-  },
-  {
-    number: "4",
-    name: "OP-Style Derivation",
-    codename: "Planned",
-    status: "planned",
-  },
-];
-
 export function RoadmapSection() {
   return (
     <section
@@ -68,7 +32,7 @@ export function RoadmapSection() {
               }}
             >
               A clean three-layer split, chain-agnostic core, infrastructure, and pluggable
-              consensus, is what makes the Orbita roadmap possible. The detail lives in the
+              consensus, is what makes this roadmap possible. The detail lives in the
               architecture docs.
             </p>
             <a
@@ -98,61 +62,15 @@ export function RoadmapSection() {
         <FadeIn delay={60}>
           <div style={{ marginBottom: "3rem" }}>
             <span className="cell-label">Roadmap</span>
-            <h2 className="section-title">Roadmap — The Orbita Vision</h2>
+            <h2 className="section-title">The path to every EVM network</h2>
             <p className="section-subtitle" style={{ marginTop: "0.75rem" }}>
-              The end state is an execution layer that runs any EVM chain, not just the ones it was
-              compiled for. Four phases get there: environment abstraction, concurrent multi-chain
-              execution, pluggable PoA consensus, and native L2 derivation.
+              The end state is one execution layer that runs any EVM chain, not only the ones it was
+              compiled for. Four phases get there: per-chain configuration, concurrent multi-chain
+              execution, pluggable PoA consensus for sidechains and consortium networks, and native
+              L2 derivation. Documentation, operator guides, and tooling mature alongside each phase.
             </p>
           </div>
         </FadeIn>
-
-        {/* Phase rows — condensed, name + status only */}
-        <div style={{ border: "1px solid var(--border)" }}>
-          {PHASES.map((phase, i) => (
-            <FadeIn key={phase.number} delay={i * 80 + 120}>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "80px 1fr auto",
-                  alignItems: "center",
-                  gap: "1.5rem",
-                  padding: "1.25rem 1.75rem",
-                  borderTop: i === 0 ? "none" : "1px solid var(--border)",
-                  background: phase.status === "active" ? "var(--accent-soft)" : "transparent",
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "0.6875rem",
-                    fontWeight: 600,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    color: phase.status === "active" ? "var(--accent)" : "var(--text-subtle)",
-                  }}
-                >
-                  Phase {phase.number}
-                </span>
-                <h3
-                  style={{
-                    fontSize: "0.9375rem",
-                    fontWeight: 700,
-                    color: "var(--text)",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  {phase.name}
-                </h3>
-                <span
-                  className={`badge-fk${phase.status === "active" ? " badge-green" : ""}`}
-                >
-                  {phase.codename}
-                </span>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
 
       </div>
     </section>
