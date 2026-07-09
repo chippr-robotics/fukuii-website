@@ -30,7 +30,7 @@ function WhatIsFukuii() {
               <span className="cell-label">About</span>
               <h2 className="cell-h2" style={{ marginBottom: '1.5rem' }}>What is Fukuii?</h2>
               <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.75 }}>
-                Fukuii is the only Scala EVM execution client. Built on Scala&nbsp;3 LTS and Pekko Typed Actors, it runs any EVM-compatible network from a single binary. Today that means Ethereum Classic, the largest Proof-of-Work EVM, alongside Ethereum mainnet and Sepolia via Engine API V1 through V4.
+                Fukuii is a Scala EVM execution client. Built on Scala&nbsp;3 LTS and Pekko Typed Actors, it runs any EVM-compatible network from a single binary. Today that means Ethereum Classic, the largest Proof-of-Work EVM, alongside Ethereum mainnet and Sepolia via Engine API V1 through V4.
               </p>
             </div>
             <a href="#quickstart" className="cell-cta" style={{ marginTop: '2rem' }}>Get started with Fukuii →</a>
@@ -58,8 +58,7 @@ function Networks() {
     { name: 'Mordor', chain: 'chain 63', meta: ['PoW / Ethash', 'SNAP sync', 'ETC testnet'] },
     { name: 'Ethereum Mainnet', chain: 'chain 1', meta: ['PoS via Engine API', 'SNAP sync', 'Prague / Electra'] },
     { name: 'Sepolia', chain: 'chain 11155111', meta: ['PoS via Engine API', 'ETH testnet'] },
-    { name: 'Holesky', chain: 'chain 17000', meta: ['PoS via Engine API', 'PoS testnet'] },
-    { name: 'Private & L2 Chains', chain: 'custom', meta: ['Pluggable consensus', 'PoA · Orbita · OP-compatible'], badge: 'Roadmap' },
+    { name: 'Private & L2 Chains', chain: 'custom', meta: ['Consensus module built for pluggability', 'PoA · Orbita · L2 derivation'], badge: 'Roadmap' },
   ];
   const Meta = ({ m }) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem', marginTop: '0.625rem' }}>
@@ -72,7 +71,7 @@ function Networks() {
         <div style={{ marginBottom: '3rem' }}>
           <span className="cell-label">Networks</span>
           <h2 className="section-title" style={{ marginBottom: '0.75rem' }}>EVM networks.</h2>
-          <p className="section-subtitle">Today: Ethereum Classic and Ethereum mainnet, each with their canonical testnet, from a single binary. Tomorrow: Orbita-powered sidechains, OP-compatible L2 rollups, and private consortium chains — one runtime, many networks.</p>
+          <p className="section-subtitle">Today: Ethereum Classic and Ethereum mainnet, each with their canonical testnet, from a single binary. Tomorrow: Orbita-powered sidechains, L2 rollups, and private consortium chains — one runtime, many networks.</p>
         </div>
         <div style={{ border: '1px solid var(--border)', borderBottom: 'none', padding: '1.75rem', background: 'var(--accent-soft)' }}>
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem' }}>
@@ -222,7 +221,7 @@ function Stack() {
     ['ACTOR SYSTEM', 'Apache Pekko 1.6.0'],
     ['STORAGE', 'RocksDB 10.10.1.1'],
     ['EFFECTS', 'Cats Effect 3 + fs2'],
-    ['SUPPLY CHAIN', 'SLSA Level 3 \u00b7 CycloneDX SBOM'],
+    ['SUPPLY CHAIN', 'Signed provenance \u00b7 CycloneDX SBOM'],
   ];
   const tiers = [
     ['Home', '8 GB RAM \u00b7 500 GB'],

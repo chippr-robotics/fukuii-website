@@ -8,7 +8,7 @@ import { PageHero } from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "Architecture",
   description:
-    "Fukuii's three-layer architecture: chain-agnostic EVM core, infrastructure layer, and pluggable consensus module. Swap consensus without touching the EVM.",
+    "Fukuii's three-layer architecture: chain-agnostic EVM core, infrastructure layer, and a consensus module built for pluggability — ETChash and Engine API today, additional consensus modules on the roadmap.",
 };
 
 const LAYERS = [
@@ -42,7 +42,7 @@ export default function ArchitecturePage() {
       <PageHero
         eyebrow="Architecture"
         title="Three layers, cleanly separated"
-        description="Chain-agnostic at the bottom, opinionated at the top. The three-layer split is what makes the Orbita roadmap possible: swapping consensus modules, adding multi-chain execution, and native L2 derivation all operate above the fukuii-core boundary."
+        description="Chain-agnostic at the bottom, opinionated at the top. The three-layer split is what makes the Orbita roadmap possible: swapping consensus modules, adding multi-chain execution, and native L2 derivation are all planned to operate above the fukuii-core boundary."
         ctas={[
           { label: "Guide", href: "/guide", primary: true },
           { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true },

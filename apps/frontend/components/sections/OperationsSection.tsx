@@ -26,7 +26,7 @@ const CARDS: CardData[] = [
   },
   {
     title: "Predictable under load",
-    lead: "Sync never starves the RPC.",
+    lead: "Sync doesn't starve the RPC.",
     items: [
       "3 isolated Pekko dispatchers (sync, rpc, general)",
       "Bootstrap checkpoints skip startup peer-wait",
@@ -44,7 +44,7 @@ const CARDS: CardData[] = [
     lead: "Verify what you deploy.",
     items: [
       "Cosign-signed container images on GHCR",
-      "SLSA Level 3 build provenance",
+      "Build provenance attestation",
       "CycloneDX SBOM on every release",
     ],
     icon: (
@@ -101,9 +101,9 @@ export function OperationsSection() {
               Designed for the people who run it.
             </h2>
             <p className="section-subtitle">
-              Three isolated Pekko dispatchers ensure sync pressure never starves the RPC: the node
-              stays responsive under full-load SNAP sync. Cosign-signed images, SLSA Level 3
-              provenance, and a CycloneDX SBOM on every release mean you know exactly what you
+              Three isolated Pekko dispatchers keep sync pressure from starving the RPC, so the node
+              stays responsive under full-load SNAP sync. Cosign-signed images, build provenance
+              attestation, and a CycloneDX SBOM on every release mean you know exactly what you
               deployed and can prove it to anyone who asks. Prometheus metrics, Grafana dashboards,
               and liveness endpoints are built in, no sidecar, no plugin, no configuration required.
             </p>

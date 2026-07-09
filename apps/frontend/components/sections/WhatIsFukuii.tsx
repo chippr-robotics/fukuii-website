@@ -49,8 +49,8 @@ export function WhatIsFukuii() {
                   Actors, Fukuii runs the largest chains in both consensus models from a single
                   codebase: Ethereum, the largest EVM and the largest Proof-of-Stake network, and
                   Ethereum Classic, the largest Proof-of-Work EVM, each with its testnet. Future
-                  releases extend the same binary to additional L1s, sidechains, L2 rollups, and
-                  private consortium networks.
+                  releases extend the same binary to additional EVM networks by configuration
+                  alone.
                 </p>
               </div>
 

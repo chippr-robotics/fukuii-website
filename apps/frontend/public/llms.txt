@@ -1,10 +1,10 @@
 # Fukuii
 
-> Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to sovereign funds.
+> Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, signed and SBOM-verifiable, open source, from solo operators to institutional infrastructure.
 
-Fukuii is the only Scala EVM execution client, maintained by Chippr Robotics LLC.
+Fukuii is a Scala EVM execution client, maintained by Chippr Robotics LLC.
 One binary runs Ethereum Classic (chain 61), Ethereum mainnet (chain 1), Mordor testnet
-(chain 63), Sepolia (chain 11155111), and Holesky from a single deployment.
+(chain 63), and Sepolia (chain 11155111) from a single deployment.
 
 ## Why Fukuii
 
@@ -38,8 +38,6 @@ wire straight into a running node.
 - Mordor (chain 63): ETC PoW testnet
 - Ethereum Mainnet (chain 1): PoS via Engine API V1-V4
 - Sepolia (chain 11155111): PoS testnet
-- Holesky: PoS testnet
-- Private/consortium chains: custom genesis, no source modification required
 
 ## Runtime Stack
 
@@ -48,7 +46,7 @@ wire straight into a running node.
 - Actor system: Apache Pekko 1.6.0 (Apache Software Foundation, no BSL)
 - Storage: RocksDB 10.10.1.1 (Meta 10.x series, late 2025)
 - Effects: Cats Effect 3 + fs2 (fully migrated off Monix)
-- SLSA Level 3 provenance: Cosign keyless signing on every release
+- Signed build provenance: Cosign keyless signing on every release
 - CycloneDX SBOM on all release artifacts
 
 ## Hardware Requirements

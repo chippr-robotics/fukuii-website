@@ -36,7 +36,7 @@ function Hero() {
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-subtle)', marginTop: '0.375rem' }}>Ethereum Virtual Machine Client</div>
               </div>
               <p style={{ fontSize: 'clamp(0.9375rem, 1.2vw + 0.5rem, 1.0625rem)', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '52ch' }}>
-                Fukuii is a Scala execution client for the wider Ethereum Virtual Machine ecosystem. It is the most feature-complete client available, with native support for established EVM execution configurations and consensus models. Built with intention, Fukuii serves institutional digital custodians, global financial institutions, and sovereign wealth funds, while remaining lightweight enough for the solo operator.
+                Fukuii is a Scala execution client for the wider Ethereum Virtual Machine ecosystem. It is feature-complete, with native support for established EVM execution configurations and consensus models. Built with intention, Fukuii serves institutional digital custodians, global financial institutions, and sovereign wealth funds, while remaining lightweight enough for the solo operator.
               </p>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: 'auto', paddingTop: '2rem', justifyContent: 'center' }}>

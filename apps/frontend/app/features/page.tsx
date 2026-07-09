@@ -9,7 +9,7 @@ import { PageHero } from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Fukuii's full capability surface: ETH68/69 wire protocols, SNAP sync, Engine API V1-V4, JSON-RPC, GraphQL, and MCP server. On public-network execution it matches go-ethereum and Besu feature for feature.",
+    "Fukuii's full capability surface: ETH68/69 wire protocols, SNAP sync, Engine API V1-V4, JSON-RPC, GraphQL, and MCP server. On public-network execution it matches go-ethereum and Besu on wire protocols, SNAP sync, and the full Engine API.",
 };
 
 type TagColor = "green" | "blue" | "teal" | "violet" | "amber" | "indigo" | "orange" | "muted";
@@ -75,8 +75,6 @@ const PROTOCOLS: readonly ProtocolCategory[] = [
   {
     category: "Consensus",
     tags: [
-      { label: "Clique", color: "green" },
-      { label: "AuRa", color: "green" },
       { label: "ETChash", color: "green" },
       { label: "PoS", color: "green" },
       { label: "PoW", color: "green" },
@@ -101,7 +99,7 @@ export default function FeaturesPage() {
       <PageHero
         eyebrow="CAPABILITIES"
         title="What Fukuii can do"
-        description="This is the full capability surface, in a single view. Every wire protocol, sync strategy, consensus model, API transport, and consensus-client integration Fukuii ships is tracked against the reference implementations and proven on the public mainnets it runs today. On public-network execution it matches go-ethereum and Besu feature for feature, from JSON-RPC and GraphQL to SNAP sync and the full Engine API. And where the JVM ecosystem can go further, it does: Fukuii is the first execution client to ship a built-in MCP server."
+        description="This is the full capability surface, in a single view. Every wire protocol, sync strategy, consensus model, API transport, and consensus-client integration Fukuii ships is tracked against the reference implementations and proven on the public mainnets it runs today. On public-network execution it matches go-ethereum and Besu on wire protocols, SNAP sync, and the full Engine API, with JSON-RPC and GraphQL alongside them. And where the JVM ecosystem can go further, it does: Fukuii ships a built-in MCP server."
         ctas={[
           { label: "Quick Start", href: "/guide" },
         ]}

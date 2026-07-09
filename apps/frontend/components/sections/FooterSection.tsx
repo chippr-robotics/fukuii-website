@@ -118,7 +118,7 @@ export function FooterSection() {
                 maxWidth: "28ch",
               }}
             >
-              Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to sovereign funds.
+              Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, signed and SBOM-verifiable, open source, from solo operators to institutional infrastructure.
             </p>
           </div>
 

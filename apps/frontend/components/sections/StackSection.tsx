@@ -30,7 +30,7 @@ const STACK_ROWS: readonly StackRow[] = [
   {
     component: "Bouncy Castle · BLS12-381 · KZG",
     what: "Cryptography",
-    why: "Audited primitives shared with the wider Ethereum ecosystem.",
+    why: "The same primitives used across the wider Ethereum ecosystem.",
   },
   {
     component: "Netty · Micrometer · Prometheus",

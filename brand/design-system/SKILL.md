@@ -12,7 +12,7 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 ## Quick orientation
 
-- **Identity:** sovereign-grade infrastructure — *"built to finance's standard."* Serious, precise, institutional, terminal-adjacent. Forest green + old gold on a near-black, green-tinted foundation.
+- **Identity:** institutional-grade infrastructure — *"built to finance's standard."* Serious, precise, institutional, terminal-adjacent. Forest green + old gold on a near-black, green-tinted foundation.
 - **Tokens:** link `styles.css` (the root entry) to pick up all colors, type, spacing, motion, and the utility classes. Dark is the default; `[data-theme="light"]` is a parity theme.
 - **Color:** primary accent green `#50a060` (sampled from the logo), secondary gold `#d6b56b`, rare pink worm accent `#c06060`. Surfaces `#0f130d` / `#1a1f16`. High contrast.
 - **Type:** DM Sans (display + prose, up to 800 for hero/CTA), JetBrains Mono (technical — chain IDs, versions, ports, labels, badges). Mono is part of the brand.

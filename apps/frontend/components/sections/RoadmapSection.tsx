@@ -31,9 +31,9 @@ export function RoadmapSection() {
                 minWidth: "22ch",
               }}
             >
-              A clean three-layer split, chain-agnostic core, infrastructure, and pluggable
-              consensus, is what makes this roadmap possible. The detail lives in the
-              architecture docs.
+              A clean three-layer split — chain-agnostic core, infrastructure, and a consensus
+              module built to be pluggable — is what makes this roadmap possible. The detail
+              lives in the architecture docs.
             </p>
             <a
               href="/architecture"

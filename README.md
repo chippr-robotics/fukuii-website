@@ -2,7 +2,7 @@
 
 **The execution client built to finance's standard.**
 
-Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to sovereign funds.
+Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, signed and SBOM-verifiable, open source, from solo operators to institutional infrastructure.
 
 [fukuii.com](https://fukuii.com) · [Download](https://github.com/chippr-robotics/fukuii/releases) · [Guide](https://fukuii.com/guide) · [Docs](https://docs.fukuii.com)
 
@@ -10,13 +10,13 @@ Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-c
 
 ## What is Fukuii?
 
-The only Scala EVM execution client. Built on Scala 3 LTS and Pekko Typed Actors, it runs any EVM-compatible network from a single binary. Today that means Ethereum Classic, the largest Proof-of-Work EVM, alongside Ethereum mainnet and Sepolia via Engine API V1 through V4. As Fukuii stabilizes, the same binary extends to sidechains, L2 rollups, and private consortium chains.
+A Scala EVM execution client. Built on Scala 3 LTS and Pekko Typed Actors, it runs any EVM-compatible network from a single binary. Today that means Ethereum Classic, the largest Proof-of-Work EVM, alongside Ethereum mainnet and Sepolia via Engine API V1 through V4. As Fukuii stabilizes, the same binary extends to additional EVM networks by configuration alone.
 
 One binary. PoW Ethash and PoS Engine API. ETC, ETH, Mordor, Sepolia, and growing.
 
 ## Built to the EVM standard.
 
-Feature-complete against go-ethereum and Besu: every wire protocol, sync strategy, and consensus mode tracked against the reference implementations. Performance-sensitive paths draw from Nethermind and Reth where Go and Rust solved problems the JVM ecosystem hadn't prioritized.
+Matches go-ethereum and Besu on wire protocols, sync strategy, and the Engine API, tracked against the reference implementations. Performance-sensitive paths draw from Nethermind and Reth, where .NET and Rust solved problems the JVM ecosystem hadn't prioritized.
 
 - Engine API V1–V4
 - SNAP sync
@@ -42,7 +42,7 @@ See the [installation guide](https://fukuii.com/guide) for Docker, Engine API mo
 
 ## Architecture
 
-Three layers, cleanly separated: a chain-agnostic EVM core (`fukuii-core`), a network and infrastructure layer (`fukuii-env`), and a pluggable consensus module on top. Swap consensus without touching the EVM. The Orbita roadmap runs on this split: multi-instance chain execution, checkpoint PoA consensus, and native L2 block derivation — each a layer above the `fukuii-core` boundary.
+Three layers, cleanly separated: a chain-agnostic EVM core (`fukuii-core`), a network and infrastructure layer (`fukuii-env`), and a consensus module built for pluggability — ETChash and Engine API today, additional consensus modules on the roadmap. The Orbita roadmap runs on this split: multi-instance chain execution, checkpoint PoA consensus, and native L2 block derivation, each planned to operate as a layer above the `fukuii-core` boundary.
 
 [Architecture →](https://fukuii.com/architecture) · [Roadmap →](https://fukuii.com/roadmap)
 

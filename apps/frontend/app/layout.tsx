@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s · Fukuii",
   },
   description:
-    "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to sovereign funds.",
+    "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, signed and SBOM-verifiable, open source, from solo operators to institutional infrastructure.",
   keywords: [
     "ethereum classic",
     "ETC",
@@ -39,7 +39,6 @@ export const metadata: Metadata = {
     "blockchain node",
     "Sepolia",
     "MCP server",
-    "SLSA",
     "institutional",
     "sovereign",
     "agentic",
@@ -62,7 +61,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Fukuii — Scala EVM Execution Client",
     description:
-      "Feature-complete Scala EVM execution client for Ethereum Classic and Ethereum. A type system that catches consensus bugs at compile time, built-in MCP server, SLSA Level 3 provenance. One binary, any EVM network.",
+      "Feature-complete Scala EVM execution client for Ethereum Classic and Ethereum. A type system that catches consensus bugs at compile time, built-in MCP server, signed build provenance. One binary, any EVM network.",
     images: [
       {
         url: "/og-fukuii.png",
@@ -76,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fukuii — Scala EVM Execution Client",
     description:
-      "Feature-complete Scala EVM execution client for Ethereum Classic and Ethereum. A type system that catches consensus bugs at compile time, built-in MCP server, SLSA Level 3 provenance. One binary, any EVM network.",
+      "Feature-complete Scala EVM execution client for Ethereum Classic and Ethereum. A type system that catches consensus bugs at compile time, built-in MCP server, signed build provenance. One binary, any EVM network.",
     images: ["/og-fukuii.png"],
   },
   robots: {
@@ -119,7 +118,7 @@ const jsonLdApp = {
   operatingSystem: "Linux, macOS, Windows",
   license: "https://opensource.org/licenses/Apache-2.0",
   description:
-    "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, sovereign-grade, open source, from solo operators to sovereign funds.",
+    "Fukuii is a Scala execution client for Ethereum and the EVM ecosystem. Feature-complete, signed and SBOM-verifiable, open source, from solo operators to institutional infrastructure.",
   downloadUrl: "https://github.com/chippr-robotics/fukuii/releases",
   codeRepository: "https://github.com/chippr-robotics/fukuii",
   programmingLanguage: "Scala",

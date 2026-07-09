@@ -119,7 +119,7 @@ export function QuickStartSection() {
             <p className="section-subtitle">
               Test on Mordor testnet, deploy via Cosign-signed Docker images on GHCR, or pair with
               any consensus client for Ethereum Sepolia, all from the same binary. The node
-              self-reports its build version, commit hash, and SLSA provenance at{" "}
+              self-reports its build version, commit hash, and build provenance at{" "}
               <code style={{ fontFamily: "var(--font-mono)", fontSize: "0.9em" }}>/buildinfo</code>.
               Requires JDK 25 LTS.
             </p>

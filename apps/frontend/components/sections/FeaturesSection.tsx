@@ -17,11 +17,11 @@ export function FeaturesSection() {
               Built to the EVM standard.
             </h2>
             <p className="section-subtitle">
-              Feature-complete against go-ethereum and Besu: every wire protocol, sync strategy, and
-              consensus mode tracked against the reference implementations. Performance-sensitive paths
-              draw from Nethermind and Reth, where .NET and Rust solved problems the JVM ecosystem
-              hadn&apos;t prioritized. Prometheus metrics, Grafana dashboards, and health endpoints ship
-              in the binary, no third-party plugin required.
+              Matches go-ethereum and Besu on wire protocols, sync strategy, and the Engine API,
+              tracked against the reference implementations. Performance-sensitive paths draw from
+              Nethermind and Reth, where .NET and Rust solved problems the JVM ecosystem hadn&apos;t
+              prioritized. Prometheus metrics, Grafana dashboards, and health endpoints ship in the
+              binary, no third-party plugin required.
             </p>
           </div>
         </FadeIn>

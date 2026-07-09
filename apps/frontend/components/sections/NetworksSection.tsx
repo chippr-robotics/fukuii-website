@@ -37,14 +37,13 @@ const ETH_GROUP: NetGroup = {
   networks: [
     { name: "Ethereum Mainnet", chainId: 1,        tags: ["ETH69, ETH70, SNAP V1", "Fulu / Osaka (Fusaka)"], primary: true },
     { name: "Sepolia",          chainId: 11155111,  tags: ["ETH testnet"] },
-    { name: "Holesky",          chainId: 17000,     tags: ["PoS testnet"] },
   ],
 };
 
 const PLANNED = [
   { label: "Additional L1s",  desc: "Plug in any EVM-compatible network" },
   { label: "Sidechains",      desc: "Orbita-powered, checkpoint PoA" },
-  { label: "L2 Rollups",      desc: "OP-compatible block derivation" },
+  { label: "L2 Rollups",      desc: "Block derivation for L2 rollups" },
   { label: "Private Chains",  desc: "Custom genesis, pluggable consensus" },
 ];
 
@@ -187,7 +186,7 @@ export function NetworksSection() {
               Two primary networks in production today. Ethereum is the primary Proof-of-Stake
               network; Ethereum Classic is the primary Proof-of-Work network. Both run from a
               single binary, each alongside its testnets. Planned support extends the same binary
-              to additional L1s, Orbita-powered sidechains, OP-compatible L2 rollups, and private
+              to additional L1s, Orbita-powered sidechains, L2 rollups, and private
               consortium chains.
             </p>
           </div>
