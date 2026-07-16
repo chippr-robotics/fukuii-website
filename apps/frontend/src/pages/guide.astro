@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import NavHeader from "@/components/sections/NavHeader.astro";
+import FooterSection from "@/components/sections/FooterSection.astro";
+import QuickStartSection from "@/components/sections/QuickStartSection.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+---
+
+<BaseLayout
+  title="Quick Start"
+  description="Install Fukuii in under five minutes: download the pre-built JAR or Docker image, choose a network, and you're running. Mining, staking, and archive configurations build on the same binary."
+>
+  <main>
+    <NavHeader />
+    <PageHero
+      eyebrow="Quick Start"
+      title="Up in five minutes"
+      description="From download to a syncing node in about five minutes. Install for your platform, choose a network, and you're running. Mining, staking, and archive configurations build on the same binary from there."
+      ctas={[{ label: "Documentation", href: "https://docs.fukuii.com/", external: true }]}
+    />
+    <QuickStartSection />
+    <FooterSection />
+  </main>
+</BaseLayout>

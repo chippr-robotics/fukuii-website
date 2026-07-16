@@ -1,0 +1,109 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import NavHeader from "@/components/sections/NavHeader.astro";
+import FooterSection from "@/components/sections/FooterSection.astro";
+import StackSection from "@/components/sections/StackSection.astro";
+import FadeIn from "@/components/ui/FadeIn.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+
+const STACK_ROWS = [
+  { layer: "Language", library: "Scala 3 LTS", track: "Current LTS patch" },
+  { layer: "JDK", library: "OpenJDK", track: "Current LTS" },
+  { layer: "Actor system", library: "Apache Pekko (actor + typed + streams)", track: "Latest stable" },
+  { layer: "HTTP / WebSocket / GraphQL", library: "Apache Pekko HTTP", track: "Latest stable" },
+  { layer: "GraphQL engine", library: "Sangria (EIP-1767)", track: "Latest stable" },
+  { layer: "Storage", library: "RocksDB JNI", track: "Latest stable" },
+  { layer: "In-memory cache", library: "Caffeine / Scaffeine", track: "Latest stable" },
+  { layer: "Crypto", library: "Bouncy Castle", track: "Latest stable" },
+  { layer: "BLS12-381", library: "Hyperledger Besu BLS", track: "Latest stable" },
+  { layer: "KZG / EIP-4844", library: "jc-kzg-4844", track: "Latest stable" },
+  { layer: "Effects", library: "Cats Effect 3", track: "Latest stable" },
+  { layer: "Streaming", library: "fs2", track: "Latest stable" },
+  { layer: "FP core", library: "Cats", track: "Latest stable" },
+  { layer: "Codec / RLP", library: "scodec-core / scodec-bits", track: "Latest stable" },
+  { layer: "Networking", library: "Netty", track: "Latest stable" },
+  { layer: "Network discovery", library: "UPnP via JUPnP", track: "Latest stable" },
+  { layer: "Serialization", library: "json4s / circe", track: "Latest stable" },
+  { layer: "Metrics", library: "Prometheus Java client", track: "Latest stable" },
+  { layer: "Metrics", library: "Micrometer (JMX + Prometheus)", track: "Latest stable" },
+  { layer: "Observability", library: "Kamon", track: "Latest stable" },
+  { layer: "Logging", library: "Logback / scala-logging / log4cats", track: "Latest stable" },
+  { layer: "Compression", library: "snappy-java", track: "Latest stable" },
+] as const;
+
+const CALLOUTS = [
+  "RocksDB: tracked to the latest stable release, not pinned to an old baseline.",
+  "Apache Pekko: the actively maintained actor-system successor to Akka, under Apache governance.",
+  "Scala 3 LTS: kept current with each LTS patch release.",
+  "JDK: current LTS, upgraded as each new LTS ships.",
+  "Cats Effect 3 + fs2: fully migrated off Monix.",
+] as const;
+---
+
+<BaseLayout
+  title="Runtime Stack"
+  description="Full dependency manifest for Fukuii: Scala 3 LTS, current JDK LTS, Apache Pekko, RocksDB, and more — every dependency kept current, not pinned to an old baseline. Every dependency ships in a signed CycloneDX SBOM."
+>
+  <main>
+    <NavHeader />
+    <PageHero
+      eyebrow="Runtime stack"
+      title="Every dependency, declared"
+      description="A current stack, on purpose. Production infrastructure runs on supported foundations, not frozen ones. Scala 3 LTS, current JDK LTS, RocksDB, maintained to the latest stable across the board. Every dependency ships in a signed CycloneDX SBOM with each release."
+      ctas={[{ label: "Download", href: "https://github.com/chippr-robotics/fukuii/releases", external: true, primary: true }]}
+    />
+    <StackSection />
+    <section class="section-fk">
+      <div class="container-fk">
+        <FadeIn delay={80}>
+          <div style="border: 1px solid var(--border); overflow: hidden; margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: 1.2fr 2fr 1fr; background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 0.625rem 1.25rem;">
+              {
+                ["Layer", "Library", "Track"].map((col) => (
+                  <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-subtle);">{col}</span>
+                ))
+              }
+            </div>
+
+            {
+              STACK_ROWS.map((row, i) => (
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1.2fr 2fr 1fr",
+                    padding: "0.75rem 1.25rem",
+                    borderBottom: i < STACK_ROWS.length - 1 ? "1px solid var(--border)" : "none",
+                    background: i % 2 === 0 ? "transparent" : "var(--bg-card)",
+                    gap: "0.75rem",
+                    alignItems: "start",
+                  }}
+                >
+                  <span style="font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5;">{row.layer}</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 600; color: var(--text); line-height: 1.5;">{row.library}</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5;">{row.track}</span>
+                </div>
+              ))
+            }
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={160}>
+          <div style="border: 1px solid var(--border); padding: 1.5rem 2rem;">
+            <span class="cell-label">Notable versions</span>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+              {
+                CALLOUTS.map((note) => (
+                  <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                    <span style="color: var(--accent); font-weight: 700; font-size: 0.875rem; flex-shrink: 0; margin-top: 0.05em;" aria-hidden="true">✓</span>
+                    <span style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6;">{note}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+    <FooterSection />
+  </main>
+</BaseLayout>

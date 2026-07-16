@@ -1,0 +1,100 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import NavHeader from "@/components/sections/NavHeader.astro";
+import FooterSection from "@/components/sections/FooterSection.astro";
+import FadeIn from "@/components/ui/FadeIn.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+
+const LAYERS = [
+  {
+    tag: "PLUGGABLE",
+    name: "consensus module",
+    description:
+      "Engine API and beacon-root handling for PoS networks, ETChash for PoW, PoA (Clique/Qbft/Bor-style) for consortium networks — the same seam hosts L2 rollup derivation and ZK-EVM families. Selected per deployment, one interface.",
+    accent: false,
+  },
+  {
+    tag: "INFRASTRUCTURE",
+    name: "fukuii-env",
+    description: "Networking, JSON-RPC, sync controllers, Prometheus metrics, storage glue.",
+    accent: false,
+  },
+  {
+    tag: "FOUNDATION",
+    name: "fukuii-core",
+    description: "EVM, state trie, RLP, txpool. Chain-agnostic. The library you'd reach for to build the next client.",
+    accent: true,
+  },
+] as const;
+---
+
+<BaseLayout
+  title="Architecture"
+  description="Fukuii's three-layer architecture: chain-agnostic EVM core, infrastructure layer, and a consensus module built for pluggability — hosting ETChash, the Engine API, PoA, L2 rollup derivation, and ZK-EVM families behind one interface."
+>
+  <main>
+    <NavHeader />
+    <PageHero
+      eyebrow="Architecture"
+      title="Three layers, cleanly separated"
+      description="Chain-agnostic at the bottom, opinionated at the top. The three-layer split is what lets Fukuii swap consensus modules, run multiple chains concurrently, and derive L2 blocks — all above the fukuii-core boundary, without touching the EVM itself."
+      ctas={[
+        { label: "Guide", href: "/guide", primary: true },
+        { label: "GitHub", href: "https://github.com/chippr-robotics/fukuii", external: true },
+      ]}
+    />
+    <section class="section-fk">
+      <div class="container-fk">
+        <FadeIn delay={80}>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border);">
+            {
+              LAYERS.map((layer, i) => (
+                <div
+                  style={{
+                    padding: "2rem 1.75rem",
+                    borderRight: i < LAYERS.length - 1 ? "1px solid var(--border)" : "none",
+                    background: layer.accent ? "var(--accent-soft)" : "transparent",
+                  }}
+                >
+                  <span class="cell-label" style={layer.accent ? { color: "var(--accent)" } : undefined}>
+                    {layer.tag}
+                  </span>
+                  <code
+                    style={{
+                      display: "block",
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "1.0625rem",
+                      fontWeight: 700,
+                      color: layer.accent ? "var(--accent)" : "var(--text)",
+                      letterSpacing: "-0.01em",
+                      marginBottom: "0.75rem",
+                    }}
+                  >
+                    {layer.name}
+                  </code>
+                  <p style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.65;">{layer.description}</p>
+                </div>
+              ))
+            }
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={160}>
+          <div style="margin-top: 2.5rem;">
+            <a
+              href="/#networks"
+              style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 600; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 0.375rem;"
+            >
+              See the network framework
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+    <FooterSection />
+  </main>
+</BaseLayout>

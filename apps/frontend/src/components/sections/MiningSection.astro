@@ -1,0 +1,97 @@
+---
+import FadeIn from "@/components/ui/FadeIn.astro";
+
+const CARDS = [
+  {
+    title: "Verify-before-ack, every share",
+    lead: "Correctness at the protocol boundary.",
+    proof: "getWork/submitWork implemented to mining-pool-grade correctness, with ECIP-1099 seedHash/DAG-epoch handling",
+    kind: "shield",
+  },
+  {
+    title: "A stable tip for the whole fleet",
+    lead: "Serve many miners without protocol errors.",
+    proof: "A named mining-pool deployment profile — SNAP-serving on, tip-server sync — keeps Fukuii a stable chain-tip node under load",
+    kind: "target",
+  },
+  {
+    title: "State distribution that scales with the network",
+    lead: "Pools as infrastructure, not just consumers.",
+    proof: "ERA1 frozen-segment bulk import + BitTorrent bootstrap distribution turns pools into snapshot seeders for the whole network",
+    kind: "network",
+  },
+] as const;
+---
+
+<section class="section-fk" id="mining">
+  <div class="container-fk">
+    <FadeIn>
+      <div style="margin-bottom: 3rem;">
+        <span class="cell-label">Mining Economy</span>
+        <h2 class="section-title" style="margin-bottom: 1rem;">Built for the only Proof-of-Work EVM network.</h2>
+        <p class="section-subtitle">
+          Ethereum Classic&apos;s maintained-client field has narrowed, right as pools need a
+          stable, actively-developed client to build on. Fukuii is built with the mining economy
+          as its flagship use case, not an afterthought.
+        </p>
+      </div>
+    </FadeIn>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; margin-bottom: 1px; border: 1px solid var(--border);">
+      {
+        CARDS.map((card, i) => (
+          <FadeIn delay={i * 100}>
+            <div class="cell-fk" style={{ padding: "1.75rem", height: "100%", border: "none", borderRight: i < CARDS.length - 1 ? "1px solid var(--border)" : undefined }}>
+              <div style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 1.125rem; flex-shrink: 0;">
+                {card.kind === "shield" && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <polyline points="9 12 11 14 15 10" />
+                  </svg>
+                )}
+                {card.kind === "target" && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                )}
+                {card.kind === "network" && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="6" cy="6" r="2.5" />
+                    <circle cx="18" cy="6" r="2.5" />
+                    <circle cx="6" cy="18" r="2.5" />
+                    <circle cx="18" cy="18" r="2.5" />
+                    <line x1="8.2" y1="6" x2="15.8" y2="6" />
+                    <line x1="6" y1="8.2" x2="6" y2="15.8" />
+                    <line x1="18" y1="8.2" x2="18" y2="15.8" />
+                    <line x1="8.2" y1="18" x2="15.8" y2="18" />
+                  </svg>
+                )}
+              </div>
+              <h3 style="font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.375rem; letter-spacing: -0.01em;">{card.title}</h3>
+              <p style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 0.875rem;">{card.lead}</p>
+              <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-subtle); line-height: 1.55;">{card.proof}</p>
+            </div>
+          </FadeIn>
+        ))
+      }
+    </div>
+
+    <FadeIn delay={300}>
+      <div class="cell-fk" style="border-left: 3px solid var(--accent); padding: 1.25rem 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <p style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6; flex: 1; min-width: 22ch;">
+          Deployment steps, configuration, and operator guidance for running Fukuii as a
+          mining-pool node.
+        </p>
+        <a
+          href="https://docs.fukuii.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 600; color: var(--accent); text-decoration: none; white-space: nowrap; flex-shrink: 0;"
+        >
+          Mining-pool deployment guide →
+        </a>
+      </div>
+    </FadeIn>
+  </div>
+</section>

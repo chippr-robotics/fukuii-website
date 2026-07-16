@@ -1,0 +1,59 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import NavHeader from "@/components/sections/NavHeader.astro";
+import FooterSection from "@/components/sections/FooterSection.astro";
+import FeaturesSection from "@/components/sections/FeaturesSection.astro";
+import OperationsSection from "@/components/sections/OperationsSection.astro";
+import FadeIn from "@/components/ui/FadeIn.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+
+const PROTOCOLS = [
+  { category: "Wire protocols", tags: [{ label: "ETH68", color: "blue" }, { label: "ETH69", color: "blue" }] },
+  { category: "Snap sync", tags: [{ label: "Snap V1", color: "teal" }] },
+  { category: "In progress", tags: [{ label: "ETH70", color: "muted" }, { label: "ETH71", color: "muted" }, { label: "Snap V2", color: "muted" }] },
+  { category: "Engine API", tags: [{ label: "V1", color: "violet" }, { label: "V2", color: "violet" }, { label: "V3", color: "violet" }, { label: "V4", color: "violet" }] },
+  { category: "JSON-RPC + API", tags: [{ label: "HTTP", color: "amber" }, { label: "WebSocket", color: "amber" }, { label: "IPC", color: "amber" }, { label: "GraphQL", color: "amber" }, { label: "MCP server", color: "amber" }] },
+  { category: "Discovery", tags: [{ label: "discv4", color: "muted" }, { label: "discv5", color: "muted" }] },
+  { category: "Monitoring", tags: [{ label: "Prometheus", color: "orange" }, { label: "Grafana", color: "orange" }] },
+  { category: "Consensus", tags: [{ label: "ETChash", color: "green" }, { label: "PoS", color: "green" }, { label: "PoW", color: "green" }] },
+  { category: "Spec-compliant with", tags: [{ label: "Lighthouse", color: "indigo" }, { label: "Prysm", color: "indigo" }, { label: "Teku", color: "indigo" }, { label: "Lodestar", color: "indigo" }, { label: "Nimbus", color: "indigo" }] },
+] as const;
+---
+
+<BaseLayout
+  title="Features"
+  description="Fukuii's full capability surface: ETH68/69 wire protocols, SNAP sync, Engine API V1-V4, JSON-RPC, GraphQL, and MCP server. On public-network execution it matches go-ethereum and Besu on wire protocols, SNAP sync, and the full Engine API."
+>
+  <main>
+    <NavHeader />
+    <PageHero
+      eyebrow="CAPABILITIES"
+      title="What Fukuii can do"
+      description="This is the full capability surface, in a single view. Every wire protocol, sync strategy, consensus model, API transport, and consensus-client integration Fukuii ships is verified byte-exact against the public specification and proven on the public mainnets it runs today: wire protocols, SNAP sync, and the full Engine API, with JSON-RPC and GraphQL alongside them. Fukuii goes one step further with a built-in MCP server — one of a very small number of EVM clients with a native agentic-AI interface."
+      ctas={[{ label: "Quick Start", href: "/guide" }]}
+    />
+    <FeaturesSection />
+    <section class="section-fk">
+      <div class="container-fk">
+        <FadeIn delay={80}>
+          <div class="protocol-matrix">
+            {
+              PROTOCOLS.map((row) => (
+                <div class="protocol-row">
+                  <div class="protocol-category">{row.category}</div>
+                  <div class="protocol-tags">
+                    {row.tags.map((tag) => (
+                      <span class={`proto-tag proto-tag--${tag.color}`}>{tag.label}</span>
+                    ))}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+    <OperationsSection />
+    <FooterSection />
+  </main>
+</BaseLayout>

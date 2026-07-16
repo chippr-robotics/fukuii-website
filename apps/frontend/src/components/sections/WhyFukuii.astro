@@ -1,0 +1,53 @@
+---
+import FadeIn from "@/components/ui/FadeIn.astro";
+
+const BLOCKS = [
+  {
+    label: "THE ONLY POW EVM",
+    heading: "The only actively-developed native client for the only Proof-of-Work EVM network.",
+    body: "Ethereum Classic is the only Proof-of-Work EVM network in production. core-geth is deprecated; Besu has exited ETC support. Fukuii is ETC's successor client — built independently on the same EIPs and wire protocol as every other EVM client, not forked from or transpiled out of any of them. A different codebase, a different language, a different team, different failure modes: a consensus bug in a Go implementation does not propagate to a JVM implementation, and vice versa.",
+  },
+  {
+    label: "ONE BINARY, EVERY NETWORK",
+    heading: "The only EVM client built to run multiple networks concurrently, in one process.",
+    body: "Run Ethereum Classic, Ethereum, Mordor, and Sepolia — or any combination Fukuii supports — from a single production binary, each fully isolated: its own state, its own metrics registry, its own config. No other EVM client runs multi-instance in production, because no other client isolates metrics, storage, and config per instance the way Fukuii does. Fewer boxes, more networks, one audited supply chain.",
+  },
+  {
+    label: "THE PREFERRED STACK",
+    heading: "A type system that rejects consensus bugs before they reach a block.",
+    body: "Serious infrastructure runs on the JVM, the runtime trading desks and clearing systems have trusted for decades, and its operational tooling (JFR, async-profiler, JMX, heap dumps) comes for free. Fukuii goes one layer further. Scala 3's algebraic data types, exhaustive pattern matching, and type system make entire classes of consensus-critical bugs impossible to express, caught at compile time rather than discovered in production. The JVM is the foundation; Scala is why correctness is structural.",
+  },
+  {
+    label: "AGENTIC INFRASTRUCTURE",
+    heading: "An EVM client with a built-in MCP server.",
+    body: "Model Context Protocol is an open standard that lets AI agents call structured tools. Fukuii ships an MCP server that exposes node state, sync progress, peer counts, and block data to any MCP-compatible agent. Infrastructure automation, anomaly detection, and runbook execution wire straight into a running node.",
+  },
+] as const;
+---
+
+<section class="section-fk section-bordered" id="why" style="background: var(--bg-elev);">
+  <div class="container-fk">
+    <FadeIn>
+      <div style="margin-bottom: 3.5rem;">
+        <span class="cell-label">Why Fukuii</span>
+        <h2 class="section-title">A different runtime. A different guarantee.</h2>
+      </div>
+    </FadeIn>
+
+    <div style="border: 1px solid var(--border);">
+      {
+        BLOCKS.map((block, i) => (
+          <FadeIn delay={i * 80}>
+            <div style={{ borderTop: i === 0 ? "none" : "1px solid var(--border)", padding: "1.75rem 2.5rem" }}>
+              <span class="cell-label">{block.label}</span>
+              <h3 style="font-size: clamp(1.125rem, 2vw + 0.5rem, 1.5rem); font-weight: 700; letter-spacing: -0.02em; color: var(--text); line-height: 1.3; margin-bottom: 0.875rem;">
+                {block.heading}
+              </h3>
+              <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.75;">{block.body}</p>
+            </div>
+          </FadeIn>
+        ))
+      }
+    </div>
+  </div>
+</section>

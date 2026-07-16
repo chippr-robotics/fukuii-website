@@ -1,0 +1,130 @@
+---
+import FadeIn from "@/components/ui/FadeIn.astro";
+
+interface NetEntry {
+  name: string;
+  chainId: number;
+  tags: string[];
+  primary?: boolean;
+}
+
+interface NetGroup {
+  family: string;
+  consensus: string;
+  badgeLabel: string;
+  badgeClass: string;
+  accentColor: string;
+  networks: NetEntry[];
+}
+
+const ETC_GROUP: NetGroup = {
+  family: "Ethereum Classic",
+  consensus: "Proof-of-Work / ETChash",
+  badgeLabel: "PoW",
+  badgeClass: "badge-fk badge-green",
+  accentColor: "var(--fk-green-3)",
+  networks: [
+    { name: "Ethereum Classic", chainId: 61, tags: ["ETH68, ETH69, SNAP V1", "Olympia (Fusaka)"], primary: true },
+    { name: "Mordor", chainId: 63, tags: ["ETC testnet"] },
+  ],
+};
+
+const ETH_GROUP: NetGroup = {
+  family: "Ethereum",
+  consensus: "Proof-of-Stake / Engine API",
+  badgeLabel: "PoS",
+  badgeClass: "badge-fk badge-violet",
+  accentColor: "#a78bfa",
+  networks: [
+    { name: "Ethereum Mainnet", chainId: 1, tags: ["ETH69, ETH70, SNAP V1", "Fulu / Osaka (Fusaka)"], primary: true },
+    { name: "Sepolia", chainId: 11155111, tags: ["ETH testnet"] },
+  ],
+};
+
+const CONFIGURABLE = [
+  { label: "PoA & consortium networks", desc: "Clique/Qbft/Bor-style consensus, custom genesis and fork schedule, no source changes" },
+  { label: "Sidechains", desc: "Polygon/Bor-style, with injected bridge/oracle logic" },
+  { label: "L2 rollups", desc: "OP-stack/Taiko-style, including rollup-specific transaction types and derivation" },
+  { label: "ZK-EVM & alt-consensus", desc: "The same family framework hosts ZK-EVM and alt-BFT consensus alongside PoW and PoS" },
+] as const;
+---
+
+<section class="section-fk section-bordered" id="networks">
+  <div class="container-fk">
+    <FadeIn>
+      <div style="margin-bottom: 3rem;">
+        <span class="cell-label">Networks</span>
+        <h2 class="section-title" style="margin-bottom: 0.75rem;">Supported Ethereum Virtual Machine Networks</h2>
+        <p class="section-subtitle">
+          Two networks run in production today, each with its testnet — Ethereum Classic, the
+          only Proof-of-Work EVM network, and Ethereum, the largest Proof-of-Stake network. The
+          same network-family framework that runs them hosts PoA consortium and private networks,
+          sidechains, L2 rollups, and ZK-EVM families — selected per deployment, not switched on
+          for everyone by default.
+        </p>
+      </div>
+    </FadeIn>
+
+    <FadeIn delay={70}>
+      <div class="cell-grid-2col" style="border: 1px solid var(--border); margin-bottom: 1px;">
+        {
+          [ETC_GROUP, ETH_GROUP].map((group, gi) => (
+            <div style={{ borderLeft: gi === 1 ? "1px solid var(--border)" : undefined, display: "flex", flexDirection: "column" }}>
+              <div style="padding: 1.5rem 1.75rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; border-bottom: 1px solid var(--border);">
+                <div>
+                  <span class="cell-label" style={{ color: group.accentColor }}>{group.consensus}</span>
+                  <h3 style={{ fontSize: "1.125rem", fontWeight: 700, letterSpacing: "-0.02em", color: group.accentColor, marginBottom: 0 }}>{group.family}</h3>
+                </div>
+                <span class={group.badgeClass}>{group.badgeLabel}</span>
+              </div>
+
+              {
+                group.networks.map((net) => (
+                  <div style="padding: 1.25rem 1.75rem; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;">
+                    <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                      <span style="font-size: 0.9375rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em;">{net.name}</span>
+                      {net.tags.map((tag) => (
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-subtle);">{tag}</span>
+                      ))}
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.375rem; flex-shrink: 0;">
+                      {net.primary && (
+                        <span class="badge-fk" style="font-family: var(--font-mono); font-size: 0.7rem; white-space: nowrap;">Primary</span>
+                      )}
+                      <span class="badge-fk" style="font-family: var(--font-mono); font-size: 0.7rem; white-space: nowrap;">
+                        {net.chainId === 0 ? "custom" : `chain ${net.chainId}`}
+                      </span>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          ))
+        }
+      </div>
+    </FadeIn>
+
+    <FadeIn delay={140}>
+      <div style="border: 1px solid var(--border); display: grid; grid-template-columns: repeat(4, 1fr); margin-bottom: 1px;">
+        {
+          CONFIGURABLE.map((item, i) => (
+            <div style={{ padding: "1.5rem 1.75rem", borderRight: i === 0 || i === 2 ? "1px solid var(--border)" : undefined }}>
+              <span class="cell-label">Configurable</span>
+              <p style="font-size: 0.9375rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em; margin-bottom: 0.375rem;">{item.label}</p>
+              <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-subtle);">{item.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </FadeIn>
+
+    <FadeIn delay={200}>
+      <div class="cell-fk" style="border-left: 3px solid var(--accent); padding: 1.25rem 2rem;">
+        <p style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6;">
+          The archival storage profile and era1 cold storage behind Fukuii&apos;s own snapshot
+          distribution are designed for operators like block explorers and archival services.
+        </p>
+      </div>
+    </FadeIn>
+  </div>
+</section>

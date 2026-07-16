@@ -1,0 +1,48 @@
+---
+import FadeIn from "@/components/ui/FadeIn.astro";
+---
+
+<section class="section-fk">
+  <div class="container-fk">
+    <FadeIn>
+      <div style="border: 1px solid var(--border); background: var(--bg-elev); padding: clamp(2rem, 5vw, 3.5rem); text-align: center;">
+        <h2 style="font-size: clamp(1.5rem, 3vw + 0.5rem, 2.25rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: var(--text); margin-bottom: 1rem;">
+          Run Fukuii in production.
+        </h2>
+
+        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 2rem; max-width: 560px; margin-inline: auto;">
+          One signed binary scales from a home node to institutional infrastructure. Download a
+          release and run it; deployment, monitoring, and upgrades live in the operator guide.
+        </p>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+          <a
+            href="https://github.com/chippr-robotics/fukuii/releases"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; background: var(--accent); border: 1px solid var(--accent); color: var(--fk-ivory); font-weight: 700; font-size: 0.9375rem; text-decoration: none; font-family: var(--font-sans);"
+          >
+            Download
+          </a>
+          <a
+            href="https://docs.fukuii.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid var(--border-strong); background: var(--bg-card); color: var(--text-muted); font-weight: 600; font-size: 0.9375rem; text-decoration: none;"
+          >
+            Documentation
+          </a>
+        </div>
+
+        <a
+          href="https://github.com/chippr-robotics/fukuii/discussions"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="display: inline-block; margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-subtle); text-decoration: none;"
+        >
+          Join discussions
+        </a>
+      </div>
+    </FadeIn>
+  </div>
+</section>

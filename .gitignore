@@ -64,6 +64,9 @@ CLAUDE.md
 # Internal development directory
 .local/
 
+# Local pre-rebuild snapshots (rollback safety net, not repo history)
+/archive/
+
 # Planning & internal docs
 SESSION_NOTES.md
 PLANNING.md

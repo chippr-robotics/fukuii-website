@@ -1,0 +1,62 @@
+---
+import FadeIn from "@/components/ui/FadeIn.astro";
+
+const STACK_ROWS = [
+  { component: "Scala 3 LTS · current JDK LTS", what: "Language and runtime", why: "A current, maintained foundation, not a frozen one." },
+  { component: "Apache Pekko", what: "Actor runtime", why: "Open Apache license; no commercial subscription, no vendor lock." },
+  { component: "RocksDB", what: "Storage engine", why: "The same proven embedded store the EVM client world relies on." },
+  { component: "Cats Effect 3 · fs2", what: "Concurrency", why: "Pure-functional effects; correctness extended into the runtime." },
+  { component: "Bouncy Castle · BLS12-381 · KZG", what: "Cryptography", why: "The same primitives used across the wider Ethereum ecosystem." },
+  { component: "Netty · Micrometer · Prometheus", what: "Networking and observability", why: "The JVM operational toolchain, the part that matters at 3 a.m." },
+] as const;
+---
+
+<section class="section-fk" id="stack">
+  <div class="container-fk">
+    <FadeIn>
+      <div style="margin-bottom: 2.5rem;">
+        <span class="cell-label">Stack</span>
+        <h2 class="section-title" style="margin-bottom: 0.75rem;">Built on what already works.</h2>
+        <p class="section-subtitle">
+          A current stack, on purpose. Scala 3 LTS, current JDK LTS, RocksDB, maintained to the
+          latest stable across the board. Production infrastructure runs on supported foundations,
+          not frozen ones. This is what active engineering looks like in a dependency manifest.
+        </p>
+      </div>
+    </FadeIn>
+
+    <FadeIn delay={80}>
+      <div style="border: 1px solid var(--border); overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1.5fr; background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 0.625rem 1.25rem;">
+          {
+            ["Component", "What it is", "Why it matters"].map((col) => (
+              <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-subtle);">
+                {col}
+              </span>
+            ))
+          }
+        </div>
+
+        {
+          STACK_ROWS.map((row, i) => (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr 1.5fr",
+                padding: "0.875rem 1.25rem",
+                borderBottom: i < STACK_ROWS.length - 1 ? "1px solid var(--border)" : "none",
+                background: i % 2 === 0 ? "transparent" : "var(--bg-card)",
+                gap: "0.75rem",
+                alignItems: "start",
+              }}
+            >
+              <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 600; color: var(--text); line-height: 1.5;">{row.component}</span>
+              <span style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.5;">{row.what}</span>
+              <span style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.5;">{row.why}</span>
+            </div>
+          ))
+        }
+      </div>
+    </FadeIn>
+  </div>
+</section>
