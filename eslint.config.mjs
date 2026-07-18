@@ -18,6 +18,6 @@ export default [
     },
   },
   {
-    ignores: ["dist/", ".astro/", "node_modules/"],
+    ignores: ["dist/", ".astro/", "node_modules/", "archive/", "brand/", ".local/"],
   },
 ];

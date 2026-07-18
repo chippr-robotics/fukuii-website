@@ -26,34 +26,36 @@ const PROTOCOLS = [
 >
   <main>
     <NavHeader />
-    <PageHero
-      eyebrow="CAPABILITIES"
-      title="What Fukuii can do"
-      description="This is the full capability surface, in a single view. Every wire protocol, sync strategy, consensus model, API transport, and consensus-client integration Fukuii ships is verified byte-exact against the public specification and proven on the public mainnets it runs today: wire protocols, SNAP sync, and the full Engine API, with JSON-RPC and GraphQL alongside them. Fukuii goes one step further with a built-in MCP server — one of a very small number of EVM clients with a native agentic-AI interface."
-      ctas={[{ label: "Quick Start", href: "/guide" }]}
-    />
-    <FeaturesSection />
-    <section class="section-fk">
-      <div class="container-fk">
-        <FadeIn delay={80}>
-          <div class="protocol-matrix">
-            {
-              PROTOCOLS.map((row) => (
-                <div class="protocol-row">
-                  <div class="protocol-category">{row.category}</div>
-                  <div class="protocol-tags">
-                    {row.tags.map((tag) => (
-                      <span class={`proto-tag proto-tag--${tag.color}`}>{tag.label}</span>
-                    ))}
+    <div id="main-content">
+      <PageHero
+        eyebrow="CAPABILITIES"
+        title="What Fukuii can do"
+        description="This is the full capability surface, in a single view. Every wire protocol, sync strategy, consensus model, API transport, and consensus-client integration Fukuii ships is verified byte-exact against the public specification and proven on the public mainnets it runs today: wire protocols, SNAP sync, and the full Engine API, with JSON-RPC and GraphQL alongside them. Fukuii goes one step further with a built-in MCP server, one of a very small number of EVM clients with a native agentic-AI interface."
+        ctas={[{ label: "Quick Start", href: "/guide" }]}
+      />
+      <FeaturesSection />
+      <section class="section-fk">
+        <div class="container-fk">
+          <FadeIn delay={80}>
+            <div class="protocol-matrix">
+              {
+                PROTOCOLS.map((row) => (
+                  <div class="protocol-row">
+                    <div class="protocol-category">{row.category}</div>
+                    <div class="protocol-tags">
+                      {row.tags.map((tag) => (
+                        <span class={`proto-tag proto-tag--${tag.color}`}>{tag.label}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))
-            }
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-    <OperationsSection />
+                ))
+              }
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+      <OperationsSection />
+    </div>
     <FooterSection />
   </main>
 </BaseLayout>

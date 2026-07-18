@@ -1,0 +1,104 @@
+# Fukuii
+
+> Fukuii is a Scala execution client for the Ethereum Virtual Machine ecosystem: the only actively-developed native client for Ethereum Classic, the only Proof-of-Work EVM network, and a full-featured client for Ethereum's Proof-of-Stake networks.
+
+Fukuii is a Scala EVM execution client, maintained by Chippr Robotics LLC. One binary runs Ethereum
+Classic (chain 61), Ethereum mainnet (chain 1), Mordor testnet (chain 63), and Sepolia (chain
+11155111) from a single deployment, each network fully isolated: its own state, its own metrics
+registry, its own config.
+
+## Why Fukuii
+
+### The Only PoW EVM
+
+Ethereum Classic is the only Proof-of-Work EVM network in production. core-geth is deprecated;
+Besu has exited ETC support. Fukuii is ETC's successor client, built independently on the same
+EIPs and wire protocol as every other EVM client, not forked from or transpiled out of any of them.
+
+### One Binary, Every Network
+
+Fukuii is the only EVM client built to run multiple networks concurrently in one process. No other
+client isolates metrics, storage, and config per instance the way Fukuii does.
+
+### The Preferred Stack
+
+A type system that rejects consensus bugs before they reach a block. Fukuii runs on the JVM, the
+runtime trading desks and clearing systems have trusted for decades, and Scala 3's type system
+makes entire classes of consensus-critical bugs impossible to express, caught at compile time.
+
+### Agentic Infrastructure
+
+Fukuii ships a built-in MCP server that exposes node state, sync progress, peer counts, and block
+data to any MCP-compatible agent: one of a very small number of EVM clients with a native
+agentic-AI interface.
+
+## Mining Economy
+
+Fukuii is built with the mining economy as its flagship use case. Mining-pool-grade
+getWork/submitWork with verify-before-ack, ECIP-1099 seedHash/DAG-epoch handling, a named
+mining-pool deployment profile (SNAP-serving on, tip-server sync), and BitTorrent-based state
+distribution that turns pools into snapshot seeders for the whole network.
+
+## Regulated Finance
+
+Pure JVM-native infrastructure for trading systems and custody platforms already running on the
+JVM: no FFI bridge, signed container images with build provenance attestation and a CycloneDX
+SBOM, concurrent multi-instance execution, and external-signer/HSM custody integration.
+
+## Supported Networks
+
+- Ethereum Classic (chain 61): the only Proof-of-Work EVM network, PoW/ETChash, full SNAP sync, Olympia (Fusaka)
+- Mordor (chain 63): ETC PoW testnet
+- Ethereum Mainnet (chain 1): the largest Proof-of-Stake network, PoS via Engine API
+- Sepolia (chain 11155111): ETH PoS testnet
+
+The same network-family framework also hosts, configurable per deployment: PoA consortium and
+private networks (Clique/Qbft/Bor-style), sidechains (Polygon/Bor-style), L2 rollups
+(OP-stack/Taiko-style), and ZK-EVM/alt-consensus families.
+
+## Runtime Stack
+
+- Language: Scala 3 LTS, kept current with each LTS patch release
+- JDK: current JDK LTS
+- Actor system: Apache Pekko (Apache Software Foundation, no BSL)
+- Storage: RocksDB, tracked to the latest stable release
+- Effects: Cats Effect 3 + fs2 (fully migrated off Monix)
+- Signed build provenance: Cosign keyless signing on every release
+- CycloneDX SBOM on all release artifacts
+
+## Operations
+
+Three isolated Pekko dispatchers keep sync pressure from starving the RPC. Prometheus metrics,
+Grafana dashboards, and liveness endpoints ship in the binary. A dRPC-Provider gRPC bridge and a
+named RPC-relay deployment profile make Fukuii a clean upstream for aggregation gateways.
+
+## Hardware Requirements
+
+- Home node: 8 GB RAM, 500 GB disk
+- Professional: 16 GB RAM, 1 TB disk
+- Enterprise: 32–64 GB RAM, 2–4 TB disk
+- Archive: 64 GB+ RAM, 4 TB+ disk
+
+## Quick Start
+
+    docker run ghcr.io/chippr-robotics/fukuii mordor
+
+## Web Properties
+
+- https://fukuii.com - Main site
+- https://fukuii.com/features - Capability surface: wire protocols, SNAP sync, Engine API, JSON-RPC, GraphQL, MCP server
+- https://fukuii.com/stack - Full dependency manifest
+- https://fukuii.com/architecture - Three-layer architecture: fukuii-core, fukuii-env, consensus module
+- https://fukuii.com/guide - Installation guide: Mordor SNAP, Docker, Sepolia with CL
+
+## Links
+
+Source:   https://github.com/chippr-robotics/fukuii
+Docker:   https://ghcr.io/chippr-robotics/fukuii
+Packages: https://github.com/chippr-robotics/fukuii/packages
+License:  Apache 2.0
+Origin:   Forked from Mantis (IOHK), package com.chipprbots
+
+## Organization
+
+Chippr Robotics LLC

@@ -12,11 +12,8 @@
 /coverage
 .nyc_output/
 
-# next.js
-/.next/
-/out/
-.next/
-out/
+# astro
+.astro/
 
 # production
 /build
@@ -41,12 +38,8 @@ yarn-error.log*
 .env.*
 !.env.example
 
-# vercel
-.vercel
-
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # secrets & credentials
 credentials.json

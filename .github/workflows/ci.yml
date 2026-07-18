@@ -23,16 +23,12 @@ jobs:
         with:
           node-version: "24"
           cache: "pnpm"
-          cache-dependency-path: apps/frontend/pnpm-lock.yaml
 
       - name: Install dependencies
-        working-directory: apps/frontend
         run: pnpm install --frozen-lockfile
 
       - name: Lint
-        working-directory: apps/frontend
         run: pnpm lint
 
       - name: Build (astro check + astro build)
-        working-directory: apps/frontend
         run: pnpm build

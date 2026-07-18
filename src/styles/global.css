@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 /* =========================================================
-   Fukuii — design system
+   Fukuii: design system
    Forest green + old gold. Dark-first, light via data-theme.
    ========================================================= */
 
 @theme {
-  /* Fonts — self-hosted via @fontsource, imported in BaseLayout */
+  /* Fonts: self-hosted via @fontsource, imported in BaseLayout */
   --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
@@ -20,14 +20,14 @@
 /* ── Design tokens ─────────────────────────────────────── */
 
 :root {
-  /* brand palette — derived from fukuii-hex-logo.png */
+  /* brand palette: derived from fukuii-hex-logo.png */
   --fk-green:        #1e4a2d;   /* deep background green */
-  --fk-green-2:      #2d6b40;   /* mid — light-mode accent */
+  --fk-green-2:      #2d6b40;   /* mid, light-mode accent */
   --fk-green-3:      #50a060;   /* hex background (primary) */
   --fk-green-char:   #60b040;   /* character/body yellow-green */
   --fk-green-light:  #70c080;   /* highlight / glow */
   --fk-green-glow:   rgba(80, 160, 96, 0.35);
-  --fk-pink:         #c06060;   /* worm accent — dusty rose */
+  --fk-pink:         #c06060;   /* worm accent, dusty rose */
   --fk-gold:         #b8964f;
   --fk-gold-2:       #d6b56b;
   --fk-ink:          #1a1f16;
@@ -35,7 +35,7 @@
   --fk-ivory:        #f5f3ed;
   --fk-ivory-dim:    #c5c3b8;
 
-  /* role tokens — dark theme defaults */
+  /* role tokens: dark theme defaults */
   --bg:             var(--fk-ink-2);
   --bg-elev:        var(--fk-ink);
   --bg-card:        rgba(80, 160, 96, 0.06);
@@ -419,7 +419,7 @@ a { color: inherit; text-decoration: none; }
   display: block;
 }
 
-/* Cell heading — used inside .cell-fk */
+/* Cell heading: used inside .cell-fk */
 .cell-h2 {
   font-size: clamp(1.375rem, 2.5vw, 1.875rem);
   font-weight: 700;

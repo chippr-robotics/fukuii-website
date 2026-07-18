@@ -37,7 +37,7 @@ Invoke-WebRequest \`
 
 # 3. Verify
 java -jar fukuii.jar --version`,
-  docker: `# No JDK required — the image bundles everything
+  docker: `# No JDK required, the image bundles everything
 docker pull ghcr.io/chippr-robotics/fukuii:latest
 
 # Verify
@@ -99,7 +99,7 @@ const REQUIREMENTS = [
 
     <FadeIn delay={160}>
       <div style="margin-top: 3.5rem;">
-        <span class="cell-label">Layer 1 — Install</span>
+        <span class="cell-label">Layer 1: Install</span>
         <p style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.5rem; margin-bottom: 1.5rem;">
           Get the binary onto your machine. Native installs require JDK 25 LTS; the Docker image
           bundles everything.
@@ -131,7 +131,7 @@ const REQUIREMENTS = [
 
         <details style="margin-top: 1rem; border: 1px solid var(--border);">
           <summary style="padding: 0.75rem 1.25rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; color: var(--text-subtle); cursor: pointer; list-style: none; user-select: none;">
-            ▶ Build from source (advanced — requires Scala toolchain)
+            ▶ Build from source (advanced, requires Scala toolchain)
           </summary>
           <div class="code-block" style="border: none; border-top: 1px solid var(--border); border-radius: 0;">
             <pre style="margin: 0; font-family: var(--font-mono); font-size: 0.8125rem; line-height: 1.7; color: var(--text); padding: 1.5rem; overflow-x: auto; white-space: pre;">{SOURCE_BUILD_CODE}</pre>
@@ -142,7 +142,7 @@ const REQUIREMENTS = [
 
     <FadeIn delay={80}>
       <div style="margin-top: 3.5rem;">
-        <span class="cell-label">Layer 2 — Run a node</span>
+        <span class="cell-label">Layer 2: Run a node</span>
         <p style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.5rem; margin-bottom: 1.5rem;">
           Once installed, the network is a single argument. The same binary runs every network
           below.

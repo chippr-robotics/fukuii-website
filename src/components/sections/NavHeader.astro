@@ -24,19 +24,23 @@ const NAV_LINKS = [
         </div>
       </a>
 
-      <nav class="hidden md:flex" style="gap: 0.25rem; align-items: center;">
-        {
-          NAV_LINKS.map((link) => (
-            <a
-              class="nav-link"
-              href={link.href}
-              target={"external" in link && link.external ? "_blank" : undefined}
-              rel={"external" in link && link.external ? "noopener noreferrer" : undefined}
-            >
-              {link.label}
-            </a>
-          ))
-        }
+      <nav class="hidden md:flex" aria-label="Primary" style="align-items: center;">
+        <ul style="display: flex; gap: 0.25rem; align-items: center; list-style: none; margin: 0; padding: 0;">
+          {
+            NAV_LINKS.map((link) => (
+              <li>
+                <a
+                  class="nav-link"
+                  href={link.href}
+                  target={"external" in link && link.external ? "_blank" : undefined}
+                  rel={"external" in link && link.external ? "noopener noreferrer" : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </nav>
 
       <div style="display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;">
@@ -71,21 +75,25 @@ const NAV_LINKS = [
       </div>
     </div>
 
-    <div class="mobile-nav-panel" style="display: none; border-top: 1px solid var(--border); padding-block: 0.75rem; flex-direction: column; gap: 0.25rem;">
-      {
-        NAV_LINKS.map((link) => (
-          <a
-            class="nav-link"
-            href={link.href}
-            target={"external" in link && link.external ? "_blank" : undefined}
-            rel={"external" in link && link.external ? "noopener noreferrer" : undefined}
-            style="padding: 0.625rem 0.75rem; font-size: 0.9375rem; display: block;"
-          >
-            {link.label}
-          </a>
-        ))
-      }
-    </div>
+    <nav class="mobile-nav-panel" aria-label="Mobile" style="display: none; border-top: 1px solid var(--border); padding-block: 0.75rem;">
+      <ul style="display: flex; flex-direction: column; gap: 0.25rem; list-style: none; margin: 0; padding: 0;">
+        {
+          NAV_LINKS.map((link) => (
+            <li>
+              <a
+                class="nav-link"
+                href={link.href}
+                target={"external" in link && link.external ? "_blank" : undefined}
+                rel={"external" in link && link.external ? "noopener noreferrer" : undefined}
+                style="padding: 0.625rem 0.75rem; font-size: 0.9375rem; display: block;"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </div>
 </header>
 

@@ -12,13 +12,15 @@ import PageHero from "@/components/ui/PageHero.astro";
 >
   <main>
     <NavHeader />
-    <PageHero
-      eyebrow="Quick Start"
-      title="Up in five minutes"
-      description="From download to a syncing node in about five minutes. Install for your platform, choose a network, and you're running. Mining, staking, and archive configurations build on the same binary from there."
-      ctas={[{ label: "Documentation", href: "https://docs.fukuii.com/", external: true }]}
-    />
-    <QuickStartSection />
+    <div id="main-content">
+      <PageHero
+        eyebrow="Quick Start"
+        title="Up in five minutes"
+        description="From download to a syncing node in about five minutes. Install for your platform, choose a network, and you're running. Mining, staking, and archive configurations build on the same binary from there."
+        ctas={[{ label: "Documentation", href: "https://docs.fukuii.com/", external: true }]}
+      />
+      <QuickStartSection />
+    </div>
     <FooterSection />
   </main>
 </BaseLayout>

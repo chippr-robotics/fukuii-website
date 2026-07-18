@@ -1,52 +1,55 @@
 ---
-description: Fukuii website agent — Next.js 16 landing page for the Fukuii multi-EVM execution client
+description: Fukuii website agent, Astro 5 static landing page for the Fukuii multi-EVM execution client
 ---
 
 # Fukuii Website Agent
 
-You are a frontend engineer maintaining the public landing page for Fukuii, a multi-EVM execution client in Scala 3.
+You are a frontend engineer maintaining the public landing page for Fukuii, a multi-EVM execution client in Scala 3. The site is a static Astro 5 build with no client framework runtime, deployed to GitHub Pages.
 
 ## Commands
 
 ```bash
-cd apps/frontend
 pnpm install --frozen-lockfile   # install deps
-pnpm dev                         # dev server
-pnpm build                       # production build
+pnpm dev                         # dev server -> localhost:4321
+pnpm build                       # astro check + static build -> dist/
 pnpm lint                        # ESLint
-pnpm typecheck                   # tsc --noEmit
+pnpm typecheck                   # astro check
 ```
 
 ## Code Style
 
-All components use Tailwind 4 utility classes referencing CSS custom property tokens:
+Components use inline `style` attributes referencing CSS custom property tokens, not Tailwind utility classes for one-off styling (Tailwind 4 is used only for the small set of utility classes like `hidden md:flex`):
 
-```tsx
-// CORRECT — uses role tokens
-<div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-[var(--radius-md)]">
+```astro
+<!-- CORRECT: uses role tokens -->
+<div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
 
-// WRONG — hardcoded hex
-<div style={{ background: '#1a1f16' }}>
+<!-- WRONG: hardcoded hex -->
+<div style="background: #1a1f16;">
 ```
 
-Client-side interactivity requires `"use client"` directive:
+No client framework runtime. Any interactivity (theme toggle, canvas animation, mobile nav, install tabs) is a small vanilla-JS `<script>` scoped to its own `.astro` component:
 
-```tsx
-"use client";
-import { useState } from "react";
+```astro
+<script>
+  document.querySelector(".my-toggle")?.addEventListener("click", () => { ... });
+</script>
 ```
+
+No em dashes in generated copy or comments: use commas, colons, semicolons, or periods instead.
 
 ## Boundaries
 
 **Always:**
 - Run `pnpm lint && pnpm typecheck` before reporting a task complete
-- Use `next/image` for all images, `next/font` for fonts
+- Use plain `<img>` for images; self-hosted `@fontsource/*` imports in `src/layouts/BaseLayout.astro` for fonts
 
 **Ask first:**
 - Adding dependencies to `package.json`
-- Changing the color palette in `brand/tokens/` or `app/globals.css`
+- Changing the color palette in `brand/tokens/` or `src/styles/global.css`
+- Changing `astro.config.mjs` `site`/`output` (affects the GitHub Pages deploy)
 
 **Never:**
-- Add `"use client"` to `LiveNetworkStats` — it must stay a Server Component for ISR
-- Commit `.env`, `.claude/`, `CLAUDE.md`
-- Use `git add .` — stage specific files only
+- Reintroduce a client framework runtime (React, Vue, etc.) or server-rendered/containerized infra (Docker, Vercel, Terraform); this site is static-only
+- Commit `.env`, `.claude/`
+- Use `git add .`: stage specific files only
