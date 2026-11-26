@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#f5f3ed" media="(prefers-color-scheme: light)">
 
     <meta property="og:title" content="Fukuii — The EVM execution client built for operators">
-    <meta property="og:description" content="ETC + Ethereum execution client in Scala 3. Engine API through Amsterdam, live on Sepolia. Olympia implemented for ETC. Alpha.">
+    <meta property="og:description" content="ETC + Ethereum execution client in Scala 3. EVM-compatible through Amsterdam, live on Sepolia. Beta.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/fukuii-logo-cute.png">
 
@@ -31,7 +31,7 @@
             <a href="/" class="logo" aria-label="Fukuii home">
                 <img src="/fukuii-logo-cute.png" alt="" class="logo-image" width="40" height="40">
                 <span class="logo-text">Fukuii</span>
-                <span class="logo-tag" aria-hidden="true">alpha</span>
+                <span class="logo-tag" aria-hidden="true">beta</span>
             </a>
             <nav class="nav-links" aria-label="Primary">
                 <a href="#what" class="nav-link">What</a>
@@ -67,7 +67,7 @@
         <div class="hero-inner">
             <div class="hero-badge">
                 <span class="hero-badge-dot"></span>
-                v0.12 · Amsterdam live on Sepolia · Olympia ready for ETC
+                Beta · v0.12 · EVM-compatible through Amsterdam
             </div>
             <h1 class="hero-title">
                 The EVM execution client
@@ -77,7 +77,7 @@
                 Fukuii is an execution layer client in Scala 3. It runs
                 <strong>Ethereum Classic and Mordor natively</strong> on proof of work, and follows
                 <strong>Ethereum mainnet, Sepolia, Hoodi, Ephemery and Platåberget</strong> under any
-                consensus client over the Engine API, from Prague through Osaka to Amsterdam.
+                consensus client over the Engine API, EVM-compatible through Amsterdam.
             </p>
             <div class="hero-actions">
                 <a href="#quickstart" class="btn btn-primary">
@@ -192,7 +192,6 @@
                     <ul class="net-meta">
                         <li>Ethash consensus and a built-in miner</li>
                         <li>SNAP sync, with checkpoint bootstrap</li>
-                        <li>Olympia (ECIP-1111/1112/1121) implemented; activation block not yet set</li>
                     </ul>
                 </article>
 
@@ -205,7 +204,6 @@
                     <ul class="net-meta">
                         <li>ETC testnet</li>
                         <li>SNAP sync, with checkpoint bootstrap</li>
-                        <li>Olympia implemented; activation block not yet set</li>
                     </ul>
                 </article>
 
@@ -301,7 +299,7 @@
                     <button id="tab-sync" class="tab" role="tab" aria-selected="true" aria-controls="panel-sync" tabindex="0">Sync</button>
                     <button id="tab-evm" class="tab" role="tab" aria-selected="false" aria-controls="panel-evm" tabindex="-1">Forks &amp; EVM</button>
                     <button id="tab-engine" class="tab" role="tab" aria-selected="false" aria-controls="panel-engine" tabindex="-1">Engine API</button>
-                    <button id="tab-rpc" class="tab" role="tab" aria-selected="false" aria-controls="panel-rpc" tabindex="-1">JSON-RPC + MCP</button>
+                    <button id="tab-rpc" class="tab" role="tab" aria-selected="false" aria-controls="panel-rpc" tabindex="-1">JSON-RPC</button>
                     <button id="tab-hive" class="tab" role="tab" aria-selected="false" aria-controls="panel-hive" tabindex="-1">Verification</button>
                     <button id="tab-ops" class="tab" role="tab" aria-selected="false" aria-controls="panel-ops" tabindex="-1">Operations</button>
                     <span class="tab-indicator" aria-hidden="true"></span>
@@ -320,8 +318,8 @@
                 </div>
 
                 <div id="panel-evm" class="tabpanel" role="tabpanel" aria-labelledby="tab-evm" hidden>
-                    <h3>Ethereum through Amsterdam, ETC through Olympia</h3>
-                    <p>Ethereum mainnet's schedule through Osaka and the BPO2 blob fork, and the Amsterdam execution rules of Glamsterdam, active on Sepolia and Platåberget. On ETC, Olympia is implemented and waits for the network to choose an activation block.</p>
+                    <h3>EVM-compatible through Amsterdam</h3>
+                    <p>Ethereum mainnet's schedule through Osaka and the BPO2 blob fork, and the Amsterdam execution rules of Glamsterdam, active on Sepolia and Platåberget.</p>
                     <ul class="bullets bullets--grid">
                         <li>EIP-7928 block-level access lists</li>
                         <li>EIP-7843 SLOTNUM</li>
@@ -333,8 +331,6 @@
                         <li>EIP-7976 / 7981 calldata and access-list cost</li>
                         <li>EIP-7840 / 7892 per-chain blob schedule</li>
                         <li>EIP-4844 blobs · EIP-7685 requests</li>
-                        <li>ECIP-1111 EIP-1559 fee market for ETC</li>
-                        <li>ECIP-1112 treasury · ECIP-1121 MESS</li>
                     </ul>
                 </div>
 
@@ -351,8 +347,8 @@
                 </div>
 
                 <div id="panel-rpc" class="tabpanel" role="tabpanel" aria-labelledby="tab-rpc" hidden>
-                    <h3>JSON-RPC, GraphQL, and MCP for AI agents</h3>
-                    <p>HTTP on 8546, WebSocket on 8552, and IPC, all bound to localhost by default. As in go-ethereum, HTTP and WebSocket serve only <code>eth</code>, <code>net</code>, <code>web3</code> and <code>fukuii</code> until you opt in to more, per transport. Add <code>mcp</code> to a transport's list to expose a Model Context Protocol server (2025-11-25) to LLM agents.</p>
+                    <h3>JSON-RPC and GraphQL</h3>
+                    <p>HTTP on 8546, WebSocket on 8552, and IPC, all bound to localhost by default. As in go-ethereum, HTTP and WebSocket serve only <code>eth</code>, <code>net</code>, <code>web3</code> and <code>fukuii</code> until you opt in to more, per transport.</p>
                     <ul class="bullets bullets--grid">
                         <li><code>eth_*</code> incl. <code>eth_simulateV1</code></li>
                         <li><code>net_*</code> · <code>web3_*</code></li>
@@ -372,7 +368,7 @@
                     <p>Fukuii publishes which checks can block a merge, generated from the CI gate matrix. Three are required today: the build with Tier-1 and Tier-2 tests, the Docker build, and the gate-integrity meta-check. Hive suites run and report but are <em>informational</em> — not a compliance claim until promoted.</p>
                     <ul class="bullets">
                         <li><strong>EEST Amsterdam</strong> — 26,503 / 26,503 execution-specs blockchain tests replayed through block import, and every accepted block rebuilt by the payload builder</li>
-                        <li><strong>First required Hive slice</strong> — geth ↔ fukuii sync both ways, Engine API invalid-payload rejection, ETC-fork consume-rlp; target 2026-12-31</li>
+                        <li><strong>First required Hive slice</strong> — geth ↔ fukuii sync both ways, Engine API invalid-payload rejection, ETC-fork consume-rlp</li>
                         <li><strong>Also running</strong> — smoke, rpc-compat, graphql, devp2p, consensus, consume-engine, and nightly ethereum/tests across both fork schedules</li>
                     </ul>
                     <p class="callout">Live tiers, waivers and promotion dates: <a href="https://docs.fukuii.com/STATUS/" rel="noopener">Verification Status</a></p>
@@ -460,8 +456,7 @@
                     <h3 class="card-title">In progress</h3>
                     <ul class="bullets">
                         <li>One unified state layout for ETC and ETH: in-place reorgs, no post-SNAP state copy (spec 018)</li>
-                        <li>Full Glamsterdam execution-layer scope and the payload builder slice (spec 009)</li>
-                        <li>Hive suites promoted to required gates (first slice by 2026-12-31)</li>
+                        <li>Hive suites promoted to required gates</li>
                         <li>Allocation-light fixed-width UInt256 EVM arithmetic (spec 021)</li>
                     </ul>
                 </article>
@@ -482,7 +477,6 @@
                         <li>State snapshots for fast ETH-family sync (spec 013)</li>
                         <li>zkVM guest program for stateless validation on RISC-V (spec 019)</li>
                         <li>Execution witnesses, once execution-specs releases them (spec 017)</li>
-                        <li>Olympia activation on ETC, when the network sets the block</li>
                     </ul>
                 </article>
             </div>
@@ -495,39 +489,96 @@
             <span class="section-label">Get started</span>
             <h2 class="section-title">Pick your path.</h2>
             <p class="section-desc">
-                Release archives need JDK 25+. Pin a release from
-                <a href="https://github.com/chippr-robotics/fukuii/releases" rel="noopener">GitHub Releases</a>
-                in place of <code>&lt;version&gt;</code>.
+                Install from a package manager, a release archive, or a signed container. Replace
+                <code>&lt;version&gt;</code> with a release from
+                <a href="https://github.com/chippr-robotics/fukuii/releases" rel="noopener">GitHub Releases</a>.
             </p>
 
             <div class="quickstart-grid">
                 <article class="qs-card reveal">
                     <header class="qs-head">
                         <span class="qs-num">01</span>
-                        <h3 class="qs-title">ETC / Mordor</h3>
+                        <h3 class="qs-title">Ubuntu (PPA)</h3>
                     </header>
-                    <p class="qs-desc">Download a release and SNAP-sync the ETC testnet.</p>
+                    <p class="qs-desc">From <a href="https://launchpad.net/~chipprbots/+archive/ubuntu/fukuii" rel="noopener">ppa:chipprbots/fukuii</a>, for noble and jammy. Config lives in <code>/etc/fukuii</code>.</p>
                     <div class="codeblock">
                         <button class="copy-btn" type="button" aria-label="Copy code">
                             <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                             <span class="copy-label">Copy</span>
                         </button>
-<pre><code>unzip fukuii-&lt;version&gt;.zip
-cd fukuii-&lt;version&gt;
+<pre><code>sudo add-apt-repository ppa:chipprbots/fukuii
+sudo apt update
+sudo apt install fukuii
 
-# datadir: ~/.fukuii/mordor
-./bin/fukuii mordor --tui
-
-# ETC mainnet: ./bin/fukuii etc</code></pre>
+# etc, mordor, eth, sepolia, hoodi, ephemery
+fukuii etc</code></pre>
                     </div>
                 </article>
 
                 <article class="qs-card reveal">
                     <header class="qs-head">
                         <span class="qs-num">02</span>
-                        <h3 class="qs-title">Docker</h3>
+                        <h3 class="qs-title">Windows (Chocolatey)</h3>
                     </header>
-                    <p class="qs-desc">Cosign-signed images on GHCR. RPC stays on the host's loopback.</p>
+                    <p class="qs-desc">From the <a href="https://community.chocolatey.org/packages/fukuii" rel="noopener">Chocolatey community repository</a>. Installs the Temurin 25 JRE with it.</p>
+                    <div class="codeblock">
+                        <button class="copy-btn" type="button" aria-label="Copy code">
+                            <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span class="copy-label">Copy</span>
+                        </button>
+<pre><code>choco install fukuii
+
+# etc, mordor, eth, sepolia, hoodi, ephemery
+fukuii etc</code></pre>
+                    </div>
+                </article>
+
+                <article class="qs-card reveal">
+                    <header class="qs-head">
+                        <span class="qs-num">03</span>
+                        <h3 class="qs-title">Release archives</h3>
+                    </header>
+                    <p class="qs-desc">Zip, tarball and JAR for Linux, macOS and Windows on <a href="https://github.com/chippr-robotics/fukuii/releases/latest" rel="noopener">the latest release</a>, with <code>SHA256SUMS.txt</code>. Needs JDK 25+.</p>
+                    <div class="codeblock">
+                        <button class="copy-btn" type="button" aria-label="Copy code">
+                            <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span class="copy-label">Copy</span>
+                        </button>
+<pre><code>sha256sum -c SHA256SUMS.txt --ignore-missing
+unzip fukuii-&lt;version&gt;.zip
+cd fukuii-&lt;version&gt;
+
+# datadir: ~/.fukuii/mordor
+./bin/fukuii mordor --tui</code></pre>
+                    </div>
+                </article>
+
+                <article class="qs-card qs-card--accent reveal">
+                    <header class="qs-head">
+                        <span class="qs-num">04</span>
+                        <h3 class="qs-title">Signed container</h3>
+                    </header>
+                    <p class="qs-desc">Release images on <code>ghcr.io</code> are Cosign keyless-signed, with provenance and SBOM attestations. Verify before you run (<a href="https://docs.fukuii.com/deployment/docker/" rel="noopener">Docker guide</a>).</p>
+                    <div class="codeblock">
+                        <button class="copy-btn" type="button" aria-label="Copy code">
+                            <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span class="copy-label">Copy</span>
+                        </button>
+<pre><code>docker pull ghcr.io/chippr-robotics/fukuii:&lt;version&gt;
+
+cosign verify \
+  --certificate-identity-regexp=https://github.com/chippr-robotics/fukuii \
+  --certificate-oidc-issuer=https://token.actions.githubusercontent.com \
+  ghcr.io/chippr-robotics/fukuii:&lt;version&gt;</code></pre>
+                    </div>
+                </article>
+
+                <article class="qs-card reveal">
+                    <header class="qs-head">
+                        <span class="qs-num">05</span>
+                        <h3 class="qs-title">Run the container</h3>
+                    </header>
+                    <p class="qs-desc">RPC stays on the host's loopback. <code>docker.io/chipprbots/fukuii</code> is an unsigned mirror.</p>
                     <div class="codeblock">
                         <button class="copy-btn" type="button" aria-label="Copy code">
                             <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
@@ -544,18 +595,18 @@ cd fukuii-&lt;version&gt;
                     </div>
                 </article>
 
-                <article class="qs-card qs-card--accent reveal">
+                <article class="qs-card reveal">
                     <header class="qs-head">
-                        <span class="qs-num">03</span>
-                        <h3 class="qs-title">Sepolia + CL</h3>
+                        <span class="qs-num">06</span>
+                        <h3 class="qs-title">Sepolia + consensus client</h3>
                     </header>
-                    <p class="qs-desc">Engine API is on by default. Point any CL at the JWT fukuii creates.</p>
+                    <p class="qs-desc">The Engine API is on by default. Point any consensus client at the JWT fukuii creates.</p>
                     <div class="codeblock">
                         <button class="copy-btn" type="button" aria-label="Copy code">
                             <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                             <span class="copy-label">Copy</span>
                         </button>
-<pre><code>./bin/fukuii sepolia
+<pre><code>fukuii sepolia
 # Engine API: localhost:8551
 # JWT: ~/.fukuii/sepolia/jwt.hex
 
@@ -617,10 +668,10 @@ lighthouse bn --network sepolia \
         <div class="section-inner">
             <div class="cta-box glass">
                 <div class="cta-content">
-                    <span class="cta-tag">Alpha software</span>
+                    <span class="cta-tag">Beta software</span>
                     <h2 class="cta-title">Run a node. Tell us what you see.</h2>
                     <p class="cta-desc">
-                        Fukuii is alpha and not yet recommended for production-critical workloads; read the
+                        Fukuii is beta software; read the
                         <a href="https://docs.fukuii.com/runbooks/known-issues/" rel="noopener">known issues</a>
                         before you sync. Operator reports — sync behaviour, peering, resource profiles —
                         directly shape the road to a stable release.
