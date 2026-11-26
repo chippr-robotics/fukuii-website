@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fukuii — The Ethereum execution client built for operators</title>
-    <meta name="description" content="Fukuii is an EVM-compliant Ethereum execution layer client written in Scala 3. Dual ETC + ETH support, Engine API V1–V4 through Prague/Electra, pluggable consensus.">
+    <title>Fukuii — The EVM execution client built for operators</title>
+    <meta name="description" content="Fukuii is an EVM execution layer client in Scala 3. Native PoW for Ethereum Classic and Mordor; Ethereum mainnet, Sepolia, Hoodi, Ephemery and Platåberget over the Engine API through Amsterdam.">
     <meta name="theme-color" content="#1a1f16" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#f5f3ed" media="(prefers-color-scheme: light)">
 
-    <meta property="og:title" content="Fukuii — The Ethereum execution client built for operators">
-    <meta property="og:description" content="Dual ETC + ETH execution client in Scala 3. Engine API V1–V4 through Prague/Electra. Pluggable consensus. Alpha · Olympia.">
+    <meta property="og:title" content="Fukuii — The EVM execution client built for operators">
+    <meta property="og:description" content="ETC + Ethereum execution client in Scala 3. Engine API through Amsterdam, live on Sepolia. Olympia implemented for ETC. Alpha.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/fukuii-logo-cute.png">
 
@@ -38,8 +38,9 @@
                 <a href="#networks" class="nav-link">Networks</a>
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#operations" class="nav-link">Operations</a>
+                <a href="#roadmap" class="nav-link">Roadmap</a>
                 <a href="#quickstart" class="nav-link">Quick Start</a>
-                <a href="https://chippr-robotics.github.io/fukuii/" class="nav-link">Docs</a>
+                <a href="https://docs.fukuii.com/" class="nav-link">Docs</a>
             </nav>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
@@ -66,17 +67,17 @@
         <div class="hero-inner">
             <div class="hero-badge">
                 <span class="hero-badge-dot"></span>
-                Alpha · Olympia · Engine API on Sepolia
+                v0.12 · Amsterdam live on Sepolia · Olympia ready for ETC
             </div>
             <h1 class="hero-title">
-                The Ethereum client
+                The EVM execution client
                 <span class="hero-title-accent">built for operators</span>.
             </h1>
             <p class="hero-subtitle">
-                Fukuii is an EVM-compliant execution layer client in Scala 3. Run it on
-                <strong>ETC and Mordor natively</strong>, or pair it with any consensus client
-                — Lighthouse, Prysm, Teku, Lodestar, Nimbus — to follow Ethereum mainnet or Sepolia
-                via <strong>Engine API V1–V4</strong> through Prague/Electra.
+                Fukuii is an execution layer client in Scala 3. It runs
+                <strong>Ethereum Classic and Mordor natively</strong> on proof of work, and follows
+                <strong>Ethereum mainnet, Sepolia, Hoodi, Ephemery and Platåberget</strong> under any
+                consensus client over the Engine API, from Prague through Osaka to Amsterdam.
             </p>
             <div class="hero-actions">
                 <a href="#quickstart" class="btn btn-primary">
@@ -87,7 +88,7 @@
                     <svg aria-hidden="true" class="btn-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                     GitHub
                 </a>
-                <a href="https://chippr-robotics.github.io/fukuii/" class="btn btn-ghost" rel="noopener">
+                <a href="https://docs.fukuii.com/" class="btn btn-ghost" rel="noopener">
                     Read the docs
                 </a>
             </div>
@@ -98,24 +99,24 @@
     <section class="strip" aria-label="Project status">
         <div class="strip-inner">
             <div class="stat reveal">
-                <span class="stat-num" data-count="2314" data-suffix="">0</span>
-                <span class="stat-label">tests passing</span>
+                <span class="stat-num" data-count="8">0</span>
+                <span class="stat-label">built-in networks</span>
             </div>
             <div class="stat reveal">
-                <span class="stat-num" data-count="12">0</span>
-                <span class="stat-label">Hive simulators</span>
+                <span class="stat-num" data-count="7200" data-suffix="+">0</span>
+                <span class="stat-label">tests gate every merge</span>
             </div>
             <div class="stat reveal">
-                <span class="stat-num" data-count="4">0</span>
-                <span class="stat-label">supported networks</span>
+                <span class="stat-num" data-count="26503">0</span>
+                <span class="stat-label">EEST Amsterdam tests passing</span>
             </div>
             <div class="stat reveal">
-                <span class="stat-num" data-count="3">0</span>
-                <span class="stat-label">sync modes</span>
+                <span class="stat-num" data-count="2">0</span>
+                <span class="stat-label">chain families, PoW + PoS</span>
             </div>
             <div class="stat reveal stat--text">
                 <span class="stat-num stat-num--text">JDK 25 LTS</span>
-                <span class="stat-label">Scala 3.3 LTS · Pekko 1.1</span>
+                <span class="stat-label">Scala 3.9 LTS · Pekko 1.6</span>
             </div>
         </div>
     </section>
@@ -126,9 +127,9 @@
             <span class="section-label">What is Fukuii?</span>
             <h2 class="section-title">An independent execution client for ETC and Ethereum.</h2>
             <p class="section-desc">
-                A continuation of <em>Mantis</em>, IOHK's Scala client — modernised to Scala 3 and
-                pointed at a single goal: a credible second non-Geth EVM client for both Ethereum
-                Classic and post-Merge Ethereum.
+                A continuation of <em>Mantis</em>, IOHK's Scala client, maintained by Chippr Robotics and
+                modernised to Scala 3 and JDK 25. The goal: a credible non-Geth execution client for both
+                Ethereum Classic and post-Merge Ethereum, on a JVM dependency tree with its own failure profile.
             </p>
 
             <div class="cards cards--3">
@@ -136,22 +137,23 @@
                     <div class="card-icon">
                         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2 4 6v12l8 4 8-4V6l-8-4z"/><path d="M4 6l8 4 8-4M12 22V10"/></svg>
                     </div>
-                    <h3 class="card-title">Dual EL client</h3>
+                    <h3 class="card-title">Two chain families, one binary</h3>
                     <p class="card-desc">
-                        Native Ethash for ETC mainnet and Mordor. Engine API for post-Merge Ethereum,
-                        validated on Sepolia with 21+ EL peers. One binary, two worlds.
+                        ETC and Mordor run proof of work with Ethash and block-number forks. Ethereum networks
+                        run proof of stake through the Engine API with timestamp forks. The two code paths are
+                        kept apart on purpose, and pinned by tests.
                     </p>
                 </article>
 
                 <article class="card glass reveal">
                     <div class="card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 2-3 2M12 14h5"/></svg>
                     </div>
-                    <h3 class="card-title">Pluggable consensus</h3>
+                    <h3 class="card-title">A command center in the terminal</h3>
                     <p class="card-desc">
-                        Three layers: <code>fukuii-core</code> (chain-agnostic EVM), <code>fukuii-env</code>
-                        (sync, RPC, networking), and a <code>consensus</code> module you can swap.
-                        Ethash today, more tomorrow.
+                        Start with <code>--tui</code> for views of the chain, peers, mempool, RPC, Engine API,
+                        mining, storage and the host, with health bars, threshold alerts and operator actions
+                        from the same screen.
                     </p>
                 </article>
 
@@ -161,9 +163,9 @@
                     </div>
                     <h3 class="card-title">Broad API surface</h3>
                     <p class="card-desc">
-                        JSON-RPC over HTTP and WebSocket, trace and txpool introspection, GraphQL,
-                        and an MCP server — plus health, readiness, and buildinfo endpoints for
-                        your load balancer.
+                        JSON-RPC over HTTP, WebSocket and IPC, with <code>eth_simulateV1</code>, trace, txpool,
+                        GraphQL and an MCP server for AI agents, plus <code>/health</code>,
+                        <code>/readiness</code> and <code>/buildinfo</code> for your orchestrator.
                     </p>
                 </article>
             </div>
@@ -174,10 +176,10 @@
     <section id="networks" class="section section--muted">
         <div class="section-inner">
             <span class="section-label">Supported Networks</span>
-            <h2 class="section-title">One client, four chains.</h2>
+            <h2 class="section-title">One client, eight built-in networks.</h2>
             <p class="section-desc">
-                Run a PoW node on Ethereum Classic, follow Sepolia under any consensus client,
-                or stand up Ethereum mainnet — all from the same codebase.
+                Each is one argument to the launcher — <code>fukuii etc</code>, <code>fukuii sepolia</code>,
+                <code>fukuii hoodi</code> — and custom genesis covers private and consortium chains.
             </p>
 
             <div class="networks-grid">
@@ -186,11 +188,11 @@
                         <span class="net-name">Ethereum Classic</span>
                         <span class="net-chain">chain 61</span>
                     </header>
-                    <p class="net-status net-status--ok">Production · full sync validated</p>
+                    <p class="net-status net-status--ok">Native PoW · <code>fukuii etc</code></p>
                     <ul class="net-meta">
-                        <li>Consensus: PoW Ethash</li>
-                        <li>Sync: SNAP / fast / regular</li>
-                        <li>Native execution &amp; consensus</li>
+                        <li>Ethash consensus and a built-in miner</li>
+                        <li>SNAP sync, with checkpoint bootstrap</li>
+                        <li>Olympia (ECIP-1111/1112/1121) implemented; activation block not yet set</li>
                     </ul>
                 </article>
 
@@ -199,11 +201,11 @@
                         <span class="net-name">Mordor</span>
                         <span class="net-chain">chain 63</span>
                     </header>
-                    <p class="net-status net-status--ok">Production · full sync validated</p>
+                    <p class="net-status net-status--ok">Native PoW · <code>fukuii mordor</code></p>
                     <ul class="net-meta">
-                        <li>Consensus: PoW Ethash</li>
-                        <li>Sync: SNAP / fast / regular</li>
                         <li>ETC testnet</li>
+                        <li>SNAP sync, with checkpoint bootstrap</li>
+                        <li>Olympia implemented; activation block not yet set</li>
                     </ul>
                 </article>
 
@@ -212,11 +214,11 @@
                         <span class="net-name">Sepolia</span>
                         <span class="net-chain">chain 11155111</span>
                     </header>
-                    <p class="net-status net-status--accent">Validated · 21+ EL peers</p>
+                    <p class="net-status net-status--accent">Amsterdam live since 2026-10-06</p>
                     <ul class="net-meta">
-                        <li>Consensus: PoS via Engine API</li>
-                        <li>Paired with Lighthouse</li>
-                        <li>Engine API V1–V4</li>
+                        <li>PoS via Engine API, on by default</li>
+                        <li>Glamsterdam (EIP-7773) execution rules</li>
+                        <li>Follows the CL by block import</li>
                     </ul>
                 </article>
 
@@ -225,11 +227,59 @@
                         <span class="net-name">Ethereum Mainnet</span>
                         <span class="net-chain">chain 1</span>
                     </header>
-                    <p class="net-status">Configuration available</p>
+                    <p class="net-status">Config shipped · <code>fukuii eth</code></p>
                     <ul class="net-meta">
-                        <li>Consensus: PoS via Engine API</li>
-                        <li>Pair with any CL</li>
-                        <li>Prague / Electra ready</li>
+                        <li>PoS via Engine API, any consensus client</li>
+                        <li>Fork schedule through Osaka and BPO2</li>
+                        <li>Amsterdam ready; mainnet date not yet scheduled</li>
+                    </ul>
+                </article>
+
+                <article class="net-card reveal">
+                    <header class="net-head">
+                        <span class="net-name">Platåberget</span>
+                        <span class="net-chain">chain 7091047534</span>
+                    </header>
+                    <p class="net-status net-status--accent">Amsterdam live since 2026-08-20</p>
+                    <ul class="net-meta">
+                        <li>The public Glamsterdam testnet</li>
+                        <li>PoS via Engine API</li>
+                    </ul>
+                </article>
+
+                <article class="net-card reveal">
+                    <header class="net-head">
+                        <span class="net-name">Hoodi</span>
+                        <span class="net-chain">chain 560048</span>
+                    </header>
+                    <p class="net-status">Built in · <code>fukuii hoodi</code></p>
+                    <ul class="net-meta">
+                        <li>Ethereum staking testnet</li>
+                        <li>PoS via Engine API</li>
+                    </ul>
+                </article>
+
+                <article class="net-card reveal">
+                    <header class="net-head">
+                        <span class="net-name">Ephemery</span>
+                        <span class="net-chain">28-day resets</span>
+                    </header>
+                    <p class="net-status">Built in · <code>fukuii ephemery</code></p>
+                    <ul class="net-meta">
+                        <li>Current iteration bundled in the jar</li>
+                        <li>Exits 75 at a reset; fetches the next iteration on restart</li>
+                    </ul>
+                </article>
+
+                <article class="net-card reveal">
+                    <header class="net-head">
+                        <span class="net-name">Private &amp; custom</span>
+                        <span class="net-chain">your genesis</span>
+                    </header>
+                    <p class="net-status">Gorgoroth · custom chains</p>
+                    <ul class="net-meta">
+                        <li>Gorgoroth: private PoW test network</li>
+                        <li>Custom genesis, chain id and fork schedule without source changes</li>
                     </ul>
                 </article>
             </div>
@@ -240,108 +290,102 @@
     <section id="features" class="section">
         <div class="section-inner">
             <span class="section-label">Capabilities</span>
-            <h2 class="section-title">Everything an execution client should be.</h2>
+            <h2 class="section-title">What the client does today.</h2>
             <p class="section-desc">
-                Sync modes, EVM forks, Engine API, JSON-RPC, Hive compliance, and the
-                operational tooling around them.
+                Sync, EVM forks, Engine API, JSON-RPC, verification, and the operational tooling around them —
+                as shipped in the 0.12 release line.
             </p>
 
             <div class="tabs reveal">
                 <div class="tablist" role="tablist" aria-label="Fukuii capabilities">
-                    <button id="tab-sync" class="tab" role="tab" aria-selected="true" aria-controls="panel-sync" tabindex="0">Sync modes</button>
-                    <button id="tab-evm" class="tab" role="tab" aria-selected="false" aria-controls="panel-evm" tabindex="-1">EVM Prague/Electra</button>
+                    <button id="tab-sync" class="tab" role="tab" aria-selected="true" aria-controls="panel-sync" tabindex="0">Sync</button>
+                    <button id="tab-evm" class="tab" role="tab" aria-selected="false" aria-controls="panel-evm" tabindex="-1">Forks &amp; EVM</button>
                     <button id="tab-engine" class="tab" role="tab" aria-selected="false" aria-controls="panel-engine" tabindex="-1">Engine API</button>
                     <button id="tab-rpc" class="tab" role="tab" aria-selected="false" aria-controls="panel-rpc" tabindex="-1">JSON-RPC + MCP</button>
-                    <button id="tab-hive" class="tab" role="tab" aria-selected="false" aria-controls="panel-hive" tabindex="-1">Hive compliance</button>
+                    <button id="tab-hive" class="tab" role="tab" aria-selected="false" aria-controls="panel-hive" tabindex="-1">Verification</button>
                     <button id="tab-ops" class="tab" role="tab" aria-selected="false" aria-controls="panel-ops" tabindex="-1">Operations</button>
                     <span class="tab-indicator" aria-hidden="true"></span>
                 </div>
 
                 <div id="panel-sync" class="tabpanel" role="tabpanel" aria-labelledby="tab-sync">
-                    <h3>SNAP, fast, and regular sync</h3>
-                    <p>Three sync modes with bootstrap checkpoints from well-known fork blocks, automatic fallback between modes, and in-place pivot refresh so a stale state root doesn't cost you the whole sync.</p>
+                    <h3>SNAP sync, block import, and checkpoints</h3>
+                    <p>Fast sync is gone. ETC and Mordor SNAP-sync by default; the Ethereum networks follow their consensus client by importing blocks. Healing converges on a live chain without walking the whole state trie.</p>
                     <ul class="bullets">
-                        <li><strong>SNAP</strong> — flat storage, deferred Merkleization, adaptive batching, capability check, dynamic concurrency, partial-range resume</li>
-                        <li><strong>Fast</strong> — headers → state → bodies, with <code>ExcludingPeers</code> selectors and exponential backoff</li>
-                        <li><strong>Regular</strong> — block-by-block from genesis when you need certainty</li>
+                        <li><strong>SNAP</strong> — snap/1 state download with every header validated against its parent, deepest-first healing that commits only complete subtrees, and a background audit after hand-off</li>
+                        <li><strong>Block import</strong> — the default on Sepolia, mainnet, Hoodi, Ephemery and Platåberget, driven by <code>engine_newPayload</code> and <code>forkchoiceUpdated</code></li>
+                        <li><strong>Checkpoint bootstrap</strong> — ETC and Mordor nodes import a trusted pivot and start SNAP at once</li>
+                        <li><strong>Portable chain files</strong> — <code>fukuii &lt;network&gt; export</code> / <code>import</code> in go-ethereum's format</li>
+                        <li><strong>Wire</strong> — eth/68 and eth/69 everywhere; eth/70 and eth/71 on the Ethereum networks</li>
                     </ul>
                 </div>
 
                 <div id="panel-evm" class="tabpanel" role="tabpanel" aria-labelledby="tab-evm" hidden>
-                    <h3>EVM through Prague / Electra</h3>
-                    <p>Full mainnet hard-fork coverage on the Ethereum side, plus the Olympia ECIPs on the ETC side.</p>
+                    <h3>Ethereum through Amsterdam, ETC through Olympia</h3>
+                    <p>Ethereum mainnet's schedule through Osaka and the BPO2 blob fork, and the Amsterdam execution rules of Glamsterdam, active on Sepolia and Platåberget. On ETC, Olympia is implemented and waits for the network to choose an activation block.</p>
                     <ul class="bullets bullets--grid">
-                        <li>EIP-1559 fee market</li>
-                        <li>EIP-3541 reject 0xEF code</li>
-                        <li>EIP-3529 refund reduction</li>
-                        <li>EIP-3651 warm COINBASE</li>
-                        <li>EIP-3855 PUSH0</li>
-                        <li>EIP-3860 init-code limit</li>
-                        <li>EIP-4844 blob txs</li>
-                        <li>EIP-4895 beacon withdrawals</li>
-                        <li>EIP-4788 beacon root</li>
-                        <li>EIP-6049 SELFDESTRUCT deprecation</li>
-                        <li>EIP-7685 general execution requests</li>
-                        <li>ECIP-1111 / 1112 / 1121 (Olympia)</li>
+                        <li>EIP-7928 block-level access lists</li>
+                        <li>EIP-7843 SLOTNUM</li>
+                        <li>EIP-8024 SWAPN / DUPN / EXCHANGE</li>
+                        <li>EIP-8037 / 8038 state gas repricing</li>
+                        <li>EIP-7778 gas accounting without refunds</li>
+                        <li>EIP-7708 ETH transfers emit a log</li>
+                        <li>EIP-7954 larger contract size</li>
+                        <li>EIP-7976 / 7981 calldata and access-list cost</li>
+                        <li>EIP-7840 / 7892 per-chain blob schedule</li>
+                        <li>EIP-4844 blobs · EIP-7685 requests</li>
+                        <li>ECIP-1111 EIP-1559 fee market for ETC</li>
+                        <li>ECIP-1112 treasury · ECIP-1121 MESS</li>
                     </ul>
                 </div>
 
                 <div id="panel-engine" class="tabpanel" role="tabpanel" aria-labelledby="tab-engine" hidden>
-                    <h3>Engine API V1–V4 on authrpc</h3>
-                    <p>JWT-authenticated authrpc on port 8551 with the full V1–V4 method set. Validated on Sepolia paired with Lighthouse.</p>
+                    <h3>Engine API through Amsterdam</h3>
+                    <p>On by default for every chain that needs a consensus client, on <code>localhost:8551</code>. At first start fukuii writes a persistent secret to <code>&lt;datadir&gt;/jwt.hex</code> (mode 0600) for your consensus client's <code>--execution-jwt</code>.</p>
                     <ul class="bullets">
-                        <li><code>engine_newPayloadV1..V4</code></li>
-                        <li><code>engine_forkchoiceUpdatedV1..V3</code></li>
-                        <li><code>engine_getPayloadV1..V4</code></li>
-                        <li><code>engine_getPayloadBodiesByHashV1</code> / <code>ByRangeV1</code></li>
-                        <li><code>engine_exchangeCapabilities</code></li>
+                        <li><code>engine_newPayloadV1..V5</code></li>
+                        <li><code>engine_forkchoiceUpdatedV1..V4</code></li>
+                        <li><code>engine_getPayloadV1..V6</code></li>
+                        <li><code>engine_getPayloadBodiesByHash</code> / <code>ByRange</code> V1 and V2</li>
+                        <li><code>engine_getBlobsV1</code> / <code>V2</code> · <code>engine_getClientVersionV1</code> · <code>engine_exchangeCapabilities</code></li>
                     </ul>
                 </div>
 
                 <div id="panel-rpc" class="tabpanel" role="tabpanel" aria-labelledby="tab-rpc" hidden>
-                    <h3>JSON-RPC + MCP for AI agents</h3>
-                    <p>Standard Ethereum JSON-RPC over HTTP (8553), WebSocket (8552), and authrpc (8551). Plus a Model Context Protocol server (2025-11-25) so LLM agents can drive the node directly.</p>
+                    <h3>JSON-RPC, GraphQL, and MCP for AI agents</h3>
+                    <p>HTTP on 8546, WebSocket on 8552, and IPC, all bound to localhost by default. As in go-ethereum, HTTP and WebSocket serve only <code>eth</code>, <code>net</code>, <code>web3</code> and <code>fukuii</code> until you opt in to more, per transport. Add <code>mcp</code> to a transport's list to expose a Model Context Protocol server (2025-11-25) to LLM agents.</p>
                     <ul class="bullets bullets--grid">
-                        <li><code>eth_*</code></li>
-                        <li><code>net_*</code></li>
-                        <li><code>web3_*</code></li>
+                        <li><code>eth_*</code> incl. <code>eth_simulateV1</code></li>
+                        <li><code>net_*</code> · <code>web3_*</code></li>
                         <li><code>debug_*</code></li>
                         <li><code>trace_*</code></li>
-                        <li><code>admin_*</code></li>
                         <li><code>txpool_*</code></li>
+                        <li><code>admin_*</code></li>
+                        <li><code>miner_*</code> (ETC)</li>
                         <li><code>personal_*</code></li>
-                        <li><code>engine_*</code></li>
+                        <li>GraphQL</li>
                     </ul>
-                    <p class="callout">Health endpoints: <code>/health</code> · <code>/readiness</code> · <code>/buildinfo</code></p>
+                    <p class="callout">Health endpoints: <code>/health</code> · <code>/readiness</code> · <code>/healthcheck</code> · <code>/buildinfo</code></p>
                 </div>
 
                 <div id="panel-hive" class="tabpanel" role="tabpanel" aria-labelledby="tab-hive" hidden>
-                    <h3>Ethereum Foundation Hive</h3>
-                    <p>Twelve compliance simulators wired into CI. <code>hive-prague</code> is the gated PR check — every change runs through it before merge.</p>
-                    <ul class="bullets bullets--grid">
-                        <li>smoke-genesis</li>
-                        <li>smoke-network</li>
-                        <li>rpc</li>
-                        <li>rpc-compat</li>
-                        <li>graphql</li>
-                        <li>devp2p</li>
-                        <li>sync</li>
-                        <li>consensus</li>
-                        <li>pyspec</li>
-                        <li>engine</li>
-                        <li>consume-engine</li>
-                        <li>consume-rlp</li>
+                    <h3>What is gated, and what only reports</h3>
+                    <p>Fukuii publishes which checks can block a merge, generated from the CI gate matrix. Three are required today: the build with Tier-1 and Tier-2 tests, the Docker build, and the gate-integrity meta-check. Hive suites run and report but are <em>informational</em> — not a compliance claim until promoted.</p>
+                    <ul class="bullets">
+                        <li><strong>EEST Amsterdam</strong> — 26,503 / 26,503 execution-specs blockchain tests replayed through block import, and every accepted block rebuilt by the payload builder</li>
+                        <li><strong>First required Hive slice</strong> — geth ↔ fukuii sync both ways, Engine API invalid-payload rejection, ETC-fork consume-rlp; target 2026-12-31</li>
+                        <li><strong>Also running</strong> — smoke, rpc-compat, graphql, devp2p, consensus, consume-engine, and nightly ethereum/tests across both fork schedules</li>
                     </ul>
+                    <p class="callout">Live tiers, waivers and promotion dates: <a href="https://docs.fukuii.com/STATUS/" rel="noopener">Verification Status</a></p>
                 </div>
 
                 <div id="panel-ops" class="tabpanel" role="tabpanel" aria-labelledby="tab-ops" hidden>
-                    <h3>Built for production</h3>
+                    <h3>Built for the people who run it</h3>
                     <ul class="bullets">
-                        <li>Pekko 1.1 actor system on three isolated dispatchers — <code>sync-dispatcher</code> prevents RPC starvation</li>
-                        <li>Prometheus metrics + Grafana dashboards out of the box</li>
-                        <li><code>ResilientRollingFileAppender</code> for log rotation that survives disk pressure</li>
-                        <li>Signed Docker images with SLSA build provenance</li>
-                        <li>Bootstrap checkpoints eliminate peer-wait at startup</li>
+                        <li><code>--tui</code> command center with alerts and operator actions</li>
+                        <li>Pekko actor system with dedicated dispatchers for sync, the Engine API and healing, so RPC stays responsive</li>
+                        <li>Prometheus metrics and Grafana dashboards in the <code>ops/</code> reference stacks</li>
+                        <li>One bounded RocksDB memory budget, and a heap watchdog on SNAP work</li>
+                        <li>Install from release zip/tarball, the <code>ppa:chipprbots/fukuii</code> Ubuntu PPA, or Cosign-signed images on GHCR</li>
                     </ul>
                 </div>
             </div>
@@ -352,9 +396,9 @@
     <section id="operations" class="section section--muted">
         <div class="section-inner">
             <span class="section-label">Operations</span>
-            <h2 class="section-title">Designed for the people who run it.</h2>
+            <h2 class="section-title">Safe defaults, visible state.</h2>
             <p class="section-desc">
-                Observability, predictable behaviour under load, and a verifiable supply chain —
+                Observability, predictable behaviour under load, and a verifiable artifact chain —
                 the things that matter at 3 a.m.
             </p>
 
@@ -365,21 +409,20 @@
                     </div>
                     <h3 class="card-title">Observability built in</h3>
                     <p class="card-desc">
-                        Prometheus metrics and Grafana dashboards out of the box, with
-                        <code>/health</code>, <code>/readiness</code>, and <code>/buildinfo</code>
-                        endpoints for orchestrators and load balancers.
+                        Prometheus metrics across sync phases, peers and the Engine API, Grafana dashboards in
+                        the reference deployments, per-peer reliability scores, and health endpoints for
+                        orchestrators and load balancers.
                     </p>
                 </article>
 
                 <article class="card glass reveal">
                     <div class="card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
                     </div>
-                    <h3 class="card-title">Predictable under load</h3>
+                    <h3 class="card-title">Locked down by default</h3>
                     <p class="card-desc">
-                        Sync runs on its own dispatcher so JSON-RPC stays responsive during heavy
-                        SNAP traffic. Bootstrap checkpoints skip the peer-wait at startup, and
-                        log rotation survives disk pressure.
+                        RPC and the Engine API bind to localhost. HTTP and WebSocket expose four namespaces until
+                        you opt in, WebSocket checks an Origin allowlist, and the Engine API accepts only HS256 JWTs.
                     </p>
                 </article>
 
@@ -387,43 +430,61 @@
                     <div class="card-icon">
                         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
                     </div>
-                    <h3 class="card-title">Verifiable supply chain</h3>
+                    <h3 class="card-title">Verifiable artifacts</h3>
                     <p class="card-desc">
-                        Cosign-signed container images on GHCR with SLSA build provenance and a
-                        CycloneDX SBOM, so you can verify exactly what you deploy.
+                        Container images on GHCR are Cosign keyless-signed, with BuildKit provenance and SBOM
+                        attestations. Release archives ship with <code>SHA256SUMS.txt</code>.
                     </p>
                 </article>
             </div>
 
             <p class="callout reveal">
-                Runbooks, alerting guidance, and upgrade procedures live in the
-                <a href="https://chippr-robotics.github.io/fukuii/for-operators/" rel="noopener">operator documentation</a>.
+                Runbooks for first start, peering, disk, backup, log triage and known issues live in the
+                <a href="https://docs.fukuii.com/runbooks/" rel="noopener">operator documentation</a>.
             </p>
         </div>
     </section>
 
-    <!-- Architecture -->
-    <section id="architecture" class="section">
+    <!-- Roadmap -->
+    <section id="roadmap" class="section">
         <div class="section-inner">
-            <span class="section-label">Architecture</span>
-            <h2 class="section-title">Three layers, cleanly separated.</h2>
+            <span class="section-label">Roadmap</span>
+            <h2 class="section-title">Where it goes next.</h2>
             <p class="section-desc">
-                Chain-agnostic at the bottom, opinionated at the top. Swap consensus without touching the EVM.
+                Drawn from the project's specs and backlog. Track it live on the
+                <a href="https://docs.fukuii.com/development/tracker/" rel="noopener">tracker</a>.
             </p>
 
-            <div class="arch-stack reveal">
-                <div class="arch-layer arch-layer--top">
-                    <span class="arch-label">consensus module</span>
-                    <p>Engine API, beacon root handling, fork choice integration. Ethash today; pluggable tomorrow.</p>
-                </div>
-                <div class="arch-layer arch-layer--mid">
-                    <span class="arch-label">fukuii-env</span>
-                    <p>Networking, JSON-RPC, sync controllers, Prometheus metrics, storage glue. The "everything around the EVM" layer.</p>
-                </div>
-                <div class="arch-layer arch-layer--bot">
-                    <span class="arch-label">fukuii-core</span>
-                    <p>EVM, state trie, RLP, txpool. Chain-agnostic. The library you'd reach for to build the next client.</p>
-                </div>
+            <div class="cards cards--3">
+                <article class="card glass reveal">
+                    <h3 class="card-title">In progress</h3>
+                    <ul class="bullets">
+                        <li>One unified state layout for ETC and ETH: in-place reorgs, no post-SNAP state copy (spec 018)</li>
+                        <li>Full Glamsterdam execution-layer scope and the payload builder slice (spec 009)</li>
+                        <li>Hive suites promoted to required gates (first slice by 2026-12-31)</li>
+                        <li>Allocation-light fixed-width UInt256 EVM arithmetic (spec 021)</li>
+                    </ul>
+                </article>
+
+                <article class="card glass reveal">
+                    <h3 class="card-title">Planned</h3>
+                    <ul class="bullets">
+                        <li>Fleet topology: process model, roles and the contract to Orbita sidechains (spec 023)</li>
+                        <li>Chain registry — a chain is data (spec 024)</li>
+                        <li>Change-record export to Kafka (spec 025)</li>
+                        <li><code>replica</code> and <code>archive</code> follower roles (spec 026)</li>
+                    </ul>
+                </article>
+
+                <article class="card glass reveal">
+                    <h3 class="card-title">Research</h3>
+                    <ul class="bullets">
+                        <li>State snapshots for fast ETH-family sync (spec 013)</li>
+                        <li>zkVM guest program for stateless validation on RISC-V (spec 019)</li>
+                        <li>Execution witnesses, once execution-specs releases them (spec 017)</li>
+                        <li>Olympia activation on ETC, when the network sets the block</li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
@@ -434,30 +495,30 @@
             <span class="section-label">Get started</span>
             <h2 class="section-title">Pick your path.</h2>
             <p class="section-desc">
-                Docker images for deployments, source builds for development, and Engine API
-                pairing with the consensus client you already run.
+                Release archives need JDK 25+. Pin a release from
+                <a href="https://github.com/chippr-robotics/fukuii/releases" rel="noopener">GitHub Releases</a>
+                in place of <code>&lt;version&gt;</code>.
             </p>
 
             <div class="quickstart-grid">
                 <article class="qs-card reveal">
                     <header class="qs-head">
                         <span class="qs-num">01</span>
-                        <h3 class="qs-title">Mordor SNAP</h3>
+                        <h3 class="qs-title">ETC / Mordor</h3>
                     </header>
-                    <p class="qs-desc">Build from source and SNAP-sync the ETC testnet.</p>
+                    <p class="qs-desc">Download a release and SNAP-sync the ETC testnet.</p>
                     <div class="codeblock">
                         <button class="copy-btn" type="button" aria-label="Copy code">
                             <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                             <span class="copy-label">Copy</span>
                         </button>
-<pre><code>git clone https://github.com/chippr-robotics/fukuii
-cd fukuii
-sbt assembly
+<pre><code>unzip fukuii-&lt;version&gt;.zip
+cd fukuii-&lt;version&gt;
 
-java -Xmx4g \
-  -Dfukuii.datadir=/var/lib/fukuii \
-  -Dfukuii.network=mordor \
-  -jar target/fukuii-assembly-&lt;ver&gt;.jar mordor</code></pre>
+# datadir: ~/.fukuii/mordor
+./bin/fukuii mordor --tui
+
+# ETC mainnet: ./bin/fukuii etc</code></pre>
                     </div>
                 </article>
 
@@ -466,20 +527,20 @@ java -Xmx4g \
                         <span class="qs-num">02</span>
                         <h3 class="qs-title">Docker</h3>
                     </header>
-                    <p class="qs-desc">Signed images on GHCR. Mount a datadir and go.</p>
+                    <p class="qs-desc">Cosign-signed images on GHCR. RPC stays on the host's loopback.</p>
                     <div class="codeblock">
                         <button class="copy-btn" type="button" aria-label="Copy code">
                             <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                             <span class="copy-label">Copy</span>
                         </button>
-<pre><code>docker pull ghcr.io/chippr-robotics/fukuii:latest
-
-docker run -d \
-  --name fukuii \
-  -p 8553:8553 \
-  -p 30305:30305 \
-  -v fukuii-data:/var/lib/fukuii \
-  ghcr.io/chippr-robotics/fukuii:latest etc</code></pre>
+<pre><code>docker run -d --name fukuii \
+  -p 30303:30303/tcp -p 30303:30303/udp \
+  -p 127.0.0.1:8546:8546 \
+  -v fukuii-data:/app/data \
+  ghcr.io/chippr-robotics/fukuii:&lt;version&gt; \
+  -Dconfig.file=/app/conf/etc.conf \
+  -Dfukuii.datadir=/app/data \
+  -Dfukuii.network.rpc.http.interface=0.0.0.0</code></pre>
                     </div>
                 </article>
 
@@ -488,21 +549,20 @@ docker run -d \
                         <span class="qs-num">03</span>
                         <h3 class="qs-title">Sepolia + CL</h3>
                     </header>
-                    <p class="qs-desc">Pair with any consensus client over Engine API.</p>
+                    <p class="qs-desc">Engine API is on by default. Point any CL at the JWT fukuii creates.</p>
                     <div class="codeblock">
                         <button class="copy-btn" type="button" aria-label="Copy code">
                             <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                             <span class="copy-label">Copy</span>
                         </button>
-<pre><code>java -Xmx8g \
-  -Dfukuii.network=sepolia \
-  -Dfukuii.engine.enabled=true \
-  -Dfukuii.engine.port=8551 \
-  -Dfukuii.engine.jwt-secret=/etc/fukuii/jwt.hex \
-  -jar fukuii-assembly-&lt;ver&gt;.jar sepolia
+<pre><code>./bin/fukuii sepolia
+# Engine API: localhost:8551
+# JWT: ~/.fukuii/sepolia/jwt.hex
 
-# then point Lighthouse / Prysm / Teku / Lodestar / Nimbus
-# at http://localhost:8551 with the same JWT secret</code></pre>
+lighthouse bn --network sepolia \
+  --execution-endpoint http://localhost:8551 \
+  --execution-jwt ~/.fukuii/sepolia/jwt.hex \
+  --checkpoint-sync-url &lt;provider&gt;</code></pre>
                     </div>
                 </article>
             </div>
@@ -515,33 +575,33 @@ docker run -d \
             <span class="section-label">Documentation</span>
             <h2 class="section-title">Documentation for every role.</h2>
             <p class="section-desc">
-                The full docs live at <a href="https://chippr-robotics.github.io/fukuii/" rel="noopener">chippr-robotics.github.io/fukuii</a>.
+                The full docs live at <a href="https://docs.fukuii.com/" rel="noopener">docs.fukuii.com</a>.
                 These are the four most common entry points.
             </p>
 
             <div class="cards cards--4">
-                <a class="audience-card glass reveal" href="https://chippr-robotics.github.io/fukuii/getting-started/" rel="noopener">
+                <a class="audience-card glass reveal" href="https://docs.fukuii.com/getting-started/" rel="noopener">
                     <span class="audience-icon">
                         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </span>
                     <h3>Getting started</h3>
-                    <p>Five minutes from clone to syncing block.</p>
+                    <p>Install, first start, and your first synced block.</p>
                 </a>
-                <a class="audience-card glass reveal" href="https://chippr-robotics.github.io/fukuii/for-node-operators/" rel="noopener">
+                <a class="audience-card glass reveal" href="https://docs.fukuii.com/for-node-operators/" rel="noopener">
                     <span class="audience-icon">
                         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
                     </span>
                     <h3>Node operators</h3>
                     <p>Network selection, ports, peering, and sync.</p>
                 </a>
-                <a class="audience-card glass reveal" href="https://chippr-robotics.github.io/fukuii/for-operators/" rel="noopener">
+                <a class="audience-card glass reveal" href="https://docs.fukuii.com/for-operators/" rel="noopener">
                     <span class="audience-icon">
                         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
                     </span>
                     <h3>SRE / production</h3>
                     <p>Metrics, alerts, runbooks, and rollback.</p>
                 </a>
-                <a class="audience-card glass reveal" href="https://chippr-robotics.github.io/fukuii/for-developers/" rel="noopener">
+                <a class="audience-card glass reveal" href="https://docs.fukuii.com/for-developers/" rel="noopener">
                     <span class="audience-icon">
                         <svg aria-hidden="true" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     </span>
@@ -560,17 +620,18 @@ docker run -d \
                     <span class="cta-tag">Alpha software</span>
                     <h2 class="cta-title">Run a node. Tell us what you see.</h2>
                     <p class="cta-desc">
-                        Fukuii is in alpha and not yet recommended for production-critical workloads.
-                        Operator reports — sync behaviour, peering, resource profiles — directly
-                        shape the road to a stable release.
+                        Fukuii is alpha and not yet recommended for production-critical workloads; read the
+                        <a href="https://docs.fukuii.com/runbooks/known-issues/" rel="noopener">known issues</a>
+                        before you sync. Operator reports — sync behaviour, peering, resource profiles —
+                        directly shape the road to a stable release.
                     </p>
                     <div class="cta-actions">
                         <a href="https://github.com/chippr-robotics/fukuii/issues" class="btn btn-primary" rel="noopener">
                             Report an issue
                             <svg aria-hidden="true" class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
-                        <a href="https://github.com/chippr-robotics/fukuii/discussions" class="btn btn-secondary" rel="noopener">
-                            Join discussions
+                        <a href="https://docs.fukuii.com/blog/" class="btn btn-secondary" rel="noopener">
+                            Release notes &amp; blog
                         </a>
                     </div>
                 </div>
@@ -589,7 +650,7 @@ docker run -d \
                         <img src="/fukuii-logo-cute.png" alt="" class="logo-image" width="40" height="40">
                         <span class="logo-text">Fukuii</span>
                     </a>
-                    <p>EVM-compliant Ethereum execution layer client in Scala 3.</p>
+                    <p>EVM execution layer client for Ethereum Classic and Ethereum, in Scala 3.</p>
                 </div>
                 <div class="footer-column">
                     <h4>Project</h4>
@@ -598,15 +659,18 @@ docker run -d \
                         <li><a href="#networks">Networks</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#operations">Operations</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Docs</h4>
                     <ul>
-                        <li><a href="https://chippr-robotics.github.io/fukuii/" rel="noopener">Documentation</a></li>
-                        <li><a href="https://chippr-robotics.github.io/fukuii/getting-started/" rel="noopener">Getting started</a></li>
-                        <li><a href="https://chippr-robotics.github.io/fukuii/for-developers/" rel="noopener">Developers</a></li>
-                        <li><a href="https://chippr-robotics.github.io/fukuii/for-operators/" rel="noopener">Operators</a></li>
+                        <li><a href="https://docs.fukuii.com/" rel="noopener">Documentation</a></li>
+                        <li><a href="https://docs.fukuii.com/getting-started/" rel="noopener">Getting started</a></li>
+                        <li><a href="https://docs.fukuii.com/for-developers/" rel="noopener">Developers</a></li>
+                        <li><a href="https://docs.fukuii.com/for-operators/" rel="noopener">Operators</a></li>
+                        <li><a href="https://docs.fukuii.com/STATUS/" rel="noopener">Verification status</a></li>
+                        <li><a href="https://docs.fukuii.com/blog/" rel="noopener">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

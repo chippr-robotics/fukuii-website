@@ -89,8 +89,9 @@ function initCountUp() {
     const animate = (el) => {
         const target = Number(el.dataset.count);
         if (!Number.isFinite(target)) return;
+        const suffix = el.dataset.suffix || '';
         if (reduceMotion) {
-            el.textContent = target.toLocaleString();
+            el.textContent = target.toLocaleString() + suffix;
             return;
         }
         const duration = 1400;
@@ -101,7 +102,7 @@ function initCountUp() {
             const value = Math.floor(target * ease(t));
             el.textContent = value.toLocaleString();
             if (t < 1) requestAnimationFrame(tick);
-            else el.textContent = target.toLocaleString();
+            else el.textContent = target.toLocaleString() + suffix;
         };
         requestAnimationFrame(tick);
     };

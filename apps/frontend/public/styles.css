@@ -627,10 +627,9 @@ body::before {
 
 .networks-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
     gap: 1.25rem;
 }
-@media (max-width: 720px) { .networks-grid { grid-template-columns: 1fr; } }
 
 .net-card {
     padding: 1.75rem;
@@ -654,6 +653,7 @@ body::before {
 }
 .net-head {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
@@ -665,6 +665,7 @@ body::before {
     letter-spacing: -0.01em;
 }
 .net-chain {
+    white-space: nowrap;
     font-family: var(--font-mono);
     font-size: 0.78rem;
     color: var(--text-subtle);
@@ -865,11 +866,11 @@ body::before {
 
 .quickstart-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
 }
 @media (max-width: 1000px) {
-    .quickstart-grid { grid-template-columns: 1fr; }
+    .quickstart-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 .qs-card {
