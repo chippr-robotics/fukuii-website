@@ -4,7 +4,7 @@ This repository contains the official website for the [fukuii](https://github.co
 
 ## About fukuii
 
-fukuii is a Scala-based Ethereum Classic client forked from IOHK's mantis project, providing production-ready blockchain infrastructure with comprehensive tooling for developers and organizations.
+fukuii is an EVM execution layer client in Scala 3, an independent continuation of IOHK's Mantis client. It runs Ethereum Classic and Mordor natively on proof of work, and Ethereum mainnet, Sepolia, Hoodi, Ephemery and Platåberget under a consensus client over the Engine API. Full documentation: <https://docs.fukuii.com/>.
 
 ## Repository Structure
 
